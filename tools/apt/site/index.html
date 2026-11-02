@@ -63,24 +63,24 @@
       <p>Packages for Raspberry Pi OS and Debian 12 or 13, on arm64 (Raspberry Pi 4 and 5) and amd64.</p>
 
       <h2>1. Get the signing key and check it</h2>
-      <pre>sudo curl -fsSL -o /usr/share/keyrings/cwnsb-archive-keyring.asc @BASE_URL@/cwnsb-archive-keyring.asc
-gpg --show-keys /usr/share/keyrings/cwnsb-archive-keyring.asc</pre>
+      <pre>sudo curl -fsSL -o /usr/share/keyrings/nasbuster-archive-keyring.asc @BASE_URL@/nasbuster-archive-keyring.asc
+gpg --show-keys /usr/share/keyrings/nasbuster-archive-keyring.asc</pre>
       <p>The fingerprint must read exactly:</p>
       <pre>6E4A B0CB FCC4 E45D EC76  A4B4 5282 C4BC 9717 0E72</pre>
       <p class="note">If it differs, stop: someone may be serving a fake key. The package keeps this key up to date afterwards.</p>
 
       <h2>2. Add the repository</h2>
-      <pre>sudo tee /etc/apt/sources.list.d/cwnsb.sources &gt;/dev/null &lt;&lt;'EOF'
+      <pre>sudo tee /etc/apt/sources.list.d/nasbuster.sources &gt;/dev/null &lt;&lt;'EOF'
 Types: deb
 URIs: @BASE_URL@
 Suites: stable
 Components: main
-Signed-By: /usr/share/keyrings/cwnsb-archive-keyring.asc
+Signed-By: /usr/share/keyrings/nasbuster-archive-keyring.asc
 EOF</pre>
 
       <h2>3. Install</h2>
       <pre>sudo apt update
-sudo apt install cwnsb</pre>
+sudo apt install nasbuster</pre>
       <p>Then open <code>https://&lt;your-pi&gt;</code> in a browser and follow the setup.</p>
     </main>
   </body>

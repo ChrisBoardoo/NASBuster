@@ -6,7 +6,7 @@
 #   tools/apt/selftest.sh --real-key   # rehearsal: sign with the REAL subkey (asks for its
 #                                      # passphrase) and check with the real public key
 #
-# Takes the newest cwnsb_*_amd64.deb and cwnsb_*_arm64.deb of dist/ (build them
+# Takes the newest nasbuster_*_amd64.deb and nasbuster_*_arm64.deb of dist/ (build them
 # first: scripts/build.ps1 -Arch <arch> -Package), then:
 #   1. builds the repository with tools/apt/build-repo.sh in debian:trixie;
 #   2. signs it with scripts/sign-release.sh and a THROWAWAY key (the real key
@@ -28,8 +28,8 @@ main() {
 	[ "${1:-}" = --real-key ] && real=1
 	cd "$ROOT"
 	local amd arm
-	amd=$(ls -t dist/cwnsb_*_amd64.deb 2>/dev/null | head -1)
-	arm=$(ls -t dist/cwnsb_*_arm64.deb 2>/dev/null | head -1)
+	amd=$(ls -t dist/nasbuster_*_amd64.deb 2>/dev/null | head -1)
+	arm=$(ls -t dist/nasbuster_*_arm64.deb 2>/dev/null | head -1)
 	[ -n "$amd" ] && [ -n "$arm" ] || { echo "build both packages first (scripts/build.ps1 -Arch amd64|arm64 -Package)" >&2; exit 1; }
 	echo "packages: $(basename "$amd"), $(basename "$arm")"
 
@@ -46,7 +46,7 @@ main() {
 		apt-get update -qq && apt-get install -y -qq --no-install-recommends apt-utils >/dev/null
 		bash /src/tools/apt/build-repo.sh /work/debs /work/site https://example.invalid/NasBuster
 		# Pool manifest, as release.yml writes it: "<sha256>  <tag> <file>".
-		cd /work/debs && for f in cwnsb_*.deb; do printf "%s  %s %s\n" "$(sha256sum < "$f" | cut -d" " -f1)" vSELFTEST "$f"; done > /work/site/pool.sha256'
+		cd /work/debs && for f in nasbuster_*.deb; do printf "%s  %s %s\n" "$(sha256sum < "$f" | cut -d" " -f1)" vSELFTEST "$f"; done > /work/site/pool.sha256'
 
 	local version
 	version=$(awk '/^Version:/ {print $2; exit}' "$work/site/dists/stable/main/binary-amd64/Packages")
@@ -56,7 +56,7 @@ main() {
 		bash scripts/sign-release.sh --dir "$work/site"
 		echo "== 3. check it with apt (debian:trixie), trusting packaging/apt/ only"
 		docker run --rm -v "$(win "$ROOT"):/src:ro" -v "$(win "$work"):/work:ro" "$IMAGE" \
-			bash /src/tools/apt/check-repo.sh /work/site /src/packaging/apt/cwnsb-archive-keyring.asc "$version"
+			bash /src/tools/apt/check-repo.sh /work/site /src/packaging/apt/nasbuster-archive-keyring.asc "$version"
 		echo
 		echo "rehearsal OK: the real key signs, and apt accepts it (nothing was published)"
 		return
@@ -83,7 +83,7 @@ main() {
 
 	echo "== 4. the real public key must refuse a repository signed by another key"
 	if docker run --rm -v "$(win "$ROOT"):/src:ro" -v "$(win "$work"):/work:ro" "$IMAGE" \
-		bash /src/tools/apt/check-repo.sh /work/site /src/packaging/apt/cwnsb-archive-keyring.asc >"$work/wrong.log" 2>&1; then
+		bash /src/tools/apt/check-repo.sh /work/site /src/packaging/apt/nasbuster-archive-keyring.asc >"$work/wrong.log" 2>&1; then
 		cat "$work/wrong.log"
 		echo "FAIL: a repository signed by another key was accepted" >&2
 		exit 1

@@ -60,8 +60,8 @@ Write Raspberry Pi OS Lite (64-bit) on the microSD card with [Raspberry Pi Image
 **2. Get the signing key and check it**
 
 ```bash
-sudo curl -fsSL -o /usr/share/keyrings/cwnsb-archive-keyring.asc https://chrisboardoo.github.io/NASBuster/cwnsb-archive-keyring.asc
-gpg --show-keys /usr/share/keyrings/cwnsb-archive-keyring.asc
+sudo curl -fsSL -o /usr/share/keyrings/nasbuster-archive-keyring.asc https://chrisboardoo.github.io/NASBuster/nasbuster-archive-keyring.asc
+gpg --show-keys /usr/share/keyrings/nasbuster-archive-keyring.asc
 ```
 
 The fingerprint must read exactly:
@@ -75,12 +75,12 @@ If it differs, stop: someone may be serving a fake key. The package keeps this k
 **3. Add the repository**
 
 ```bash
-sudo tee /etc/apt/sources.list.d/cwnsb.sources >/dev/null <<'EOF'
+sudo tee /etc/apt/sources.list.d/nasbuster.sources >/dev/null <<'EOF'
 Types: deb
 URIs: https://chrisboardoo.github.io/NASBuster
 Suites: stable
 Components: main
-Signed-By: /usr/share/keyrings/cwnsb-archive-keyring.asc
+Signed-By: /usr/share/keyrings/nasbuster-archive-keyring.asc
 EOF
 ```
 
@@ -88,7 +88,7 @@ EOF
 
 ```bash
 sudo apt update
-sudo apt install cwnsb
+sudo apt install nasbuster
 ```
 
 **5. Set it up**
@@ -110,8 +110,8 @@ sudo apt update && sudo apt upgrade
 ## Uninstall
 
 ```bash
-sudo apt remove cwnsb    # stops NasBuster, keeps everything
-sudo apt purge cwnsb     # also deletes its settings and web accounts
+sudo apt remove nasbuster    # stops NasBuster, keeps everything
+sudo apt purge nasbuster     # also deletes its settings and web accounts
 ```
 
 Neither command touches your pools, shares, their data or the NAS user accounts.
@@ -121,7 +121,7 @@ Neither command touches your pools, shares, their data or the NAS user accounts.
 Go and pnpm are needed. On Linux:
 
 ```bash
-make web package-arm64    # dist/cwnsb_<version>_arm64.deb
+make web package-arm64    # dist/nasbuster_<version>_arm64.deb
 make test
 ```
 

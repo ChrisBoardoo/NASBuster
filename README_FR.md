@@ -60,8 +60,8 @@ Les paquets viennent d'un dépôt APT signé : <https://chrisboardoo.github.io/N
 **2. Récupérer la clé de signature et la vérifier**
 
 ```bash
-sudo curl -fsSL -o /usr/share/keyrings/cwnsb-archive-keyring.asc https://chrisboardoo.github.io/NASBuster/cwnsb-archive-keyring.asc
-gpg --show-keys /usr/share/keyrings/cwnsb-archive-keyring.asc
+sudo curl -fsSL -o /usr/share/keyrings/nasbuster-archive-keyring.asc https://chrisboardoo.github.io/NASBuster/nasbuster-archive-keyring.asc
+gpg --show-keys /usr/share/keyrings/nasbuster-archive-keyring.asc
 ```
 
 L'empreinte doit être exactement :
@@ -75,12 +75,12 @@ Si elle diffère, arrêtez-vous : quelqu'un sert peut-être une fausse clé. Ens
 **3. Ajouter le dépôt**
 
 ```bash
-sudo tee /etc/apt/sources.list.d/cwnsb.sources >/dev/null <<'EOF'
+sudo tee /etc/apt/sources.list.d/nasbuster.sources >/dev/null <<'EOF'
 Types: deb
 URIs: https://chrisboardoo.github.io/NASBuster
 Suites: stable
 Components: main
-Signed-By: /usr/share/keyrings/cwnsb-archive-keyring.asc
+Signed-By: /usr/share/keyrings/nasbuster-archive-keyring.asc
 EOF
 ```
 
@@ -88,7 +88,7 @@ EOF
 
 ```bash
 sudo apt update
-sudo apt install cwnsb
+sudo apt install nasbuster
 ```
 
 **5. Mettre en route**
@@ -110,8 +110,8 @@ sudo apt update && sudo apt upgrade
 ## Désinstallation
 
 ```bash
-sudo apt remove cwnsb    # arrête NasBuster, garde tout
-sudo apt purge cwnsb     # efface aussi ses réglages et ses comptes web
+sudo apt remove nasbuster    # arrête NasBuster, garde tout
+sudo apt purge nasbuster     # efface aussi ses réglages et ses comptes web
 ```
 
 Aucune de ces commandes ne touche à vos pools, à vos partages, à leurs données ni aux comptes des utilisateurs du NAS.
@@ -121,7 +121,7 @@ Aucune de ces commandes ne touche à vos pools, à vos partages, à leurs donné
 Il faut Go et pnpm. Sous Linux :
 
 ```bash
-make web package-arm64    # dist/cwnsb_<version>_arm64.deb
+make web package-arm64    # dist/nasbuster_<version>_arm64.deb
 make test
 ```
 

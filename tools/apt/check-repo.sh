@@ -17,8 +17,8 @@ set -euo pipefail
 fail() { echo "FAIL: $*" >&2; exit 1; }
 
 use_repo() { # <dir>
-	rm -f /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/cwnsb.sources
-	cat >/etc/apt/sources.list.d/cwnsb.sources <<EOF
+	rm -f /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/nasbuster.sources
+	cat >/etc/apt/sources.list.d/nasbuster.sources <<EOF
 Types: deb
 URIs: file://$1
 Suites: stable
@@ -44,14 +44,14 @@ main() {
 	echo "ok: signature accepted by apt ($(apt-get --version | head -1))"
 
 	local candidate
-	candidate=$(apt-cache policy cwnsb | awk '/Candidate:/ {print $2}')
-	[ -n "$candidate" ] && [ "$candidate" != "(none)" ] || fail "cwnsb not found in the repository"
+	candidate=$(apt-cache policy nasbuster | awk '/Candidate:/ {print $2}')
+	[ -n "$candidate" ] && [ "$candidate" != "(none)" ] || fail "nasbuster not found in the repository"
 	[ -z "$expected" ] || [ "$candidate" = "$expected" ] || fail "candidate is $candidate, expected $expected"
 	echo "ok: candidate version $candidate"
 
-	(cd /tmp && apt-get download -q "cwnsb=$candidate" >/dev/null) || fail "download failed"
+	(cd /tmp && apt-get download -q "nasbuster=$candidate" >/dev/null) || fail "download failed"
 	echo "ok: package downloaded and its hash matched the index"
-	apt-get install -s -q cwnsb >/tmp/install.log 2>&1 || { cat /tmp/install.log; fail "simulated install failed"; }
+	apt-get install -s -q nasbuster >/tmp/install.log 2>&1 || { cat /tmp/install.log; fail "simulated install failed"; }
 	echo "ok: install simulation resolves every dependency"
 
 	# Negative checks, on copies of the site.

@@ -4,15 +4,35 @@ name: CI
 on:
   push:
     branches: [main]
+    paths-ignore: # Actions minutes: no checks for a change that touches no code
+      - 'md/**'
+      - '**/*.md'
+      - 'logo/**'
+      - 'website/**'
+      - '.claude/**'
   pull_request:
+    paths-ignore:
+      - 'md/**'
+      - '**/*.md'
+      - 'logo/**'
+      - 'website/**'
+      - '.claude/**'
   workflow_call: # reused by release.yml: a release runs the same checks first
+
+# A newer push on the same branch replaces the run still going.
+concurrency:
+  group: ci-${{ github.repository }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
 
+# In the public repo, main only moves with a release export: its tag runs these
+# checks through release.yml, so the push to main does not run them twice.
 jobs:
   go:
     name: Go (vet, test, vuln, build)
+    if: ${{ !(github.repository == 'ChrisBoardoo/NASBuster' && github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,6 +50,7 @@ jobs:
 
   integration:
     name: Storage integration (real kernel, loop devices)
+    if: ${{ !(github.repository == 'ChrisBoardoo/NASBuster' && github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,10 +60,13 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends btrfs-progs mdadm
       - run: sudo mkdir -p /var/lib/cwnsb-lab
       - run: go test -c -tags integration -o bin/storage.integration.test ./internal/storage/
-      - run: sudo env CWNSB_LAB=1 GITHUB_ACTIONS=true bin/storage.integration.test -test.v
+      # From the package directory, like `go test`: the parsers' tests read testdata/.
+      - run: sudo env CWNSB_LAB=1 GITHUB_ACTIONS=true ../../bin/storage.integration.test -test.v
+        working-directory: internal/storage
 
   web:
     name: Web UI (typecheck, build, audit)
+    if: ${{ !(github.repository == 'ChrisBoardoo/NASBuster' && github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-latest
     defaults:
       run:

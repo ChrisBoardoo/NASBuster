@@ -42,17 +42,17 @@ jobs:
           gh release download "$TAG" -p apt-repo.tar.gz -p InRelease -p Release.gpg -D assets
           tar -xzf assets/apt-repo.tar.gz -C site
           cp assets/InRelease assets/Release.gpg site/dists/stable/
-          mkdir -p site/pool/main/c/cwnsb
+          mkdir -p site/pool/main/n/nasbuster
           while read -r hash tag file; do
-            gh release download "$tag" -p "$file" -D site/pool/main/c/cwnsb
-            [ "$(sha256sum < "site/pool/main/c/cwnsb/$file" | cut -d' ' -f1)" = "$hash" ] || { echo "hash mismatch: $file"; exit 1; }
+            gh release download "$tag" -p "$file" -D site/pool/main/n/nasbuster
+            [ "$(sha256sum < "site/pool/main/n/nasbuster/$file" | cut -d' ' -f1)" = "$hash" ] || { echo "hash mismatch: $file"; exit 1; }
           done < site/pool.sha256
-          ls -l site/pool/main/c/cwnsb
+          ls -l site/pool/main/n/nasbuster
 
       - name: Check with apt (debian:trixie, trusting packaging/apt only)
         run: |
           docker run --rm -v "$PWD:/src:ro" debian:trixie \
-            bash /src/tools/apt/check-repo.sh /src/site /src/packaging/apt/cwnsb-archive-keyring.asc "${TAG#v}"
+            bash /src/tools/apt/check-repo.sh /src/site /src/packaging/apt/nasbuster-archive-keyring.asc "${TAG#v}"
 
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:

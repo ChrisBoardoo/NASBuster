@@ -18,7 +18,7 @@
 # Environment (defaults in brackets):
 #   CWNSB_GNUPGHOME       keyring holding the signing subkey [~/.cwnsb-gnupg]
 #   CWNSB_SIGNING_KEY     subkey fingerprint [60C9ADBAF28CD18AC687E53CA6850A6B0E1D5F94]
-#   CWNSB_TRUSTED_KEYRING public key to verify with [packaging/apt/cwnsb-archive-keyring.asc]
+#   CWNSB_TRUSTED_KEYRING public key to verify with [packaging/apt/nasbuster-archive-keyring.asc]
 #   CWNSB_PUBLIC_REPO     GitHub repository of the releases [ChrisBoardoo/NASBuster]
 #   CWNSB_PASSPHRASE_FILE read the passphrase from this file (tests only) [prompt]
 #   CWNSB_YES=1           do not ask for confirmation (tests only)
@@ -27,7 +27,7 @@ set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 GNUPGHOME=${CWNSB_GNUPGHOME:-$HOME/.cwnsb-gnupg}
 KEY=${CWNSB_SIGNING_KEY:-60C9ADBAF28CD18AC687E53CA6850A6B0E1D5F94}
-TRUSTED=${CWNSB_TRUSTED_KEYRING:-$ROOT/packaging/apt/cwnsb-archive-keyring.asc}
+TRUSTED=${CWNSB_TRUSTED_KEYRING:-$ROOT/packaging/apt/nasbuster-archive-keyring.asc}
 REPO=${CWNSB_PUBLIC_REPO:-ChrisBoardoo/NASBuster}
 export GNUPGHOME
 

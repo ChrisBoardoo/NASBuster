@@ -33,7 +33,7 @@ test:
 # Real kernel tests (loop devices, Btrfs, mdadm). Root, lab or CI runner only.
 test-integration:
 	go test -c -tags integration -o bin/storage.integration.test ./internal/storage/
-	sudo env CWNSB_LAB=1 bin/storage.integration.test -test.v
+	cd internal/storage && sudo env CWNSB_LAB=1 ../../bin/storage.integration.test -test.v
 
 vet:
 	go vet ./...

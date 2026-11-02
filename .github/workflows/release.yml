@@ -57,13 +57,13 @@ jobs:
           mkdir -p debs prev
           : > pool.sha256
           for t in $(gh release list --exclude-drafts --limit 4 --json tagName --jq '.[].tagName'); do
-            gh release download "$t" -p 'cwnsb_*.deb' -D "prev/$t"
+            gh release download "$t" -p 'nasbuster_*.deb' -D "prev/$t"
             for f in "prev/$t"/*.deb; do
               cp "$f" debs/
               printf '%s  %s %s\n' "$(sha256sum < "$f" | cut -d' ' -f1)" "$t" "$(basename "$f")" >> pool.sha256
             done
           done
-          for f in dist/cwnsb_*.deb; do
+          for f in dist/nasbuster_*.deb; do
             cp "$f" debs/
             printf '%s  %s %s\n' "$(sha256sum < "$f" | cut -d' ' -f1)" "$TAG" "$(basename "$f")" >> pool.sha256
           done
@@ -93,5 +93,5 @@ jobs:
           # READMEs ships to this repository).
           echo "NasBuster $TAG (draft: notes are set when the release is signed)." > notes.md
           gh release create "$TAG" --draft --verify-tag --title "NasBuster $TAG" --notes-file notes.md \
-            dist/cwnsb_*.deb apt-repo.tar.gz
+            dist/nasbuster_*.deb apt-repo.tar.gz
           echo "Draft ready. On the PC, in Git Bash: scripts/sign-release.sh --tag $TAG" >> "$GITHUB_STEP_SUMMARY"

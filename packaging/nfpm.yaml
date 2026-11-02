@@ -3,7 +3,7 @@
 #   CWNSB_ARCH=arm64 CWNSB_VERSION=0.1.0 go run github.com/goreleaser/nfpm/v2/cmd/nfpm@v2.47.0 \
 #     package -f packaging/nfpm.yaml -p deb -t dist/
 # On Windows: .\scripts\build.ps1 -Package
-name: cwnsb
+name: nasbuster
 arch: ${CWNSB_ARCH}
 platform: linux
 version: ${CWNSB_VERSION}
@@ -40,6 +40,13 @@ recommends:
 # skip that recommendation (ADR-0017).
 conflicts:
   - samba-ad-dc
+  - cwnsb
+# The package was called cwnsb before v0.1.0 (ADR-0040): apt replaces it with
+# this one and keeps the daemon's state (/var/lib/cwnsb), the pools and the data.
+replaces:
+  - cwnsb
+provides:
+  - cwnsb
 
 contents:
   - src: ./bin/pkg/nasbusterd
@@ -59,14 +66,14 @@ contents:
   - src: ./packaging/sysusers.d/cwnsb.conf
     dst: /usr/lib/sysusers.d/cwnsb.conf
   - src: ./LICENSE
-    dst: /usr/share/doc/cwnsb/copyright
+    dst: /usr/share/doc/nasbuster/copyright
   # The logo embedded in the UI has its own license (not AGPL).
   - src: ./logo/LICENSE.txt
-    dst: /usr/share/doc/cwnsb/LOGO-LICENSE
+    dst: /usr/share/doc/nasbuster/LOGO-LICENSE
   # Public key of the APT repository (ADR-0023): installed by the package so that
   # a renewed or replaced signing subkey reaches every NAS with a normal update.
-  - src: ./packaging/apt/cwnsb-archive-keyring.asc
-    dst: /usr/share/keyrings/cwnsb-archive-keyring.asc
+  - src: ./packaging/apt/nasbuster-archive-keyring.asc
+    dst: /usr/share/keyrings/nasbuster-archive-keyring.asc
     file_info:
       mode: 0644
 

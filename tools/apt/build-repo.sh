@@ -9,10 +9,10 @@
 # (package apt-utils): runs on the GitHub runner or in a debian:trixie container.
 #
 # Layout (one suite "stable", one component "main", amd64 and arm64):
-#   pool/main/c/cwnsb/cwnsb_<version>_<arch>.deb
+#   pool/main/n/nasbuster/nasbuster_<version>_<arch>.deb
 #   dists/stable/main/binary-<arch>/Packages{,.gz}
 #   dists/stable/Release          (to sign: InRelease, Release.gpg)
-#   cwnsb-archive-keyring.asc     (public key, a copy of packaging/apt/)
+#   nasbuster-archive-keyring.asc     (public key, a copy of packaging/apt/)
 #   index.html                    (install instructions)
 set -euo pipefail
 
@@ -23,12 +23,12 @@ main() {
 	root=$(cd "$here/../.." && pwd)
 
 	shopt -s nullglob
-	local files=("$debs"/cwnsb_*.deb)
-	((${#files[@]})) || { echo "no cwnsb_*.deb in $debs" >&2; exit 1; }
+	local files=("$debs"/nasbuster_*.deb)
+	((${#files[@]})) || { echo "no nasbuster_*.deb in $debs" >&2; exit 1; }
 
 	rm -rf "$out"
-	mkdir -p "$out/pool/main/c/cwnsb"
-	cp "${files[@]}" "$out/pool/main/c/cwnsb/"
+	mkdir -p "$out/pool/main/n/nasbuster"
+	cp "${files[@]}" "$out/pool/main/n/nasbuster/"
 	cd "$out"
 
 	local arch
@@ -50,7 +50,7 @@ main() {
 		release dists/stable >Release.tmp
 	mv Release.tmp dists/stable/Release
 
-	cp "$root/packaging/apt/cwnsb-archive-keyring.asc" cwnsb-archive-keyring.asc
+	cp "$root/packaging/apt/nasbuster-archive-keyring.asc" nasbuster-archive-keyring.asc
 	sed "s|@BASE_URL@|$base|g" "$here/site/index.html" >index.html
 	touch .nojekyll # GitHub Pages: serve files as they are
 
