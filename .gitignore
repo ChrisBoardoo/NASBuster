@@ -1,0 +1,40 @@
+# Build outputs
+/bin/
+/dist/
+/web/dist/*
+!/web/dist/.keep
+*.exe
+
+# Go
+*.test
+*.out
+coverage.*
+
+# Node
+node_modules/
+.pnpm-store/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+# Hand-off of the APT signing key to the password manager: never committed
+/md/10.key/
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Pi audit outputs (contain disk serial numbers and local IPs)
+cwnsb-audit*.txt
+# Raw captures from the test Pi (tools/pi/collect.sh): anonymize before making fixtures
+/captures/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Python (scripts/publish_public.py)
+__pycache__/

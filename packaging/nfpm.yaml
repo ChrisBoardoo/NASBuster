@@ -1,0 +1,76 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# CrossWax NasBuster — Debian package definition (nfpm, no Debian tooling needed).
+#   CWNSB_ARCH=arm64 CWNSB_VERSION=0.1.0 go run github.com/goreleaser/nfpm/v2/cmd/nfpm@v2.47.0 \
+#     package -f packaging/nfpm.yaml -p deb -t dist/
+# On Windows: .\scripts\build.ps1 -Package
+name: cwnsb
+arch: ${CWNSB_ARCH}
+platform: linux
+version: ${CWNSB_VERSION}
+section: admin
+priority: optional
+maintainer: CrossWax NasBuster <maintainer@example.invalid>
+description: |
+  CrossWax NasBuster — a lightweight NAS for Raspberry Pi.
+  Btrfs and mdadm pools with self-healing mirrors and parity, SMB shares with
+  Windows "Previous Versions", scheduled snapshots and scrubs, guided onboarding.
+  A single Go daemon (about 20 MB of RAM) and an on-demand privileged helper.
+vendor: CrossWax
+homepage: https://github.com/crosswax/nasbuster
+license: AGPL-3.0-or-later AND LicenseRef-NasBuster-Logo
+
+depends:
+  - systemd
+  - udev
+  - util-linux
+  - btrfs-progs
+  - mdadm
+  - gdisk
+  - smartmontools
+  - samba
+  - avahi-daemon
+  - rsync
+recommends:
+  - wsdd2
+  - e2fsprogs
+# samba recommends samba-ad-dc, which depends on winbind, libnss-winbind and
+# libpam-winbind: about 45 MB of RAM and pam_winbind in every login stack (seen
+# on the Pi 5). CWNSB writes a standalone-server smb.conf, so an AD domain
+# controller on the same host cannot work: declaring the conflict makes apt
+# skip that recommendation (ADR-0017).
+conflicts:
+  - samba-ad-dc
+
+contents:
+  - src: ./bin/pkg/nasbusterd
+    dst: /usr/bin/nasbusterd
+    file_info:
+      mode: 0755
+  - src: ./bin/pkg/nbhelper
+    dst: /usr/libexec/cwnsb/nbhelper
+    file_info:
+      mode: 0755
+  - src: ./packaging/systemd/nasbusterd.service
+    dst: /usr/lib/systemd/system/nasbusterd.service
+  - src: ./packaging/systemd/nbhelper.service
+    dst: /usr/lib/systemd/system/nbhelper.service
+  - src: ./packaging/systemd/nbhelper.socket
+    dst: /usr/lib/systemd/system/nbhelper.socket
+  - src: ./packaging/sysusers.d/cwnsb.conf
+    dst: /usr/lib/sysusers.d/cwnsb.conf
+  - src: ./LICENSE
+    dst: /usr/share/doc/cwnsb/copyright
+  # The logo embedded in the UI has its own license (not AGPL).
+  - src: ./logo/LICENSE.txt
+    dst: /usr/share/doc/cwnsb/LOGO-LICENSE
+  # Public key of the APT repository (ADR-0023): installed by the package so that
+  # a renewed or replaced signing subkey reaches every NAS with a normal update.
+  - src: ./packaging/apt/cwnsb-archive-keyring.asc
+    dst: /usr/share/keyrings/cwnsb-archive-keyring.asc
+    file_info:
+      mode: 0644
+
+scripts:
+  postinstall: ./packaging/scripts/postinst.sh
+  preremove: ./packaging/scripts/prerm.sh
+  postremove: ./packaging/scripts/postrm.sh

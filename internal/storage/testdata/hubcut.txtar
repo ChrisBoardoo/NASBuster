@@ -1,0 +1,61 @@
+Real outputs of a RAID5 that lost 2 of its 3 members at once (ADR-0032):
+the lab (kernel 5.15, tools/lab probe of 2026-10-26, loop devices) and the
+Pi 5 (kernel 6.18, USB sticks, hub cut of 2026-10-26).
+-- mdstat-broken-lab.txt --
+Personalities : [raid1] [raid6] [raid5] [raid4]
+md127 : active raid5 loop2[0]
+      610304 blocks super 1.2 level 5, 512k chunk, algorithm 2 [3/1] [U__]
+      bitmap: 1/1 pages [4KB], 65536KB chunk
+
+unused devices: <none>
+-- mdstat-broken-pi5.txt --
+Personalities : [raid0] [raid1] [raid4] [raid5] [raid6] [raid10]
+md127 : broken raid5 sda1[0]
+      243063808 blocks super 1.2 level 5, 512k chunk, algorithm 2 [3/1] [U__]
+      bitmap: 0/1 pages [0KB], 65536KB chunk
+
+unused devices: <none>
+-- mdstat-inactive-pi5.txt --
+Personalities : [raid0] [raid1] [raid4] [raid5] [raid6] [raid10]
+md127 : inactive sdd1[3](S) sdc1[1](S) sda1[0](S)
+      366331854 blocks super 1.2
+
+unused devices: <none>
+-- mdstat-auto-read-only-pi5.txt --
+Personalities : [raid0] [raid1] [raid4] [raid5] [raid6] [raid10]
+md127 : active (auto-read-only) raid5 sda1[0] sdd1[3] sdc1[1]
+      243063808 blocks super 1.2 level 5, 512k chunk, algorithm 2 [3/3] [UUU]
+      bitmap: 0/1 pages [0KB], 65536KB chunk
+
+unused devices: <none>
+-- examine-pi5.txt --
+/dev/sda1:
+          Magic : a92b4efc
+        Version : 1.2
+    Feature Map : 0x1
+     Array UUID : 30ab94bd:026ffe21:8fd777ae:9d3632d2
+           Name : <redacted>
+  Creation Time : Sun Oct 25 23:10:58 2026
+     Raid Level : raid5
+   Raid Devices : 3
+
+ Avail Dev Size : 243064799 sectors (115.90 GiB 124.45 GB)
+     Array Size : 243063808 KiB (231.80 GiB 248.90 GB)
+  Used Dev Size : 243063808 sectors (115.90 GiB 124.45 GB)
+    Data Offset : 133120 sectors
+   Super Offset : 8 sectors
+   Unused Space : before=133040 sectors, after=991 sectors
+          State : clean
+    Device UUID : a3611331:cb3d9128:22fb0d60:7e070087
+
+Internal Bitmap : 8 sectors from superblock
+    Update Time : Mon Oct 26 19:00:45 2026
+  Bad Block Log : 512 entries available at offset 16 sectors
+       Checksum : b9509d2f - correct
+         Events : 762
+
+         Layout : left-symmetric
+     Chunk Size : 512K
+
+   Device Role : Active device 0
+   Array State : AAA ('A' == active, '.' == missing, 'R' == replacing)

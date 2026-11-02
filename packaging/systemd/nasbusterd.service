@@ -1,0 +1,47 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# CrossWax NasBuster — web UI and API (unprivileged, see ADR-0002).
+[Unit]
+Description=CrossWax NasBuster daemon (web UI and API)
+Documentation=https://github.com/crosswax/nasbuster
+After=network-online.target nbhelper.socket
+Wants=network-online.target nbhelper.socket
+
+[Service]
+Type=simple
+User=cwnsb
+Group=cwnsb
+# vcgencmd needs /dev/vcio (group video) for power/throttling flags.
+SupplementaryGroups=video
+ExecStart=/usr/bin/nasbusterd -listen :443 -data-dir /var/lib/cwnsb -helper-socket /run/cwnsb/helper.sock
+StateDirectory=cwnsb
+StateDirectoryMode=0750
+Restart=on-failure
+RestartSec=2
+
+# Bind :443 without root.
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+# Hardening.
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+# No ProtectHostname: its private UTS namespace would hide hostname changes
+# made by nbhelper, and the UI would show a stale name.
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+RestrictNamespaces=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,111 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<!--
+  Source of website/og-image.png (link previews: 1200 x 630). From the repository root, in PowerShell:
+  & "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe" --headless=new --disable-gpu --hide-scrollbars `
+    --allow-file-access-from-files --window-size=1200,630 --screenshot="$PWD\website\og-image.png" "$PWD\tools\logo\og-image.html"
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>NasBuster og:image</title>
+    <style>
+      @font-face {
+        font-family: 'Inter Tight Variable';
+        font-weight: 100 900;
+        src: url('../../website/fonts/inter-tight-latin-wght-normal.woff2') format('woff2-variations');
+      }
+      @font-face {
+        font-family: 'JetBrains Mono Variable';
+        font-weight: 100 800;
+        src: url('../../website/fonts/jetbrains-mono-latin-wght-normal.woff2') format('woff2-variations');
+      }
+      :root {
+        --background: #0a0a0a;
+        --foreground: #fafafa;
+        --muted-foreground: #8a8a8a;
+        --accent: #ff3d00;
+      }
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: var(--background);
+        color: var(--foreground);
+        font-family: 'Inter Tight Variable', system-ui, sans-serif;
+      }
+      .page {
+        position: relative;
+        height: 100%;
+        padding: 64px 72px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+      .beta {
+        font-family: 'JetBrains Mono Variable', monospace;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: var(--accent);
+        color: var(--background);
+        padding: 4px 10px;
+      }
+      h1 {
+        font-size: 100px;
+        font-weight: 800;
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+      }
+      h1 span {
+        display: block;
+      }
+      .underline {
+        display: inline;
+        background-image: linear-gradient(var(--accent), var(--accent));
+        background-repeat: no-repeat;
+        background-size: 100% 0.08em;
+        background-position: 0 92%;
+      }
+      .label {
+        font-family: 'JetBrains Mono Variable', monospace;
+        font-size: 18px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted-foreground);
+      }
+      .mascot {
+        position: absolute;
+        right: 56px;
+        bottom: 48px;
+        width: 330px;
+        height: 330px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="brand">NasBuster <span class="beta">Beta</span></div>
+      <h1>
+        <span>Your Raspberry Pi.</span>
+        <span><span class="underline">A real NAS.</span></span>
+      </h1>
+      <p class="label">Raspberry Pi 4 &amp; 5 · crosswax.net/nasbuster</p>
+    </div>
+    <img class="mascot" src="../../logo/transparent/nasbuster-512.png" alt="" />
+  </body>
+</html>

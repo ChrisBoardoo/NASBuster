@@ -1,0 +1,97 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Release, step 1 of 3 (ADR-0024): on a vX.Y.Z tag of the PUBLIC repository,
+# run the CI, build the .deb packages and the UNSIGNED APT repository, and
+# leave everything in a draft release.
+#   step 2, on the PC: scripts/sign-release.sh --tag vX.Y.Z (signs, publishes)
+#   step 3: publish-apt.yml checks the signed repository with apt, deploys Pages
+# No signing key lives in GitHub (ADR-0021).
+name: Release
+
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    if: github.repository == 'ChrisBoardoo/NASBuster'
+    uses: ./.github/workflows/ci.yml
+
+  build:
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the draft release
+    env:
+      TAG: ${{ github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          version: 11
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Web UI (embedded in the binary)
+        run: make web
+
+      - name: Packages (arm64, amd64)
+        run: make package-arm64 package-amd64 VERSION="$TAG" DEB_VERSION="${TAG#v}"
+
+      - name: Pool (this release + the 4 previous ones, for rollbacks)
+        run: |
+          set -euo pipefail
+          mkdir -p debs prev
+          : > pool.sha256
+          for t in $(gh release list --exclude-drafts --limit 4 --json tagName --jq '.[].tagName'); do
+            gh release download "$t" -p 'cwnsb_*.deb' -D "prev/$t"
+            for f in "prev/$t"/*.deb; do
+              cp "$f" debs/
+              printf '%s  %s %s\n' "$(sha256sum < "$f" | cut -d' ' -f1)" "$t" "$(basename "$f")" >> pool.sha256
+            done
+          done
+          for f in dist/cwnsb_*.deb; do
+            cp "$f" debs/
+            printf '%s  %s %s\n' "$(sha256sum < "$f" | cut -d' ' -f1)" "$TAG" "$(basename "$f")" >> pool.sha256
+          done
+          cat pool.sha256
+
+      - name: Unsigned APT repository
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends apt-utils
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
+          base="https://${owner}.github.io/${GITHUB_REPOSITORY#*/}"
+          bash tools/apt/build-repo.sh debs site "$base"
+          cp pool.sha256 site/
+          {
+            echo "tag: $TAG"
+            echo "commit: $GITHUB_SHA"
+            echo "built by: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          } > site/build-info.txt
+          # Everything but the packages: they are release assets already.
+          tar -czf apt-repo.tar.gz -C site --exclude=./pool .
+
+      - name: Draft release
+        run: |
+          set -euo pipefail
+          # Placeholder notes: the real ones come from the PRIVATE CHANGELOG.md,
+          # set by scripts/sign-release.sh when it publishes (no .md but the
+          # READMEs ships to this repository).
+          echo "NasBuster $TAG (draft: notes are set when the release is signed)." > notes.md
+          gh release create "$TAG" --draft --verify-tag --title "NasBuster $TAG" --notes-file notes.md \
+            dist/cwnsb_*.deb apt-repo.tar.gz
+          echo "Draft ready. On the PC, in Git Bash: scripts/sign-release.sh --tag $TAG" >> "$GITHUB_STEP_SUMMARY"

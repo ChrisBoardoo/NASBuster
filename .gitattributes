@@ -1,0 +1,20 @@
+# Line endings: LF everywhere — the code and scripts run on Linux / Raspberry Pi.
+# Needed because Git for Windows often runs with core.autocrlf=true.
+* text=auto eol=lf
+
+# Windows-only scripts keep CRLF
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binaries
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary

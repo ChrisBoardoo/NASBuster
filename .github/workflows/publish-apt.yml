@@ -1,0 +1,72 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Release, step 3 of 3 (ADR-0024): when the maintainer publishes a release
+# (scripts/sign-release.sh, step 2), rebuild the repository site from the
+# release assets, check it with the real apt of Debian 13 against the public
+# key of the repository, and deploy it to GitHub Pages.
+# Nothing is signed here: an unsigned or wrongly signed repository is refused.
+name: Publish APT repository
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release to (re)deploy, vX.Y.Z
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  assemble:
+    if: github.repository == 'ChrisBoardoo/NASBuster'
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
+
+      - name: Site from the release assets
+        run: |
+          set -euo pipefail
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "bad tag $TAG"; exit 1; }
+          mkdir -p assets site
+          gh release download "$TAG" -p apt-repo.tar.gz -p InRelease -p Release.gpg -D assets
+          tar -xzf assets/apt-repo.tar.gz -C site
+          cp assets/InRelease assets/Release.gpg site/dists/stable/
+          mkdir -p site/pool/main/c/cwnsb
+          while read -r hash tag file; do
+            gh release download "$tag" -p "$file" -D site/pool/main/c/cwnsb
+            [ "$(sha256sum < "site/pool/main/c/cwnsb/$file" | cut -d' ' -f1)" = "$hash" ] || { echo "hash mismatch: $file"; exit 1; }
+          done < site/pool.sha256
+          ls -l site/pool/main/c/cwnsb
+
+      - name: Check with apt (debian:trixie, trusting packaging/apt only)
+        run: |
+          docker run --rm -v "$PWD:/src:ro" debian:trixie \
+            bash /src/tools/apt/check-repo.sh /src/site /src/packaging/apt/cwnsb-archive-keyring.asc "${TAG#v}"
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site
+
+  deploy:
+    needs: assemble
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

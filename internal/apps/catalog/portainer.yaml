@@ -1,0 +1,23 @@
+# Portainer CE (https://www.portainer.io), LTS channel.
+# The Docker socket gives Portainer full control of Docker: it keeps its own
+# administrator account, created on first visit.
+# Bind mounts in the long syntax, never created by Docker: if ./data is gone,
+# the container refuses to start instead of coming back empty, with its admin
+# page open. NasBuster creates ./data when it deploys the application.
+services:
+  portainer:
+    image: portainer/portainer-ce:lts
+    restart: unless-stopped
+    ports:
+      - "9443:9443"
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./data
+        target: /data
+        bind:
+          create_host_path: false

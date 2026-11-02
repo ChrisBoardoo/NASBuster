@@ -1,0 +1,151 @@
+Three identical 128 GB USB sticks on a Raspberry Pi 5. SYNTHETIC: written
+from the shape of real lsblk and udevadm outputs, to be replaced by a capture
+of the real sticks (tools/pi/collect.sh). sda and sdb report the same serial
+number, as some cheap sticks do: udev gives both the same by-id name.
+
+-- lsblk.json --
+{
+   "blockdevices": [
+      {
+         "name": "sda",
+         "kname": "sda",
+         "path": "/dev/sda",
+         "size": 128043712512,
+         "type": "disk",
+         "tran": "usb",
+         "rota": false,
+         "rm": true,
+         "ro": false,
+         "model": "Flash Disk",
+         "serial": "FBA81234",
+         "wwn": null,
+         "vendor": "Generic ",
+         "fstype": null,
+         "uuid": null,
+         "label": null,
+         "partlabel": null,
+         "pttype": null,
+         "mountpoints": [
+            null
+         ],
+         "pkname": null,
+         "hotplug": true
+      },
+      {
+         "name": "sdb",
+         "kname": "sdb",
+         "path": "/dev/sdb",
+         "size": 128043712512,
+         "type": "disk",
+         "tran": "usb",
+         "rota": false,
+         "rm": true,
+         "ro": false,
+         "model": "Flash Disk",
+         "serial": "FBA81234",
+         "wwn": null,
+         "vendor": "Generic ",
+         "fstype": null,
+         "uuid": null,
+         "label": null,
+         "partlabel": null,
+         "pttype": null,
+         "mountpoints": [
+            null
+         ],
+         "pkname": null,
+         "hotplug": true
+      },
+      {
+         "name": "sdc",
+         "kname": "sdc",
+         "path": "/dev/sdc",
+         "size": 128043712512,
+         "type": "disk",
+         "tran": "usb",
+         "rota": false,
+         "rm": true,
+         "ro": false,
+         "model": "Flash Disk",
+         "serial": "FBA85678",
+         "wwn": null,
+         "vendor": "Generic ",
+         "fstype": null,
+         "uuid": null,
+         "label": null,
+         "partlabel": null,
+         "pttype": null,
+         "mountpoints": [
+            null
+         ],
+         "pkname": null,
+         "hotplug": true
+      }
+   ]
+}
+-- udevadm /dev/sda --
+DEVPATH=/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb2/2-1/2-1:1.0/host1/target1:0:0/1:0:0:0/block/sda
+DEVNAME=/dev/sda
+DEVTYPE=disk
+MAJOR=8
+MINOR=0
+SUBSYSTEM=block
+ID_BUS=usb
+ID_MODEL=Flash_Disk
+ID_MODEL_ID=6387
+ID_SERIAL=Generic_Flash_Disk_FBA81234-0:0
+ID_SERIAL_SHORT=FBA81234
+ID_TYPE=disk
+ID_VENDOR=Generic
+ID_VENDOR_ID=058f
+ID_INSTANCE=0:0
+ID_USB_VENDOR_ID=058f
+ID_USB_MODEL_ID=6387
+ID_USB_DRIVER=usb-storage
+ID_PATH=platform-xhci-hcd.0-usb-0:1:1.0-scsi-0:0:0:0
+DEVLINKS=/dev/disk/by-id/usb-Generic_Flash_Disk_FBA81234-0:0 /dev/disk/by-path/platform-xhci-hcd.0-usb-0:1:1.0-scsi-0:0:0:0 /dev/disk/by-diskseq/9
+TAGS=:systemd:
+-- udevadm /dev/sdb --
+DEVPATH=/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb2/2-2/2-2:1.0/host2/target2:0:0/2:0:0:0/block/sdb
+DEVNAME=/dev/sdb
+DEVTYPE=disk
+MAJOR=8
+MINOR=16
+SUBSYSTEM=block
+ID_BUS=usb
+ID_MODEL=Flash_Disk
+ID_MODEL_ID=6387
+ID_SERIAL=Generic_Flash_Disk_FBA81234-0:0
+ID_SERIAL_SHORT=FBA81234
+ID_TYPE=disk
+ID_VENDOR=Generic
+ID_VENDOR_ID=058f
+ID_INSTANCE=0:0
+ID_USB_VENDOR_ID=058f
+ID_USB_MODEL_ID=6387
+ID_USB_DRIVER=usb-storage
+ID_PATH=platform-xhci-hcd.0-usb-0:2:1.0-scsi-0:0:0:0
+DEVLINKS=/dev/disk/by-id/usb-Generic_Flash_Disk_FBA81234-0:0 /dev/disk/by-path/platform-xhci-hcd.0-usb-0:2:1.0-scsi-0:0:0:0 /dev/disk/by-diskseq/10
+TAGS=:systemd:
+-- udevadm /dev/sdc --
+DEVPATH=/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb2/2-3/2-3:1.0/host3/target3:0:0/3:0:0:0/block/sdc
+DEVNAME=/dev/sdc
+DEVTYPE=disk
+MAJOR=8
+MINOR=32
+SUBSYSTEM=block
+ID_BUS=usb
+ID_MODEL=Flash_Disk
+ID_MODEL_ID=6387
+ID_SERIAL=Generic_Flash_Disk_FBA85678-0:0
+ID_SERIAL_SHORT=FBA85678
+ID_TYPE=disk
+ID_VENDOR=Generic
+ID_VENDOR_ID=058f
+ID_INSTANCE=0:0
+ID_USB_VENDOR_ID=058f
+ID_USB_MODEL_ID=6387
+ID_USB_DRIVER=usb-storage
+ID_PATH=platform-xhci-hcd.0-usb-0:3:1.0-scsi-0:0:0:0
+DEVLINKS=/dev/disk/by-id/usb-Generic_Flash_Disk_FBA85678-0:0 /dev/disk/by-path/platform-xhci-hcd.0-usb-0:3:1.0-scsi-0:0:0:0 /dev/disk/by-diskseq/11
+TAGS=:systemd:

@@ -1,0 +1,129 @@
+Real outputs captured in cwnsb-lab on 2026-10-01 (Debian 13, btrfs-progs 6.14,
+mdadm 4.4, kernel 5.15) by tools/lab/probe-btrfs.sh on a 2-loop RAID1.
+Edited for tests: loop3p1 error counters in device-stats.json (real: all 0),
+and the degraded md126 RAID5 block in mdstat.txt (synthetic, [3/2] [UU_]).
+
+-- device-stats.json --
+{
+  "__header": {
+    "version": "1"
+  },
+  "device-stats": [
+    {
+      "device": "/dev/loop2p1",
+      "devid": 1,
+      "write_io_errs": 0,
+      "read_io_errs": 0,
+      "flush_io_errs": 0,
+      "corruption_errs": 0,
+      "generation_errs": 0
+    },
+    {
+      "device": "/dev/loop3p1",
+      "devid": 2,
+      "write_io_errs": 0,
+      "read_io_errs": 2,
+      "flush_io_errs": 0,
+      "corruption_errs": 1,
+      "generation_errs": 0
+    }
+  ]
+}
+-- filesystem-df.json --
+{
+  "__header": {
+    "version": "1"
+  },
+  "filesystem-df": [
+    {
+      "bg-type": "Data",
+      "bg-profile": "RAID1",
+      "total": 67108864,
+      "used": 0
+    },
+    {
+      "bg-type": "System",
+      "bg-profile": "RAID1",
+      "total": 8388608,
+      "used": 16384
+    },
+    {
+      "bg-type": "Metadata",
+      "bg-profile": "RAID1",
+      "total": 43057152,
+      "used": 131072
+    },
+    {
+      "bg-type": "GlobalReserve",
+      "bg-profile": "single",
+      "total": 3407872,
+      "used": 0
+    }
+  ]
+}
+-- filesystem-usage.txt --
+Overall:
+    Device size:		         861888512
+    Device allocated:		         237109248
+    Device unallocated:		         624779264
+    Device missing:		                 0
+    Device slack:		              7168
+    Used:			            294912
+    Free (estimated):		         379498496	(min: 379498496)
+    Free (statfs, df):		         378404864
+    Data ratio:			              2.00
+    Metadata ratio:		              2.00
+    Global reserve:		           3407872	(used: 0)
+    Multiple profiles:		                no
+
+Data,RAID1: Size:67108864, Used:0 (0.00%)
+   /dev/loop2p1	  67108864
+   /dev/loop3p1	  67108864
+-- scrub-status.txt --
+UUID:             7a31ae09-61e0-414b-8124-68d1d2b89674
+Scrub started:    Thu Oct  1 21:59:52 2026
+Status:           finished
+Duration:         0:00:00
+	data_extents_scrubbed: 0
+	tree_extents_scrubbed: 18
+	data_bytes_scrubbed: 0
+	tree_bytes_scrubbed: 294912
+	read_errors: 0
+	csum_errors: 0
+	verify_errors: 0
+	no_csum: 0
+	csum_discards: 0
+	super_errors: 0
+	malloc_errors: 0
+	uncorrectable_errors: 0
+	unverified_errors: 0
+	corrected_errors: 0
+	last_physical: 119603200
+-- scrub-status-never.txt --
+UUID:             7a31ae09-61e0-414b-8124-68d1d2b89674
+	no stats available
+-- mdadm-detail-export.txt --
+MD_LEVEL=raid1
+MD_DEVICES=2
+MD_METADATA=1.2
+MD_UUID=753ebdf0:71c967bf:96f38de7:06791455
+MD_DEVNAME=cwnsb-probe
+MD_NAME=cwnsb-lab:cwnsb-probe
+MD_DEVICE_dev_loop3p1_ROLE=1
+MD_DEVICE_dev_loop3p1_DEV=/dev/loop3p1
+MD_DEVICE_dev_loop2p1_ROLE=0
+MD_DEVICE_dev_loop2p1_DEV=/dev/loop2p1
+-- mdadm-detail-brief.txt --
+ARRAY /dev/md/cwnsb-probe metadata=1.2 UUID=753ebdf0:71c967bf:96f38de7:06791455
+-- mdstat.txt --
+Personalities : [raid0] [raid1] [raid10] [raid6] [raid5] [raid4]
+md127 : active raid1 loop3p1[1] loop2p1[0]
+      419776 blocks super 1.2 [2/2] [UU]
+      [==>..................]  resync = 14.1% (59392/419776) finish=0.1min speed=59392K/sec
+      bitmap: 1/1 pages [4KB], 65536KB chunk
+
+md126 : active raid5 sdc1[2] sdb1[1]
+      7813771264 blocks super 1.2 level 5, 512k chunk, algorithm 2 [3/2] [UU_]
+      bitmap: 0/30 pages [0KB], 65536KB chunk
+
+unused devices: <none>

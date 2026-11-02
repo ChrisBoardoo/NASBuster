@@ -1,0 +1,120 @@
+Real files from the Raspberry Pi 5 8 GB test Pi (Raspberry Pi OS Lite 64-bit,
+Debian 13, kernel 6.18.50+rpt-rpi-2712, booting from a 16 GB SD card), captured
+by tools/pi/collect.sh on 2026-10-10. There is no get_throttled file in sysfs on
+this kernel: the throttling flags come from vcgencmd. Zone files are stubs.
+
+-- proc/device-tree/model --
+Raspberry Pi 5 Model B Rev 1.1
+-- proc/meminfo --
+MemTotal:        8255824 kB
+MemFree:         7035104 kB
+MemAvailable:    7860544 kB
+Buffers:           90240 kB
+Cached:           791760 kB
+SwapCached:            0 kB
+Active:           232352 kB
+Inactive:         748848 kB
+Active(anon):     122992 kB
+Inactive(anon):        0 kB
+Active(file):     109360 kB
+Inactive(file):   748848 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097136 kB
+SwapFree:        2097136 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:               176 kB
+Writeback:             0 kB
+AnonPages:         99296 kB
+Mapped:            77744 kB
+Shmem:             24208 kB
+KReclaimable:      57120 kB
+Slab:             106944 kB
+SReclaimable:      57120 kB
+SUnreclaim:        49824 kB
+KernelStack:        3184 kB
+PageTables:         5376 kB
+SecPageTables:       112 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6225040 kB
+Committed_AS:     324960 kB
+VmallocTotal:   68447887360 kB
+VmallocUsed:       52432 kB
+VmallocChunk:          0 kB
+Percpu:              960 kB
+CmaTotal:          65536 kB
+CmaFree:           56320 kB
+Balloon:               0 kB
+-- proc/stat --
+cpu  3704 1 1436 412906 12522 0 11 0 0 0
+cpu0 842 1 330 103704 2713 0 11 0 0 0
+cpu1 1061 0 438 102556 3561 0 0 0 0 0
+cpu2 970 0 366 104054 2288 0 0 0 0 0
+cpu3 830 0 301 102591 3957 0 0 0 0 0
+intr 480440 0 16993 173494 0 0 0 6466 0 0 0 0 0 0 168265 1281 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2829 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 54677 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 44806 11617 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ctxt 509807
+btime 1791658820
+processes 11348
+procs_running 1
+procs_blocked 0
+softirq 245213 10 28361 11035 98379 54 0 113 63204 222 43835
+-- proc/loadavg --
+0.17 0.57 0.31 1/196 11341
+-- proc/uptime --
+1077.39 4129.06
+-- proc/self/mountinfo --
+20 25 0:19 / /sys rw,nosuid,nodev,noexec,relatime shared:6 - sysfs sysfs rw
+21 25 0:20 / /proc rw,relatime shared:11 - proc proc rw
+22 25 0:6 / /dev rw,nosuid,relatime shared:2 - devtmpfs udev rw,size=4086000k,nr_inodes=255375,mode=755
+23 22 0:21 / /dev/pts rw,nosuid,noexec,relatime shared:3 - devpts devpts rw,gid=5,mode=600,ptmxmode=000
+24 25 0:22 / /run rw,nosuid,nodev,noexec,relatime shared:5 - tmpfs tmpfs rw,size=1651168k,mode=755
+25 1 179:2 / / rw,noatime shared:1 - ext4 /dev/mmcblk0p2 rw
+26 20 0:7 / /sys/kernel/security rw,nosuid,nodev,noexec,relatime shared:7 - securityfs securityfs rw
+27 22 0:23 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw
+28 20 0:24 / /sys/fs/cgroup rw,nosuid,nodev,noexec,relatime shared:8 - cgroup2 cgroup2 rw,nsdelegate,memory_recursiveprot
+29 20 0:25 / /sys/fs/pstore rw,nosuid,nodev,noexec,relatime shared:9 - pstore none rw
+30 20 0:26 / /sys/fs/bpf rw,nosuid,nodev,noexec,relatime shared:10 - bpf bpf rw,mode=700
+31 21 0:27 / /proc/sys/fs/binfmt_misc rw,relatime shared:12 - autofs systemd-1 rw,fd=37,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=2912
+32 24 0:28 / /run/lock rw,nosuid,nodev,noexec,relatime shared:13 - tmpfs tmpfs rw,size=5120k
+33 20 0:8 / /sys/kernel/debug rw,nosuid,nodev,noexec,relatime shared:14 - debugfs debugfs rw
+34 22 0:17 / /dev/mqueue rw,nosuid,nodev,noexec,relatime shared:15 - mqueue mqueue rw
+35 20 0:12 / /sys/kernel/tracing rw,nosuid,nodev,noexec,relatime shared:16 - tracefs tracefs rw
+54 24 0:29 / /run/credentials/systemd-journald.service ro,nosuid,nodev,noexec,relatime,nosymfollow shared:17 - tmpfs tmpfs rw,size=1024k,nr_inodes=1024,mode=700,noswap
+56 20 0:18 / /sys/kernel/config rw,nosuid,nodev,noexec,relatime shared:18 - configfs configfs rw
+58 20 0:31 / /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime shared:19 - fusectl fusectl rw
+39 25 0:35 / /tmp rw,nosuid,nodev shared:63 - tmpfs tmpfs rw,size=4127920k,nr_inodes=1048576
+42 25 179:1 / /boot/firmware rw,relatime shared:79 - vfat /dev/mmcblk0p1 rw,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,errors=remount-ro
+45 31 0:36 / /proc/sys/fs/binfmt_misc rw,nosuid,nodev,noexec,relatime shared:82 - binfmt_misc binfmt_misc rw
+194 24 0:38 / /run/credentials/getty@tty1.service ro,nosuid,nodev,noexec,relatime,nosymfollow shared:94 - tmpfs tmpfs rw,size=1024k,nr_inodes=1024,mode=700,noswap
+202 24 0:42 / /run/credentials/serial-getty@ttyAMA10.service ro,nosuid,nodev,noexec,relatime,nosymfollow shared:130 - tmpfs tmpfs rw,size=1024k,nr_inodes=1024,mode=700,noswap
+50 24 0:43 / /run/user/1000 rw,nosuid,nodev,relatime shared:138 - tmpfs tmpfs rw,size=825568k,nr_inodes=206392,mode=700,uid=1000,gid=1000
+51 33 0:12 / /sys/kernel/debug/tracing rw,nosuid,nodev,noexec,relatime shared:124 - tracefs tracefs rw
+-- proc/sys/kernel/hostname --
+Rpi5-NAS
+-- proc/sys/kernel/osrelease --
+6.18.50+rpt-rpi-2712
+-- etc/os-release --
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.7
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+-- sys/class/thermal/thermal_zone0/type --
+cpu-thermal
+-- sys/class/thermal/thermal_zone0/temp --
+48500
+-- etc/localtime -> /usr/share/zoneinfo/Europe/Paris --
+-- usr/share/zoneinfo/Europe/Paris --
+TZif
+-- usr/share/zoneinfo/zone.tab --
+FR	+4852+00220	Europe/Paris
+-- usr/share/zoneinfo/zone1970.tab --
+FR,MC	+4852+00220	Europe/Paris

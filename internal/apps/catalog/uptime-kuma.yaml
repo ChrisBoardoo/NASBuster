@@ -1,0 +1,18 @@
+# Uptime Kuma (https://github.com/louislam/uptime-kuma), version 2: the tag it
+# recommends (version 1 no longer gets fixes, and says so on first visit).
+# An existing version 1 keeps its image: the 1 -> 2 database migration is one-way.
+# Bind mount in the long syntax, never created by Docker: if ./data is gone,
+# the container refuses to start instead of coming back empty, with its admin
+# page open. NasBuster creates ./data when it deploys the application.
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:2
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - type: bind
+        source: ./data
+        target: /app/data
+        bind:
+          create_host_path: false

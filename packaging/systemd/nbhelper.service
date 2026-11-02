@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# CrossWax NasBuster — privileged helper (root, fixed list of validated operations).
+[Unit]
+Description=CrossWax NasBuster privileged helper
+Requires=nbhelper.socket
+After=nbhelper.socket
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/cwnsb/nbhelper -allow-user cwnsb -idle-exit 2m
+# Root by default: NO User=root. With User= set, NoNewPrivileges= and a
+# system-call filter (RestrictRealtime=, LockPersonality=…), systemd 257
+# removes CAP_SETUID from the helper, and apt-get can no longer switch to its
+# _apt user ("seteuid 42 failed"): Docker could not be uninstalled (Pi 5).
+# The helper changes system state (hostname, timezone, disks, mounts), so only
+# hardening that does not get in the way of that is applied. In particular NO
+# option that creates a private mount namespace (PrivateTmp, ProtectHome,
+# ProtectSystem…): the helper would not reliably see the pool mounts systemd
+# makes, and pool creation fails its final check (found in the lab).
+NoNewPrivileges=yes
+RestrictRealtime=yes
+LockPersonality=yes
+SystemCallArchitectures=native
+RestrictAddressFamilies=AF_UNIX AF_NETLINK

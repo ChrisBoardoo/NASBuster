@@ -1,0 +1,224 @@
+{
+   "blockdevices": [
+      {
+         "name": "sda",
+         "kname": "sda",
+         "path": "/dev/sda",
+         "size": 4000787030016,
+         "type": "disk",
+         "tran": "usb",
+         "rota": true,
+         "rm": false,
+         "ro": false,
+         "model": "ST4000VN008-2DR166",
+         "serial": "ZDH1ABCD",
+         "wwn": "0x5000c500c1234567",
+         "vendor": "Seagate ",
+         "fstype": null,
+         "uuid": null,
+         "label": null,
+         "pttype": null,
+         "mountpoints": [
+            null
+         ],
+         "pkname": null,
+         "hotplug": true
+      },
+      {
+         "name": "sdb",
+         "kname": "sdb",
+         "path": "/dev/sdb",
+         "size": 4000787030016,
+         "type": "disk",
+         "tran": "usb",
+         "rota": true,
+         "rm": false,
+         "ro": false,
+         "model": "WDC WD40EFRX-68N32N0",
+         "serial": "0123456789ABCDEF",
+         "wwn": null,
+         "vendor": "WDC     ",
+         "fstype": null,
+         "uuid": null,
+         "label": null,
+         "pttype": "gpt",
+         "mountpoints": [
+            null
+         ],
+         "pkname": null,
+         "hotplug": true,
+         "children": [
+            {
+               "name": "sdb1",
+               "kname": "sdb1",
+               "path": "/dev/sdb1",
+               "size": 4000785104896,
+               "type": "part",
+               "tran": null,
+               "rota": true,
+               "rm": false,
+               "ro": false,
+               "model": null,
+               "serial": null,
+               "wwn": null,
+               "vendor": null,
+               "fstype": "ext4",
+               "uuid": "6f1c2a7e-3b4d-4c8e-9f10-2a3b4c5d6e7f",
+               "label": "data",
+               "pttype": "gpt",
+               "mountpoints": [
+                  "/srv/dev-disk-by-uuid-6f1c2a7e-3b4d-4c8e-9f10-2a3b4c5d6e7f"
+               ],
+               "pkname": "sdb",
+               "hotplug": true
+            }
+         ]
+      },
+      {
+         "name": "sdc",
+         "kname": "sdc",
+         "path": "/dev/sdc",
+         "size": 2000398934016,
+         "type": "disk",
+         "tran": "usb",
+         "rota": true,
+         "rm": false,
+         "ro": false,
+         "model": "ST2000LM015-2E8174",
+         "serial": "0123456789ABCDEF",
+         "wwn": null,
+         "vendor": "Seagate ",
+         "fstype": null,
+         "uuid": null,
+         "label": null,
+         "pttype": null,
+         "mountpoints": [
+            null
+         ],
+         "pkname": null,
+         "hotplug": true
+      },
+      {
+         "name": "sdd",
+         "kname": "sdd",
+         "path": "/dev/sdd",
+         "size": 4000787030016,
+         "type": "disk",
+         "tran": "usb",
+         "rota": true,
+         "rm": false,
+         "ro": false,
+         "model": "WDC WD40EFPX-68C6CN0",
+         "serial": "WD-WX12D3456789",
+         "wwn": "0x50014ee2b1234567",
+         "vendor": "WDC     ",
+         "fstype": null,
+         "uuid": null,
+         "label": null,
+         "pttype": null,
+         "mountpoints": [
+            null
+         ],
+         "pkname": null,
+         "hotplug": true
+      },
+      {
+         "name": "mmcblk0",
+         "kname": "mmcblk0",
+         "path": "/dev/mmcblk0",
+         "size": 31914983424,
+         "type": "disk",
+         "tran": null,
+         "rota": false,
+         "rm": false,
+         "ro": false,
+         "model": null,
+         "serial": "0x1234abcd",
+         "wwn": null,
+         "vendor": null,
+         "fstype": null,
+         "uuid": null,
+         "label": null,
+         "pttype": "dos",
+         "mountpoints": [
+            null
+         ],
+         "pkname": null,
+         "hotplug": false,
+         "children": [
+            {
+               "name": "mmcblk0p1",
+               "kname": "mmcblk0p1",
+               "path": "/dev/mmcblk0p1",
+               "size": 536870912,
+               "type": "part",
+               "tran": null,
+               "rota": false,
+               "rm": false,
+               "ro": false,
+               "model": null,
+               "serial": null,
+               "wwn": null,
+               "vendor": null,
+               "fstype": "vfat",
+               "uuid": "4EF5-6F55",
+               "label": "bootfs",
+               "pttype": "dos",
+               "mountpoints": [
+                  "/boot/firmware"
+               ],
+               "pkname": "mmcblk0",
+               "hotplug": false
+            },
+            {
+               "name": "mmcblk0p2",
+               "kname": "mmcblk0p2",
+               "path": "/dev/mmcblk0p2",
+               "size": 31373918208,
+               "type": "part",
+               "tran": null,
+               "rota": false,
+               "rm": false,
+               "ro": false,
+               "model": null,
+               "serial": null,
+               "wwn": null,
+               "vendor": null,
+               "fstype": "ext4",
+               "uuid": "ce208fd3-38a8-424a-87a2-cd44114eb820",
+               "label": "rootfs",
+               "pttype": "dos",
+               "mountpoints": [
+                  "/"
+               ],
+               "pkname": "mmcblk0",
+               "hotplug": false
+            }
+         ]
+      },
+      {
+         "name": "zram0",
+         "kname": "zram0",
+         "path": "/dev/zram0",
+         "size": 2147483648,
+         "type": "disk",
+         "tran": null,
+         "rota": false,
+         "rm": false,
+         "ro": false,
+         "model": null,
+         "serial": null,
+         "wwn": null,
+         "vendor": null,
+         "fstype": "swap",
+         "uuid": "0d1f7c2e-0000-4000-8000-000000000001",
+         "label": "zram0",
+         "pttype": null,
+         "mountpoints": [
+            "[SWAP]"
+         ],
+         "pkname": null,
+         "hotplug": false
+      }
+   ]
+}

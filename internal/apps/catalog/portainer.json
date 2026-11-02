@@ -1,0 +1,12 @@
+{
+  "name": "portainer",
+  "title": "Portainer CE",
+  "description": {
+    "en": "Full Docker management in the browser: containers, images, volumes, stacks. An expert tool: it controls Docker entirely.",
+    "fr": "Gestion complète de Docker dans le navigateur : conteneurs, images, volumes, piles. Outil d'expert : il contrôle entièrement Docker."
+  },
+  "expert": true,
+  "webPort": 9443,
+  "webScheme": "https",
+  "setupToken": true
+}

@@ -1,0 +1,99 @@
+Synthetic `smartctl -j -a [-d sat] <by-id path>` outputs, keyed by
+"<disk id>" (auto-detect) or "<disk id> sat" (forced SAT). Shaped after
+smartmontools 7.4 JSON. ⚠️ Replace with real captures from the test Pi.
+
+-- wwn-0x5000c500c1234567 --
+{
+  "json_format_version": [1, 0],
+  "smartctl": {"version": [7, 4], "exit_status": 0},
+  "device": {"name": "/dev/disk/by-id/wwn-0x5000c500c1234567", "info_name": "/dev/sda [SAT]", "type": "sat", "protocol": "ATA"},
+  "model_family": "Seagate IronWolf",
+  "model_name": "ST4000VN008-2DR166",
+  "serial_number": "ZDH1ABCD",
+  "user_capacity": {"blocks": 7814037168, "bytes": 4000787030016},
+  "smart_support": {"available": true, "enabled": true},
+  "smart_status": {"passed": true},
+  "ata_smart_attributes": {"revision": 10, "table": [
+    {"id": 1, "name": "Raw_Read_Error_Rate", "value": 83, "worst": 64, "thresh": 44, "raw": {"value": 205734512, "string": "205734512"}},
+    {"id": 5, "name": "Reallocated_Sector_Ct", "value": 100, "worst": 100, "thresh": 10, "raw": {"value": 0, "string": "0"}},
+    {"id": 9, "name": "Power_On_Hours", "value": 86, "worst": 86, "thresh": 0, "raw": {"value": 12345, "string": "12345"}},
+    {"id": 187, "name": "Reported_Uncorrect", "value": 100, "worst": 100, "thresh": 0, "raw": {"value": 0, "string": "0"}},
+    {"id": 194, "name": "Temperature_Celsius", "value": 34, "worst": 45, "thresh": 0, "raw": {"value": 34, "string": "34"}},
+    {"id": 197, "name": "Current_Pending_Sector", "value": 100, "worst": 100, "thresh": 0, "raw": {"value": 0, "string": "0"}},
+    {"id": 198, "name": "Offline_Uncorrectable", "value": 100, "worst": 100, "thresh": 0, "raw": {"value": 0, "string": "0"}},
+    {"id": 199, "name": "UDMA_CRC_Error_Count", "value": 200, "worst": 200, "thresh": 0, "raw": {"value": 0, "string": "0"}}
+  ]},
+  "power_on_time": {"hours": 12345},
+  "power_cycle_count": 321,
+  "temperature": {"current": 34}
+}
+-- usb-WDC_WD40EFRX-68N32N0_0123456789ABCDEF-0:0 --
+{
+  "json_format_version": [1, 0],
+  "smartctl": {"version": [7, 4], "exit_status": 1, "messages": [
+    {"string": "/dev/disk/by-id/usb-WDC_WD40EFRX-68N32N0_0123456789ABCDEF-0:0: Unknown USB bridge [0x152d:0x0578 (0x214)]", "severity": "error"},
+    {"string": "Please specify device type with the -d option.", "severity": "error"}
+  ]}
+}
+-- usb-WDC_WD40EFRX-68N32N0_0123456789ABCDEF-0:0 sat --
+{
+  "json_format_version": [1, 0],
+  "smartctl": {"version": [7, 4], "exit_status": 64},
+  "device": {"name": "/dev/disk/by-id/usb-WDC_WD40EFRX-68N32N0_0123456789ABCDEF-0:0", "info_name": "/dev/sdb", "type": "sat", "protocol": "ATA"},
+  "model_family": "Western Digital Red",
+  "model_name": "WDC WD40EFRX-68N32N0",
+  "serial_number": "WD-WCC7K1234567",
+  "smart_support": {"available": true, "enabled": true},
+  "smart_status": {"passed": true},
+  "ata_smart_attributes": {"revision": 16, "table": [
+    {"id": 5, "name": "Reallocated_Sector_Ct", "value": 200, "worst": 200, "thresh": 140, "raw": {"value": 0, "string": "0"}},
+    {"id": 197, "name": "Current_Pending_Sector", "value": 200, "worst": 200, "thresh": 0, "raw": {"value": 0, "string": "0"}},
+    {"id": 198, "name": "Offline_Uncorrectable", "value": 100, "worst": 253, "thresh": 0, "raw": {"value": 0, "string": "0"}},
+    {"id": 199, "name": "UDMA_CRC_Error_Count", "value": 200, "worst": 200, "thresh": 0, "raw": {"value": 3, "string": "3"}}
+  ]},
+  "power_on_time": {"hours": 31012},
+  "temperature": {"current": 38}
+}
+-- usb-Seagate_ST2000LM015-2E8174_0123456789ABCDEF-0:0 --
+{
+  "json_format_version": [1, 0],
+  "smartctl": {"version": [7, 4], "exit_status": 4},
+  "device": {"name": "/dev/disk/by-id/usb-Seagate_ST2000LM015-2E8174_0123456789ABCDEF-0:0", "info_name": "/dev/sdc", "type": "scsi", "protocol": "SCSI"},
+  "scsi_vendor": "Seagate",
+  "scsi_product": "ST2000LM015-2E8174"
+}
+-- usb-Seagate_ST2000LM015-2E8174_0123456789ABCDEF-0:0 sat --
+{
+  "json_format_version": [1, 0],
+  "smartctl": {"version": [7, 4], "exit_status": 2, "messages": [
+    {"string": "Read Device Identity failed: scsi error unsupported field in scsi command", "severity": "error"}
+  ]},
+  "device": {"name": "/dev/disk/by-id/usb-Seagate_ST2000LM015-2E8174_0123456789ABCDEF-0:0", "info_name": "/dev/sdc", "type": "sat", "protocol": "ATA"}
+}
+-- wwn-0x50014ee2b1234567 --
+{
+  "json_format_version": [1, 0],
+  "smartctl": {"version": [7, 4], "exit_status": 0},
+  "device": {"name": "/dev/disk/by-id/wwn-0x50014ee2b1234567", "info_name": "/dev/sdd [SAT]", "type": "sat", "protocol": "ATA"},
+  "model_family": "Western Digital Red Plus",
+  "model_name": "WDC WD40EFPX-68C6CN0",
+  "serial_number": "WD-WX12D3456789",
+  "smart_support": {"available": true, "enabled": true},
+  "smart_status": {"passed": true},
+  "ata_smart_attributes": {"revision": 16, "table": [
+    {"id": 5, "name": "Reallocated_Sector_Ct", "value": 200, "worst": 200, "thresh": 140, "raw": {"value": 0, "string": "0"}},
+    {"id": 187, "name": "Reported_Uncorrect", "value": 100, "worst": 100, "thresh": 0, "raw": {"value": 0, "string": "0"}},
+    {"id": 197, "name": "Current_Pending_Sector", "value": 200, "worst": 200, "thresh": 0, "raw": {"value": 0, "string": "0"}},
+    {"id": 198, "name": "Offline_Uncorrectable", "value": 100, "worst": 253, "thresh": 0, "raw": {"value": 0, "string": "0"}},
+    {"id": 199, "name": "UDMA_CRC_Error_Count", "value": 200, "worst": 200, "thresh": 0, "raw": {"value": 0, "string": "0"}}
+  ]},
+  "power_on_time": {"hours": 2210},
+  "temperature": {"current": 33}
+}
+-- mmc-SN32G_0x1234abcd --
+{
+  "json_format_version": [1, 0],
+  "smartctl": {"version": [7, 4], "exit_status": 2, "messages": [
+    {"string": "/dev/disk/by-id/mmc-SN32G_0x1234abcd: Unable to detect device type", "severity": "error"}
+  ]}
+}

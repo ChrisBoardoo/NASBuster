@@ -1,0 +1,63 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call: # reused by release.yml: a release runs the same checks first
+
+permissions:
+  contents: read
+
+jobs:
+  go:
+    name: Go (vet, test, vuln, build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: gofmt
+        run: test -z "$(gofmt -l .)" || { gofmt -l .; exit 1; }
+      - run: go vet ./...
+      - run: go test ./...
+      - name: govulncheck
+        run: go run golang.org/x/vuln/cmd/govulncheck@latest ./...
+      - name: Build linux/arm64 and linux/amd64
+        run: make build-arm64 build-amd64
+
+  integration:
+    name: Storage integration (real kernel, loop devices)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends btrfs-progs mdadm
+      - run: sudo mkdir -p /var/lib/cwnsb-lab
+      - run: go test -c -tags integration -o bin/storage.integration.test ./internal/storage/
+      - run: sudo env CWNSB_LAB=1 GITHUB_ACTIONS=true bin/storage.integration.test -test.v
+
+  web:
+    name: Web UI (typecheck, build, audit)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm build
+      - run: pnpm audit --prod

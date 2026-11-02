@@ -1,0 +1,11 @@
+{
+  "name": "uptime-kuma",
+  "title": "Uptime Kuma",
+  "description": {
+    "en": "Watches your sites and services and tells you when one goes down.",
+    "fr": "Surveille tes sites et services et te prévient quand l'un tombe."
+  },
+  "expert": false,
+  "webPort": 3001,
+  "webScheme": "http"
+}

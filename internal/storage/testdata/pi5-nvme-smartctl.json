@@ -1,0 +1,127 @@
+{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      4
+    ],
+    "pre_release": false,
+    "svn_revision": "5530",
+    "platform_info": "aarch64-linux-6.18.50+rpt-rpi-2712",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-j",
+      "-a",
+      "/dev/disk/by-id/nvme-AirDisk_512GB_SSD_PMG000000000000000"
+    ],
+    "messages": [
+      {
+        "string": "Read Self-test Log failed: Invalid Field in Command (0x002)",
+        "severity": "error"
+      }
+    ],
+    "exit_status": 4
+  },
+  "local_time": {
+    "time_t": 1791750662,
+    "asctime": "Sun Oct 11 22:31:02 2026 CEST"
+  },
+  "device": {
+    "name": "/dev/disk/by-id/nvme-AirDisk_512GB_SSD_PMG000000000000000",
+    "info_name": "/dev/disk/by-id/nvme-AirDisk_512GB_SSD_PMG000000000000000",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "AirDisk 512GB SSD",
+  "serial_number": "PMG000000000000000",
+  "firmware_version": "SN13126",
+  "nvme_pci_vendor": {
+    "id": 7755,
+    "subsystem_id": 7755
+  },
+  "nvme_ieee_oui_identifier": 3824167,
+  "nvme_total_capacity": 512110190592,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 0,
+  "nvme_version": {
+    "string": "1.4",
+    "value": 66560
+  },
+  "nvme_number_of_namespaces": 1,
+  "nvme_namespaces": [
+    {
+      "id": 1,
+      "size": {
+        "blocks": 1000215216,
+        "bytes": 512110190592
+      },
+      "capacity": {
+        "blocks": 1000215216,
+        "bytes": 512110190592
+      },
+      "utilization": {
+        "blocks": 1000215216,
+        "bytes": 512110190592
+      },
+      "formatted_lba_size": 512,
+      "eui64": {
+        "oui": 3824167,
+        "ext_id": 13153338722
+      }
+    }
+  ],
+  "user_capacity": {
+    "blocks": 1000215216,
+    "bytes": 512110190592
+  },
+  "logical_block_size": 512,
+  "smart_support": {
+    "available": true,
+    "enabled": true
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 24,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 0,
+    "data_units_read": 21410224,
+    "data_units_written": 9011576,
+    "host_reads": 156649206,
+    "host_writes": 145885129,
+    "controller_busy_time": 439,
+    "power_cycles": 279,
+    "power_on_hours": 127,
+    "unsafe_shutdowns": 59,
+    "media_errors": 0,
+    "num_err_log_entries": 0,
+    "warning_temp_time": 156,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      24,
+      29
+    ]
+  },
+  "temperature": {
+    "current": 24
+  },
+  "power_cycle_count": 279,
+  "power_on_time": {
+    "hours": 127
+  },
+  "nvme_error_information_log": {
+    "size": 64,
+    "read": 16,
+    "unread": 0
+  }
+}

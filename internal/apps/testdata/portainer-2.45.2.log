@@ -1,0 +1,44 @@
+[2Kportainer-1  | 2026-10-12T06:41:25.822200007Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/cmd/portainer/main.go:357[0m[36m >[0m encryption key file not present | [36mfilename=[0m/run/secrets/portainer
+[2Kportainer-1  | 2026-10-12T06:41:25.822269304Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/cmd/portainer/main.go:395[0m[36m >[0m proceeding without encryption key |
+[2Kportainer-1  | 2026-10-12T06:41:25.822285711Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/database/boltdb/db.go:163[0m[36m >[0m loading PortainerDB | [36mfilename=[0mportainer.db
+[2Kportainer-1  | 2026-10-12T06:41:25.917926116Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/internal/ssl/ssl.go:79[0m[36m >[0m no cert files found, generating self signed SSL certificates |
+[2Kportainer-1  | 2026-10-12T06:41:25.921478571Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/pkg/libhelm/cache/manager.go:30[0m[36m >[0m Helm registry cache initialized | [36muser_session_timeout=[0m8h
+[2Kportainer-1  | 2026-10-12T06:41:25.921615256Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/http/security/setuptoken/setuptoken.go:40[0m[36m >[0m 
+[2Kportainer-1  | 2026-10-12T06:41:25.921627052Z 
+[2Kportainer-1  | 2026-10-12T06:41:25.921630589Z ==========================
+[2Kportainer-1  | 2026-10-12T06:41:25.921633997Z 
+[2Kportainer-1  | 2026-10-12T06:41:25.921636960Z setup_token=1111111111111111111111111111111111111111111111111111111111111111
+[2Kportainer-1  | 2026-10-12T06:41:25.921640163Z 
+[2Kportainer-1  | 2026-10-12T06:41:25.921643052Z Paste it into the setup screen, or send it in the X-Setup-Token header.
+[2Kportainer-1  | 2026-10-12T06:41:25.921648386Z Start with --no-setup-token to disable.
+[2Kportainer-1  | 2026-10-12T06:41:25.921651886Z 
+[2Kportainer-1  | 2026-10-12T06:41:25.921654793Z ========================== |
+[2Kportainer-1  | 2026-10-12T06:41:25.921775811Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/chisel/service.go:229[0m[36m >[0m generated a new Chisel private key file | [36mprivate-key=[0m/data/chisel/private-key.pem
+[2Kportainer-1  | 2026-10-12T06:41:25.921866181Z 2026/10/12 06:41:25 server: Reverse tunnelling enabled
+[2Kportainer-1  | 2026-10-12T06:41:25.921871330Z 2026/10/12 06:41:25 server: Fingerprint IdmKShPQdJaeyD1vByxI76VrSqSghN68TK3/PbZDvjs=
+[2Kportainer-1  | 2026-10-12T06:41:25.925546303Z 2026/10/12 06:41:25 server: Listening on http://0.0.0.0:8000
+[2Kportainer-1  | 2026-10-12T06:41:25.928109353Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/cmd/portainer/main.go:705[0m[36m >[0m starting Portainer | [36mbuild_number=[0m40 [36mgo_version=[0mgo1.26.6 [36mimage_tag=[0m2.45.2-linux-arm64 [36mnodejs_version=[0mv22.23.3 [36mpnpm_version=[0m10.27.0 [36mversion=[0m2.45.2 [36mwebpack_version=[0m5.107.2
+[2Kportainer-1  | 2026-10-12T06:41:25.936219762Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/http/server.go:371[0m[36m >[0m starting HTTPS server | [36mbind_address=[0m:9443
+[2Kportainer-1  | 2026-10-12T06:41:25.936276669Z [90m2026/10/12 06:41AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/http/server.go:355[0m[36m >[0m starting HTTP server | [36mbind_address=[0m:9000
+[2Kportainer-1  | 2026-10-12T06:46:25.928927426Z [90m2026/10/12 06:46AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/adminmonitor/admin_monitor.go:60[0m[36m >[0m the Portainer instance timed out for security purposes, to re-enable your Portainer instance, you will need to restart Portainer |
+[2Kportainer-1  | 2026-10-12T07:03:02.856434872Z [90m2026/10/12 07:03AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/cmd/portainer/main.go:357[0m[36m >[0m encryption key file not present | [36mfilename=[0m/run/secrets/portainer
+[2Kportainer-1  | 2026-10-12T07:03:02.856496038Z [90m2026/10/12 07:03AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/cmd/portainer/main.go:395[0m[36m >[0m proceeding without encryption key |
+[2Kportainer-1  | 2026-10-12T07:03:02.856502538Z [90m2026/10/12 07:03AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/database/boltdb/db.go:163[0m[36m >[0m loading PortainerDB | [36mfilename=[0mportainer.db
+[2Kportainer-1  | 2026-10-12T07:03:02.919096672Z [90m2026/10/12 07:03AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/pkg/libhelm/cache/manager.go:30[0m[36m >[0m Helm registry cache initialized | [36muser_session_timeout=[0m8h
+[2Kportainer-1  | 2026-10-12T07:03:02.919300764Z [90m2026/10/12 07:03AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/http/security/setuptoken/setuptoken.go:40[0m[36m >[0m 
+[2Kportainer-1  | 2026-10-12T07:03:02.919332393Z 
+[2Kportainer-1  | 2026-10-12T07:03:02.919338764Z ==========================
+[2Kportainer-1  | 2026-10-12T07:03:02.919342375Z 
+[2Kportainer-1  | 2026-10-12T07:03:02.919345523Z setup_token=2222222222222222222222222222222222222222222222222222222222222222
+[2Kportainer-1  | 2026-10-12T07:03:02.919348875Z 
+[2Kportainer-1  | 2026-10-12T07:03:02.919351912Z Paste it into the setup screen, or send it in the X-Setup-Token header.
+[2Kportainer-1  | 2026-10-12T07:03:02.919355097Z Start with --no-setup-token to disable.
+[2Kportainer-1  | 2026-10-12T07:03:02.919359023Z 
+[2Kportainer-1  | 2026-10-12T07:03:02.919362190Z ========================== |
+[2Kportainer-1  | 2026-10-12T07:03:02.919368190Z [90m2026/10/12 07:03AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/chisel/service.go:201[0m[36m >[0m found Chisel private key file on disk | [36mprivate-key=[0m/data/chisel/private-key.pem
+[2Kportainer-1  | 2026-10-12T07:03:02.919509134Z 2026/10/12 07:03:02 server: Reverse tunnelling enabled
+[2Kportainer-1  | 2026-10-12T07:03:02.919533560Z 2026/10/12 07:03:02 server: Fingerprint IdmKShPQdJaeyD1vByxI76VrSqSghN68TK3/PbZDvjs=
+[2Kportainer-1  | 2026-10-12T07:03:02.924442309Z 2026/10/12 07:03:02 server: Listening on http://0.0.0.0:8000
+[2Kportainer-1  | 2026-10-12T07:03:02.927577099Z [90m2026/10/12 07:03AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/cmd/portainer/main.go:705[0m[36m >[0m starting Portainer | [36mbuild_number=[0m40 [36mgo_version=[0mgo1.26.6 [36mimage_tag=[0m2.45.2-linux-arm64 [36mnodejs_version=[0mv22.23.3 [36mpnpm_version=[0m10.27.0 [36mversion=[0m2.45.2 [36mwebpack_version=[0m5.107.2
+[2Kportainer-1  | 2026-10-12T07:03:02.936084619Z [90m2026/10/12 07:03AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/http/server.go:371[0m[36m >[0m starting HTTPS server | [36mbind_address=[0m:9443
+[2Kportainer-1  | 2026-10-12T07:03:02.936323341Z [90m2026/10/12 07:03AM[0m [32mINF[0m [1mgithub.com/portainer/portainer/api/http/server.go:355[0m[36m >[0m starting HTTP server | [36mbind_address=[0m:9000

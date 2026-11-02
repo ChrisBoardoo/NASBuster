@@ -1,0 +1,59 @@
+NasBuster logo license
+======================
+
+Copyright (c) 2026 CrossWax. All rights reserved, except as granted below.
+
+The NasBuster logo (the pixel-art ghost holding a two-bay NAS, in every size,
+format and background variant) is NOT covered by the GNU Affero General Public
+License that applies to the NasBuster source code. As section 7(e) of the AGPL
+allows, no trademark rights to the logo are granted by that license.
+
+Files covered
+-------------
+- logo/ (every image in this folder and its subfolders)
+- web/public/favicons/ and web/src/assets/nasbuster-*.png
+- website/favicons/, website/logo/ and website/og-image.png
+- the same images when embedded in a NasBuster binary or package
+
+The program that derives them (tools/logo/) is source code: it stays under the
+AGPL-3.0-or-later like the rest of the repository.
+
+What you may do without asking
+------------------------------
+1. Refer to NasBuster: use the unmodified logo in articles, reviews,
+   tutorials, videos, talks, links and app lists that are about NasBuster.
+2. Redistribute NasBuster: keep the logo in unmodified copies of the
+   NasBuster source code, packages and binaries, including Linux distribution
+   packages and mirrors that only add packaging changes.
+3. Resize it, or put it on a plain background, as long as the drawing itself
+   is not changed.
+
+What needs written permission from CrossWax
+-------------------------------------------
+1. Modified versions (forks): a modified version of NasBuster that is
+   distributed or offered over a network must replace the logo with its own.
+   This keeps users from mistaking a fork for the official project. The AGPL
+   still lets you fork everything else.
+2. Changing the drawing (colors, shape, character, parts of it), or making new
+   artwork derived from it.
+3. Using it as the logo, icon or mascot of another product, service, company
+   or project, or in a way that suggests CrossWax endorses something it does
+   not.
+4. Selling it on merchandise (stickers, clothing, prints...).
+
+To ask: contact@crosswax.net
+
+No warranty
+-----------
+The logo is provided "as is", without warranty of any kind.
+
+
+Résumé en français (pour information ; le texte anglais ci-dessus fait foi)
+---------------------------------------------------------------------------
+Le logo de NasBuster (le fantôme) n'est pas sous AGPL : tous droits réservés
+à CrossWax, sauf ce qui suit. Sans rien demander, on peut l'utiliser tel quel
+pour parler de NasBuster (articles, tutoriels, vidéos, liens) et le garder dans
+les copies non modifiées du logiciel (paquets, distributions, miroirs). Un fork
+doit prendre son propre logo. Modifier le dessin, l'utiliser pour un autre
+produit ou le vendre sur des objets demande une autorisation écrite :
+contact@crosswax.net.

@@ -1,0 +1,151 @@
+Real outputs from the Raspberry Pi 5 test Pi (Raspberry Pi OS Lite 64-bit,
+Debian 13, kernel 6.18.50+rpt-rpi-2712), captured by tools/pi/collect.sh on
+2026-10-10: a 16 GB SD card and Raspberry Pi OS's swap (zram0, backed by loop0
+on /var/swap). No USB disk attached. SD card serial anonymized.
+
+-- lsblk.json --
+{
+   "blockdevices": [
+      {
+         "name": "loop0",
+         "kname": "loop0",
+         "path": "/dev/loop0",
+         "size": 2147483648,
+         "type": "loop",
+         "tran": null,
+         "rota": false,
+         "rm": false,
+         "ro": false,
+         "model": null,
+         "serial": null,
+         "wwn": null,
+         "vendor": null,
+         "fstype": "swap",
+         "uuid": null,
+         "label": "origin:rpi-swap",
+         "partlabel": null,
+         "pttype": null,
+         "mountpoints": [],
+         "pkname": null,
+         "hotplug": false
+      },{
+         "name": "mmcblk0",
+         "kname": "mmcblk0",
+         "path": "/dev/mmcblk0",
+         "size": 16088301568,
+         "type": "disk",
+         "tran": "mmc",
+         "rota": false,
+         "rm": false,
+         "ro": false,
+         "model": null,
+         "serial": "0x00c0ffee",
+         "wwn": null,
+         "vendor": null,
+         "fstype": null,
+         "uuid": null,
+         "label": null,
+         "partlabel": null,
+         "pttype": "dos",
+         "mountpoints": [],
+         "pkname": null,
+         "hotplug": true,
+         "children": [
+            {
+               "name": "mmcblk0p1",
+               "kname": "mmcblk0p1",
+               "path": "/dev/mmcblk0p1",
+               "size": 536870912,
+               "type": "part",
+               "tran": "mmc",
+               "rota": false,
+               "rm": false,
+               "ro": false,
+               "model": null,
+               "serial": null,
+               "wwn": null,
+               "vendor": null,
+               "fstype": "vfat",
+               "uuid": "0398-3084",
+               "label": "bootfs",
+               "partlabel": null,
+               "pttype": "dos",
+               "mountpoints": [
+                   "/boot/firmware"
+               ],
+               "pkname": "mmcblk0",
+               "hotplug": true
+            },{
+               "name": "mmcblk0p2",
+               "kname": "mmcblk0p2",
+               "path": "/dev/mmcblk0p2",
+               "size": 15543042048,
+               "type": "part",
+               "tran": "mmc",
+               "rota": false,
+               "rm": false,
+               "ro": false,
+               "model": null,
+               "serial": null,
+               "wwn": null,
+               "vendor": null,
+               "fstype": "ext4",
+               "uuid": "02f61d5e-92cb-4f9c-a781-099d97795020",
+               "label": "rootfs",
+               "partlabel": null,
+               "pttype": "dos",
+               "mountpoints": [
+                   "/"
+               ],
+               "pkname": "mmcblk0",
+               "hotplug": true
+            }
+         ]
+      },{
+         "name": "zram0",
+         "kname": "zram0",
+         "path": "/dev/zram0",
+         "size": 2147483648,
+         "type": "disk",
+         "tran": null,
+         "rota": false,
+         "rm": false,
+         "ro": false,
+         "model": null,
+         "serial": null,
+         "wwn": null,
+         "vendor": null,
+         "fstype": "swap",
+         "uuid": "39839915-333e-42bc-b49d-cfca0f07085c",
+         "label": "zram0",
+         "partlabel": null,
+         "pttype": null,
+         "mountpoints": [
+             "[SWAP]"
+         ],
+         "pkname": null,
+         "hotplug": false
+      }
+   ]
+}
+-- udevadm /dev/mmcblk0 --
+DEVPATH=/devices/platform/soc@107c000000/1000fff000.mmc/mmc_host/mmc0/mmc0:59b4/block/mmcblk0
+DEVNAME=/dev/mmcblk0
+DEVTYPE=disk
+DISKSEQ=25
+MAJOR=179
+MINOR=0
+SUBSYSTEM=block
+USEC_INITIALIZED=879768
+ID_NAME=USD00
+ID_SERIAL=0x00c0ffee
+ID_PATH=platform-1000fff000.mmc
+ID_PATH_TAG=platform-1000fff000_mmc
+ID_PART_TABLE_UUID=a37dcd88
+ID_PART_TABLE_TYPE=dos
+MMC_TYPE=SD
+ID_DRIVE_FLASH_SD=1
+ID_DRIVE_MEDIA_FLASH_SD=1
+DEVLINKS=/dev/disk/by-path/platform-1000fff000.mmc /dev/disk/by-diskseq/25 /dev/disk/by-id/mmc-USD00_0x00c0ffee
+TAGS=:systemd:
+CURRENT_TAGS=:systemd:

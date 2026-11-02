@@ -1,0 +1,2437 @@
+{
+  "app": {
+    "name": "CrossWax NasBuster",
+    "brand": "CrossWax",
+    "product": "NasBuster",
+    "wordmark": "NASBUSTER",
+    "skipToContent": "Aller au contenu",
+    "labMode": "Mode labo",
+    "labModeHint": "Mode labo : seuls les disques virtuels du labo peuvent être modifiés.",
+    "demo": "Démo",
+    "version": "v{{version}}",
+    "license": "AGPL-3.0",
+    "loading": "Chargement",
+    "bootError": {
+      "eyebrow": "Connexion",
+      "title": "Le NAS ne répond pas.",
+      "body": "L'interface est chargée, mais le service NasBuster n'a pas répondu. Vérifie que le Pi est allumé et que nasbusterd tourne, puis réessaie.",
+      "retry": "Réessayer"
+    }
+  },
+  "about": {
+    "open": "À propos de CrossWax NasBuster",
+    "madeWith": "Fait avec",
+    "love": "amour",
+    "by": "par",
+    "crosswaxLabel": "Site de CrossWax (nouvel onglet)"
+  },
+  "common": {
+    "continue": "Continuer",
+    "back": "Retour",
+    "retry": "Réessayer",
+    "refresh": "Actualiser",
+    "skip": "Passer pour l'instant",
+    "loading": "Chargement…",
+    "saving": "Enregistrement…",
+    "unknown": "Inconnu",
+    "none": "Aucun",
+    "yes": "Oui",
+    "no": "Non",
+    "seeAll": "Tout voir",
+    "show": "Afficher",
+    "hide": "Masquer",
+    "cancel": "Annuler",
+    "copy": "Copier",
+    "copied": "Copié",
+    "copyValue": "Copier {{value}}",
+    "on": "Activé",
+    "off": "Désactivé",
+    "close": "Fermer"
+  },
+  "language": {
+    "label": "Langue",
+    "en": "English",
+    "fr": "Français",
+    "code": {
+      "en": "EN",
+      "fr": "FR"
+    },
+    "saveFailed": "Langue changée ici, mais pas enregistrée sur ton compte."
+  },
+  "theme": {
+    "label": "Thème",
+    "bold": "Bold",
+    "paper": "Paper",
+    "boldHint": "Sombre, typographie d'affiche. Par défaut.",
+    "paperHint": "Clair, même typographie.",
+    "switchTo": "Passer au thème {{theme}}",
+    "sample": "Aa"
+  },
+  "status": {
+    "ok": "OK",
+    "info": "Info",
+    "warn": "Attention",
+    "crit": "Critique",
+    "unknown": "Inconnu"
+  },
+  "units": {
+    "bytes": {
+      "B": "o",
+      "kB": "ko",
+      "MB": "Mo",
+      "GB": "Go",
+      "TB": "To",
+      "PB": "Po"
+    },
+    "duration": {
+      "d": "j",
+      "h": "h",
+      "min": "min"
+    },
+    "percent": "%",
+    "hours": "h"
+  },
+  "nav": {
+    "label": "Navigation principale",
+    "dashboard": "Tableau de bord",
+    "storage": "Stockage",
+    "system": "Système",
+    "activity": "Activité",
+    "journal": "Journal",
+    "settings": "Réglages",
+    "logout": "Déconnexion",
+    "shares": "Partages",
+    "users": "Utilisateurs",
+    "alerts": "Alertes",
+    "apps": "Applications"
+  },
+  "onboarding": {
+    "label": "Configuration",
+    "progress": "Étape {{current}} sur {{total}} : {{name}}",
+    "steps": {
+      "welcome": "Bienvenue",
+      "health": "Bilan",
+      "account": "Compte",
+      "identity": "Identité",
+      "disks": "Disques",
+      "protection": "Protection",
+      "confirm": "Confirmation",
+      "create": "Création",
+      "share": "Partages",
+      "safety": "Sécurité",
+      "done": "Terminé",
+      "apps": "Applications"
+    },
+    "keyboardHint": "Entrée pour continuer · Échap pour revenir",
+    "progressNotSaved": "Ta progression n'a pas pu être enregistrée. Tu peux continuer.",
+    "welcome": {
+      "eyebrow": "Bienvenue",
+      "title": "CrossWax NasBuster",
+      "promise": "Transforme ce Raspberry Pi en un NAS de confiance, une décision à la fois.",
+      "languageLabel": "Choisis ta langue",
+      "start": "Commencer"
+    },
+    "health": {
+      "eyebrow": "Bilan",
+      "title": "Ton Pi, passé en revue.",
+      "intro": "Avant de toucher à tes données, voici l'état de ce Pi. Les avertissements ne bloquent jamais la configuration.",
+      "loading": "Bilan du Pi en cours…",
+      "allGood": "Tout est en ordre.",
+      "hasWarnings_one": "{{count}} point à améliorer. Rien ne bloque la configuration.",
+      "hasWarnings_other": "{{count}} points à améliorer. Rien ne bloque la configuration.",
+      "hasCritical_one": "{{count}} problème critique. Tu peux continuer, mais corrige-le avant de confier tes données à ce Pi.",
+      "hasCritical_other": "{{count}} problèmes critiques. Tu peux continuer, mais corrige-les avant de confier tes données à ce Pi.",
+      "loadFailed": "Le bilan n'a pas pu s'exécuter. Tu peux continuer et le relancer plus tard depuis Système."
+    },
+    "account": {
+      "eyebrow": "Compte",
+      "title": "Crée ton compte administrateur.",
+      "intro": "Ce compte gère le NAS. Le code de setup prouve que c'est bien toi qui es devant le Pi, et pas quelqu'un d'autre sur ton réseau.",
+      "setupCode": "Code de setup",
+      "setupCodeHelp": "Affiché par l'installeur. Perdu ? Lance l'une de ces commandes sur le Pi :",
+      "username": "Nom d'utilisateur",
+      "usernameHint": "3 à 32 caractères : minuscules, chiffres, - et _. Commence par une lettre.",
+      "usernameInvalid": "Minuscules, chiffres, - et _ uniquement, en commençant par une lettre (3 à 32).",
+      "password": "Mot de passe",
+      "passwordLength": "{{count}} / {{min}} caractères minimum",
+      "passwordLong": "Assez long.",
+      "confirm": "Confirme le mot de passe",
+      "confirmMismatch": "Les mots de passe ne correspondent pas.",
+      "confirmMatch": "Les mots de passe correspondent.",
+      "submit": "Créer le compte",
+      "submitting": "Création…",
+      "done": "Compte créé. Tu es connecté en tant que {{username}}.",
+      "setupCodeFormat": "Format : XXXX-XXXX, 8 lettres ou chiffres.",
+      "introMachine": "Ce compte gère le NAS. D'abord, prouve que ce Pi est à toi avec le compte choisi en préparant sa carte SD : quelqu'un d'autre sur ton réseau ne le connaît pas.",
+      "machineTitle": "Le compte de ce Pi",
+      "machineUser": "Utilisateur du Pi",
+      "machinePassword": "Mot de passe du Pi",
+      "machineHelp": "L'utilisateur et le mot de passe choisis dans Raspberry Pi Imager (ou à l'installation de Debian). Ils prouvent seulement que c'est toi : NasBuster ne les garde jamais.",
+      "machineDemo": "Démo : le compte du Pi émulé est pi, mot de passe raspberry.",
+      "machineUserInvalid": "Minuscules, chiffres, - et _ uniquement, comme dans Raspberry Pi Imager.",
+      "machinePasswordRequired": "Entre le mot de passe du Pi.",
+      "useCode": "Utiliser le code de setup à la place",
+      "useMachine": "Utiliser le compte du Pi à la place",
+      "codeTitle": "Prouve que ce Pi est à toi",
+      "adminTitle": "Ton compte admin du NAS"
+    },
+    "identity": {
+      "eyebrow": "Identité",
+      "title": "Nomme ton NAS.",
+      "intro": "C'est le nom que tes ordinateurs verront sur le réseau, et l'heure qu'il suivra.",
+      "hostname": "Nom de la machine",
+      "hostnameHint": "Minuscules, chiffres et tirets. 63 caractères maximum.",
+      "hostnameErrors": {
+        "empty": "Donne un nom à ton NAS.",
+        "tooLong": "63 caractères maximum.",
+        "invalidChars": "Uniquement des minuscules, des chiffres et des tirets.",
+        "hyphenEdge": "Pas de tiret au début ni à la fin."
+      },
+      "preview": "Sur ton réseau",
+      "timezone": "Fuseau horaire",
+      "timezoneSearch": "Chercher un fuseau horaire",
+      "timezoneNoMatch": "Aucun fuseau ne correspond à « {{query}} ».",
+      "timezoneDetected": "Détecté depuis ce navigateur",
+      "timezoneResults_one": "{{count}} résultat",
+      "timezoneResults_other": "{{count}} résultats",
+      "timezonesFailed": "La liste des fuseaux horaires n'a pas pu être chargée.",
+      "submit": "Enregistrer et continuer",
+      "helperTitle": "L'assistant système ne tourne pas.",
+      "helperBody": "NasBuster change le nom et le fuseau horaire via son assistant privilégié, nbhelper, qui n'a pas répondu. Rien n'a été modifié. Passe cette étape et règle-les plus tard depuis Système.",
+      "saved": "Enregistré."
+    },
+    "disks": {
+      "eyebrow": "Disques",
+      "title": "Tes disques.",
+      "intro": "Tous les disques que ce Pi voit. Rien n'y est écrit pendant la configuration."
+    },
+    "keyboardHintFirst": "Entrée pour continuer",
+    "keyboardHintBackOnly": "Échap pour revenir",
+    "protection": {
+      "eyebrow": "Protection",
+      "title": "Comment protéger tes données ?",
+      "intro": "Un pool réunit des disques vierges en un seul espace de stockage. Choisis ce qu'il doit encaisser, puis ses disques. Rien n'est encore écrit.",
+      "layoutsLabel": "Protection",
+      "recommended": "Recommandé",
+      "needsDisks_one": "Il faut au moins {{count}} disque vierge.",
+      "needsDisks_other": "Il faut au moins {{count}} disques vierges.",
+      "youHave_one": "Tu en as {{count}}.",
+      "youHave_other": "Tu en as {{count}}.",
+      "disksLabel": "Disques",
+      "disksHint": "Seuls les disques vierges peuvent rejoindre un pool. Le disque système et les disques qui contiennent des données ne sont jamais proposés.",
+      "disksHintSingle": "Le mode simple utilise un seul disque : en choisir un autre le remplace.",
+      "selected_one": "{{count}} disque vierge choisi sur {{total}}",
+      "selected_other": "{{count}} disques vierges choisis sur {{total}}",
+      "previewTitle": "Espace utile",
+      "previewRaw": "Sur {{raw}} d'espace disque brut. Une estimation, avant le surcoût du système de fichiers.",
+      "previewPick": "Choisis des disques pour voir l'espace utile.",
+      "previewLoading": "Calcul…",
+      "previewFailed": "L'espace utile n'a pas pu être calculé.",
+      "previewLive": "Espace utile : {{size}}. {{survives}}.",
+      "survivesLabel": "Résiste à",
+      "corruptionLabel": "Corruption",
+      "noDisks": {
+        "title": "Pas encore de disque vierge.",
+        "body": "Les disques ci-dessous contiennent déjà des données. NasBuster n'efface un disque que si tu le lui demandes : efface celui que tu veux utiliser, ou branche un disque vierge. Tu peux aussi passer cette étape et créer un pool à tout moment depuis Stockage."
+      },
+      "noDataDisks": {
+        "title": "Aucun disque trouvé, à part celui du système.",
+        "body": "NasBuster ne voit que la carte SD sur laquelle le Pi démarre. Vérifie que tes disques sont bien branchés (câble USB et hub alimenté, ou nappe et HAT d'un disque NVMe sur un Pi 5), puis actualise. Tu peux aussi passer cette étape et créer un pool à tout moment depuis Stockage."
+      },
+      "continueWithout": "Continuer sans pool",
+      "backToStorage": "Retour au stockage"
+    },
+    "confirm": {
+      "eyebrow": "Confirmation",
+      "title_one": "Effacer {{count}} disque ?",
+      "title_other": "Effacer {{count}} disques ?",
+      "intro": "Créer le pool formate tous les disques listés ici. Relis une dernière fois, nomme le pool, puis tape son nom pour confirmer.",
+      "summaryLabel": "Résumé",
+      "protection": "Protection",
+      "usable": "Espace utile",
+      "survives": "Résiste à",
+      "disks": "Disques",
+      "warningTitle_one": "Tout le contenu de ce disque sera effacé.",
+      "warningTitle_other": "Tout le contenu de ces disques sera effacé.",
+      "warningBody": "NasBuster ne propose que des disques qui semblent vierges, mais vérifie qu'aucun ne contient quelque chose d'important. C'est irréversible.",
+      "name": "Nom du pool",
+      "nameHint": "2 à 24 caractères : lettres minuscules et chiffres, en commençant par une lettre. Pas de tiret.",
+      "nameErrors": {
+        "empty": "Donne un nom à ton pool.",
+        "startLetter": "Commence par une lettre minuscule.",
+        "invalidChars": "Lettres minuscules et chiffres uniquement : ni tiret, ni espace.",
+        "tooShort": "Au moins 2 caractères.",
+        "tooLong": "24 caractères maximum.",
+        "exists": "Un pool nommé {{name}} existe déjà."
+      },
+      "mountPreview": "Monté sur",
+      "confirmLabel": "Tape {{name}} pour confirmer",
+      "confirmLabelEmpty": "Tape le nom du pool pour confirmer",
+      "confirmHint": "Le bouton se débloque quand le nom correspond exactement.",
+      "confirmMatch": "Nom confirmé.",
+      "confirmMismatch": "Ne correspond pas encore au nom du pool.",
+      "submit": "Effacer et créer",
+      "submitting": "Lancement…",
+      "lost": "Ta sélection a été perdue (la page a été rechargée). Reviens en arrière et choisis à nouveau les disques.",
+      "diskGone": "{{disk}} n'est plus vierge ou n'est plus branché. Reviens en arrière et choisis à nouveau.",
+      "disksLoadFailed": "Les disques n'ont pas pu être revérifiés."
+    },
+    "create": {
+      "eyebrow": "Création",
+      "runningTitle": "Création de ton pool.",
+      "runningBody_one": "Partitionnement de {{count}} disque, formatage et montage du pool. Sur des disques USB, cela peut prendre quelques minutes. Garde cette page ouverte.",
+      "runningBody_other": "Partitionnement de {{count}} disques, construction du pool et montage. Sur des disques USB, cela peut prendre quelques minutes. Garde cette page ouverte.",
+      "progressLabel": "Création du pool",
+      "elapsed": "Écoulé",
+      "running": "Création…",
+      "doneEyebrow": "Pool prêt",
+      "doneTitle": "Ton pool est prêt.",
+      "doneBody": "{{name}} est monté et prêt à recevoir tes données.",
+      "usable": "Utile",
+      "health": "Santé",
+      "mountPoint": "Point de montage",
+      "protection": "Protection",
+      "syncNote": "Les disques se synchronisent encore en arrière-plan ({{percent}} %). Le pool est déjà utilisable ; il résiste à la panne d'un disque une fois la synchronisation terminée.",
+      "failedEyebrow": "Échec de la création",
+      "failedTitle": "Le pool n'a pas été créé.",
+      "failedBeforeWrite": "Rien n'a été écrit sur tes disques.",
+      "failedDuringWrite": "Quand une étape échoue, NasBuster défait ce qu'il a commencé. Vérifie les disques à l'écran suivant avant de réessayer.",
+      "residualBody": "Rien de ce qui t'appartient n'a été modifié : NasBuster a seulement retiré la partition qu'il venait de créer. Si tu n'as pas besoin de ce qu'il y a sur ce disque, efface-le ici, puis choisis à nouveau tes disques.",
+      "technicalDetail": "Détail technique",
+      "backToProtection": "Retour à la protection",
+      "unknownTitle": "Impossible de confirmer le résultat.",
+      "unknownBody": "La connexion a été coupée ou la page rechargée pendant la création du pool. Elle est peut-être encore en cours : attends une minute, puis vérifie à nouveau.",
+      "notFound": "Aucun pool trouvé pour l'instant.",
+      "checkAgain": "Vérifier à nouveau",
+      "checking": "Vérification…",
+      "goToStorage": "Aller au stockage"
+    },
+    "share": {
+      "eyebrow": "Partages",
+      "noPool": {
+        "title": "Les partages vivent sur un pool.",
+        "body": "Tu as passé l'étape du pool : il n'y a donc pas encore d'endroit où ranger un dossier partagé. Crée un pool depuis Stockage, puis un partage depuis Partages : ça prend deux minutes.",
+        "continue": "Continuer sans partage"
+      },
+      "user": {
+        "title": "Qui ouvrira tes fichiers ?",
+        "intro": "Crée le compte que l'on tape sur son ordinateur pour ouvrir les dossiers partagés. Ce n'est pas ton compte admin : l'admin gère le NAS, celui-ci ouvre seulement des dossiers.",
+        "submit": "Créer l'utilisateur",
+        "existing_one": "Un utilisateur du NAS existe déjà. Tu peux l'utiliser à la place.",
+        "existing_other": "Des utilisateurs du NAS existent déjà. Tu peux utiliser l'un d'eux à la place.",
+        "useExisting": "Utiliser {{name}}"
+      },
+      "share": {
+        "title": "Que veux-tu partager ?",
+        "intro": "Un partage est un dossier de ton pool que tes ordinateurs ouvrent par le réseau. Commence par un ; tu pourras en ajouter depuis Partages.",
+        "submit": "Créer le partage",
+        "preview": "Sur ton réseau",
+        "access": "{{user}} peut",
+        "existing": "{{user}} peut déjà ouvrir ces partages :",
+        "useExisting": "Utiliser {{name}}"
+      },
+      "connect": {
+        "title": "Ouvre-le depuis ton ordinateur.",
+        "intro": "Essaie maintenant. Le NAS voit la connexion dès que ton ordinateur ouvre le partage.",
+        "doneTitle": "Ça marche.",
+        "connected": "Connecté depuis {{machine}}",
+        "waiting": "En attente d'un ordinateur…",
+        "skipTest": "Passer le test",
+        "windowsTitle": "Windows",
+        "windows1": "Appuie sur Windows + E pour ouvrir l'Explorateur de fichiers.",
+        "windows2": "Clique dans la barre d'adresse, tape {{path}} puis Entrée.",
+        "windows3": "Connecte-toi en tant que {{user}} avec le mot de passe que tu viens de choisir.",
+        "macTitle": "macOS",
+        "mac1": "Dans le Finder, choisis Aller → Se connecter au serveur (⌘K).",
+        "mac2": "Tape {{url}} puis clique sur Se connecter.",
+        "mac3": "Connecte-toi en tant que {{user}} avec le mot de passe que tu viens de choisir."
+      }
+    },
+    "safety": {
+      "eyebrow": "Sécurité",
+      "title": "Tes fichiers sont déjà protégés.",
+      "intro": "La protection est active par défaut. Ajuste-la si tu veux, puis continue.",
+      "snapshotsBody": "Toutes les heures, NasBuster fige une copie en lecture seule de chaque partage, puis fait le tri : les dernières heures, puis une par jour, par semaine, par mois.",
+      "scrubBody": "Chaque pool est relu de bout en bout et comparé à ses checksums, pour trouver une corruption silencieuse avant que tu aies besoin des fichiers.",
+      "previousTitle": "« Versions précédentes » dans Windows",
+      "previousBody": "Clic droit sur un fichier ou un dossier d'un partage → Propriétés → Versions précédentes, puis choisis l'heure à récupérer.",
+      "survivesTitle": "Résiste aux erreurs et aux rançongiciels",
+      "survivesBody": "Un fichier supprimé par erreur, un dossier écrasé, un PC touché par un rançongiciel : les snapshots sont en lecture seule et hors de portée des ordinateurs du réseau.",
+      "notBackupTitle": "Pas une sauvegarde",
+      "notBackupBody": "Les snapshots vivent sur le NAS. Si le NAS lui-même tombe en panne, brûle ou est volé, ils partent avec lui. Garde ailleurs une copie de ce qui compte."
+    },
+    "done": {
+      "eyebrow": "Terminé",
+      "title": "Ton NAS est prêt.",
+      "bodyShare": "Ton pool garde tes données, {{share}} est ouvert à tes ordinateurs, et les snapshots tournent toutes les heures.",
+      "bodyShareUnnamed": "Ton pool garde tes données, ton partage est ouvert à tes ordinateurs, et les snapshots tournent toutes les heures.",
+      "bodyPool": "Ton pool est prêt et protégé par des snapshots horaires. Crée un partage depuis Partages pour l'ouvrir depuis tes ordinateurs.",
+      "bodyNoPool": "Ton Pi est passé en revue et ton compte est prêt. Crée un pool depuis Stockage, puis un partage depuis Partages.",
+      "next": "Ensuite : ajoute des applis comme Portainer ou Uptime Kuma depuis Applications, et règle tes alertes sur téléphone à tout moment dans Réglages → Notifications.",
+      "quote": "D'abord des fondations solides. Tes données vivent ici maintenant.",
+      "cta": "Aller au tableau de bord",
+      "finishing": "Finalisation…"
+    },
+    "phone": {
+      "eyebrow": "Facultatif · Alertes",
+      "title": "Sois prévenu sur ton téléphone.",
+      "intro": "Si un disque lâche à 3 h du matin, tu le sauras au petit-déjeuner. Ça prend deux minutes avec l'application gratuite ntfy. Tu peux aussi passer et le faire plus tard depuis Réglages.",
+      "turnOn": "Activer les alertes",
+      "notNow": "Pas maintenant",
+      "already": "Les alertes partent déjà vers le sujet ntfy {{topic}}.",
+      "checkPhone": "Regarde ton téléphone : le test devrait y être.",
+      "later": "Tu peux changer ça, ajouter un webhook ou tout désactiver à tout moment dans Réglages → Notifications."
+    },
+    "apps": {
+      "eyebrow": "Applications (facultatif)",
+      "title": "Des applis à côté de tes fichiers ?",
+      "intro": "Docker fait tourner des applis comme Portainer ou Uptime Kuma sur ton NAS. C'est facultatif : tu peux l'installer à tout moment depuis Applications.",
+      "notNow": "Pas maintenant",
+      "ready": "Docker est prêt.",
+      "readyBody": "Choisis une appli ci-dessous, ou plus tard depuis Applications.",
+      "started": "En cours d'installation : {{names}}",
+      "startedBody": "Les images se téléchargent en arrière-plan : les applis démarrent toutes seules, et Applications affiche leur état.",
+      "portainerSoon": "Dès que {{name}} tourne, son jeton de configuration s'affiche ci-dessous : ouvre-le et crée tout de suite son compte admin."
+    }
+  },
+  "checkNames": {
+    "model": "Modèle",
+    "arch": "Architecture",
+    "memory": "Mémoire",
+    "temperature": "Température",
+    "power": "Alimentation",
+    "usbPower": "Alimentation USB",
+    "throttling": "Bridage",
+    "bootDevice": "Démarrage",
+    "clock": "Horloge"
+  },
+  "checks": {
+    "model": {
+      "raspberry_pi": "{{model}}",
+      "other": "Pas un Raspberry Pi : {{model}}.",
+      "unknown": "Impossible d'identifier le matériel."
+    },
+    "arch": {
+      "64bit": "Système 64 bits ({{arch}}).",
+      "32bit": "Système 32 bits ({{arch}}).",
+      "unknown": "Impossible de déterminer l'architecture."
+    },
+    "memory": {
+      "ok": "{{bytes}} de mémoire.",
+      "low": "Seulement {{bytes}} de mémoire.",
+      "very_low": "Seulement {{bytes}} de mémoire.",
+      "unknown": "Impossible de lire la quantité de mémoire."
+    },
+    "temperature": {
+      "ok": "{{celsius}}, tout va bien.",
+      "warm": "{{celsius}}, il chauffe.",
+      "hot": "{{celsius}}, beaucoup trop chaud.",
+      "unknown": "Aucun capteur de température disponible."
+    },
+    "power": {
+      "ok": "Alimentation stable.",
+      "under_voltage_occurred": "Une sous-tension a eu lieu depuis le démarrage.",
+      "under_voltage_now": "Sous-tension en ce moment.",
+      "unknown": "Impossible de lire l'état de l'alimentation."
+    },
+    "usbPower": {
+      "full": "Ports USB à pleine puissance (1,6 A).",
+      "limited": "Ports USB limités à 600 mA : l'alimentation n'annonce pas 5 A."
+    },
+    "throttling": {
+      "none": "Aucun bridage.",
+      "occurred": "Le processeur a été bridé depuis le démarrage.",
+      "active": "Le processeur est bridé en ce moment.",
+      "unknown": "Impossible de lire l'état du bridage."
+    },
+    "bootDevice": {
+      "ssd": "Démarrage sur un SSD ({{device}}).",
+      "sd_card": "Démarrage sur une carte SD ({{device}}).",
+      "other": "Démarrage sur {{device}}.",
+      "unknown": "Impossible de déterminer le périphérique de démarrage."
+    },
+    "clock": {
+      "synced": "À l'heure d'internet.",
+      "not_synced": "Pas synchronisée avec l'heure d'internet.",
+      "unknown": "Impossible de lire l'état de l'horloge."
+    }
+  },
+  "checkAdvice": {
+    "unknown": "Impossible de lire cette information. Ça ne bloque rien.",
+    "model": {
+      "other": "NasBuster est testé sur Raspberry Pi 4 et 5. Un autre matériel peut fonctionner, sans garantie."
+    },
+    "arch": {
+      "32bit": "NasBuster a besoin d'un système 64 bits. Réinstalle avec Raspberry Pi OS Lite 64-bit."
+    },
+    "memory": {
+      "low": "Moins de 2 Go suffit pour partager des fichiers, mais laisse peu de place aux apps et à Docker.",
+      "very_low": "Moins de 1 Go, c'est trop peu pour un NAS fiable. Utilise un Pi avec au moins 2 Go."
+    },
+    "temperature": {
+      "warm": "Ajoute un dissipateur ou un ventilateur, et place le Pi dans un endroit aéré. La chaleur le ralentit.",
+      "hot": "Le Pi surchauffe et se ralentit pour survivre. Ajoute un refroidissement actif avant d'y stocker des données."
+    },
+    "power": {
+      "under_voltage_occurred": "L'alimentation a faibli à un moment. Utilise l'alimentation officielle Raspberry Pi et branche tes disques USB sur un hub alimenté : une alimentation trop faible est la première cause de disques corrompus.",
+      "under_voltage_now": "Le Pi manque de courant en ce moment : les disques peuvent décrocher en pleine écriture et corrompre les données. Passe à l'alimentation officielle et à un hub USB alimenté avant d'aller plus loin."
+    },
+    "usbPower": {
+      "limited": "Le Pi 5 ne donne toute leur puissance à ses ports USB qu'avec une alimentation qui annonce 5 A, comme l'officielle de 27 W. Les disques alimentés par le port USB peuvent décrocher en pleine charge. Utilise l'alimentation officielle, ou alimente les disques par un hub USB alimenté."
+    },
+    "throttling": {
+      "occurred": "Le Pi s'est ralenti plus tôt, à cause de la chaleur ou de l'alimentation. Vérifie le refroidissement et l'alimentation.",
+      "active": "Le Pi se ralentit en ce moment. Règle d'abord le refroidissement ou l'alimentation."
+    },
+    "bootDevice": {
+      "sd_card": "Les cartes SD s'usent sous les écritures répétées. Ça fonctionne, mais démarrer sur un SSD USB est plus fiable sur la durée."
+    },
+    "clock": {
+      "not_synced": "Un Pi n'a pas d'horloge sur pile : sans l'heure d'internet, il repart de l'heure de son dernier arrêt, et toutes les dates qu'il écrit (alertes, snapshots) sont fausses. Vérifie sa connexion réseau : l'horloge se règle seule quelques secondes après."
+    }
+  },
+  "disks": {
+    "role": {
+      "system": "Disque système — jamais touché",
+      "protected": "Protégé (mode labo)",
+      "in_use": "Utilisé",
+      "available": "Disponible"
+    },
+    "roleHint": {
+      "system": "Il porte le système. NasBuster n'y écrira jamais.",
+      "protected": "Le mode labo ne touche qu'aux disques virtuels du labo. Celui-ci est hors limites.",
+      "in_use": "Il contient des partitions ou des données. Il ne sera jamais utilisé sans ton accord explicite.",
+      "available": "Vierge. Prêt à rejoindre un pool de stockage."
+    },
+    "transport": {
+      "usb": "USB",
+      "sata": "SATA",
+      "nvme": "NVMe",
+      "sd_card": "Carte SD",
+      "virtual": "Virtuel",
+      "loop": "Loop",
+      "unknown": "Bus inconnu"
+    },
+    "usage": {
+      "mounted": "Monté",
+      "filesystem": "Système de fichiers",
+      "md_member": "Membre RAID (mdadm)",
+      "btrfs_member": "Membre Btrfs",
+      "lvm_member": "Membre LVM",
+      "crypto": "Chiffré",
+      "swap": "Swap",
+      "partition_table": "Table de partitions",
+      "duplicate_id": "Même identifiant qu'un autre disque : impossible de les distinguer, donc aucun des deux n'est utilisable. Branchez-en un seul, ou prenez des disques aux numéros de série différents."
+    },
+    "warning": {
+      "duplicate_serial": "Un autre disque annonce le même numéro de série. Certains bridges USB et certaines clés font ça. Les disques qui ont un WWN restent distingués ; sinon, aucun des deux n'est utilisable.",
+      "no_stable_id": "Ni WWN ni numéro de série : ce disque ne peut pas être identifié de façon fiable d'un redémarrage à l'autre.",
+      "usb_storage_driver": "Utilise le pilote usb-storage, plus lent, au lieu d'UAS. Les performances seront limitées.",
+      "usb2_link": "Branché à la vitesse de l'USB 2 (480 Mb/s). Si c'est un disque USB 3, branche-le sur un port bleu : sur un Pi 5, les deux ports bleus sont l'un au-dessus de l'autre."
+    },
+    "spinning": "Disque dur",
+    "solidState": "SSD",
+    "removable": "Amovible",
+    "stableId": "Identifiant stable",
+    "device": "Périphérique",
+    "serial": "N° de série",
+    "usbDriver": "Pilote USB",
+    "usbBridge": "Bridge",
+    "uas": "UAS, rapide",
+    "usbStorage": "usb-storage, plus lent",
+    "partitions": "Partitions",
+    "partitionLine": "{{name}} · {{size}} · {{fstype}}",
+    "noFs": "aucun système de fichiers",
+    "mountedAt": "Monté sur",
+    "usageTitle": "Contenu",
+    "available_one": "{{count}} disque disponible pour un pool",
+    "available_other": "{{count}} disques disponibles pour un pool",
+    "count_one": "{{count}} disque",
+    "count_other": "{{count}} disques",
+    "warnings_one": "{{count}} avertissement",
+    "warnings_other": "{{count}} avertissements",
+    "loading": "Recherche des disques…",
+    "loadFailed": "La liste des disques n'a pas pu être chargée.",
+    "empty": {
+      "title": "Aucun disque pour l'instant.",
+      "body": "Branche un disque sur le Pi (idéalement via un hub USB alimenté), puis actualise."
+    },
+    "bus": "Bus",
+    "found": {
+      "partition": "une partition",
+      "holder": "un périphérique qui l'utilise (RAID, LVM ou chiffrement)",
+      "unknown": "des données que NasBuster ne sait pas identifier",
+      "table": "une table de partitions ({{type}})",
+      "signature": "des données existantes ({{type}})"
+    },
+    "usbStick": "Clé USB"
+  },
+  "smart": {
+    "button": "SMART",
+    "hide": "Masquer SMART",
+    "loading": "Lecture des données SMART…",
+    "title": "Santé SMART",
+    "overall": "Auto-diagnostic",
+    "passed": "Réussi",
+    "failed": "Échoué",
+    "temperature": "Température",
+    "powerOnHours": "Allumé depuis",
+    "deviceType": "Type",
+    "attributes": "Attributs critiques",
+    "attributeId": "ID",
+    "attributeName": "Attribut",
+    "attributeRaw": "Valeur brute",
+    "attributeStatus": "État",
+    "noAttributes": "Aucun attribut critique remonté.",
+    "attr": {
+      "5": "Secteurs réalloués",
+      "187": "Erreurs non corrigibles signalées",
+      "197": "Secteurs en attente",
+      "198": "Secteurs non corrigibles hors ligne",
+      "199": "Erreurs CRC de l'interface"
+    },
+    "attrWarn": "Supérieur à zéro : surveille ce disque et vérifie qu'il est sauvegardé.",
+    "attrCrc": "Les erreurs CRC viennent en général d'un câble ou d'un bridge USB défaillant, pas du disque lui-même.",
+    "nvme": {
+      "title": "Santé NVMe",
+      "percentageUsed": "Usure",
+      "mediaErrors": "Erreurs média",
+      "criticalWarning": "Alerte critique",
+      "availableSpare": "Réserve disponible"
+    },
+    "unavailable": {
+      "title": "SMART n'est pas disponible pour ce disque.",
+      "usb_bridge_unsupported": "Son bridge USB ne laisse pas passer les commandes SMART. Un boîtier UAS compatible SAT le fait en général.",
+      "not_supported": "Ce périphérique ne gère pas SMART.",
+      "not_installed": "smartmontools n'est pas installé sur le Pi.",
+      "error": "smartctl a échoué en lisant ce disque."
+    }
+  },
+  "login": {
+    "eyebrow": "Connexion",
+    "title": "Connexion.",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "submitting": "Connexion…",
+    "rateLimited": "Trop de tentatives. Réessaie dans {{seconds}} s.",
+    "rateLimitOver": "Tu peux réessayer maintenant.",
+    "sessionExpired": "Ta session a expiré. Reconnecte-toi.",
+    "forgot": {
+      "link": "Mot de passe oublié ?",
+      "title": "Nouveau mot de passe admin",
+      "intro": "Prouve que ce Pi est à toi avec son propre compte, celui choisi dans Raspberry Pi Imager. Choisis ensuite un nouveau mot de passe pour le NAS.",
+      "machineHint": "Un compte du groupe sudo. NasBuster ne garde jamais son mot de passe.",
+      "admin": "Administrateur du NAS",
+      "adminRequired": "Dis quel administrateur.",
+      "admins": "Administrateurs : {{names}}",
+      "newPassword": "Nouveau mot de passe du NAS",
+      "confirm": "Retape-le",
+      "sessionsEnd": "Toutes les sessions ouvertes de ce compte se ferment. Tu es connecté juste après.",
+      "submit": "Changer le mot de passe",
+      "submitting": "Vérification…",
+      "back": "Retour à la connexion",
+      "doneTitle": "Mot de passe changé.",
+      "doneBody": "Ton identifiant est {{username}}. Garde le nouveau mot de passe en lieu sûr, dans un gestionnaire de mots de passe par exemple.",
+      "closed": "La réinitialisation depuis cet écran est coupée sur ce NAS.",
+      "consoleBody": "Sur le Pi lui-même, ou en SSH, tape :",
+      "consoleHint": "La commande demande deux fois le nouveau mot de passe, sans l'afficher. Ajoute le nom de l'admin après la commande s'il y en a plusieurs."
+    }
+  },
+  "dashboard": {
+    "eyebrow": "Tableau de bord",
+    "summary": {
+      "loading": "Bilan en cours…",
+      "allGood": "Tout fonctionne.",
+      "attention_one": "{{count}} point demande ton attention.",
+      "attention_other": "{{count}} points demandent ton attention."
+    },
+    "metricsTitle": "En direct",
+    "healthTitle": "Santé",
+    "disksTitle": "Disques",
+    "poolsTitle": "Stockage",
+    "poolsFree": "libres sur {{total}}",
+    "poolsCount_one": "{{count}} pool",
+    "poolsCount_other": "{{count}} pools",
+    "poolFree": "{{free}} libres sur {{total}}",
+    "noPool": {
+      "title": "Pas encore de pool.",
+      "body": "Tes disques vierges attendent. Crée un pool pour commencer à stocker des données."
+    }
+  },
+  "metrics": {
+    "cpu": "Processeur",
+    "memory": "Mémoire",
+    "temperature": "Température",
+    "uptime": "En marche depuis",
+    "load": "Charge {{load}}",
+    "ofTotal": "sur {{total}} · {{percent}} %",
+    "noSensor": "Pas de capteur",
+    "since": "Depuis le {{date}}",
+    "window": "{{minutes}} dernières min",
+    "now": "maintenant",
+    "waiting": "En attente des données…",
+    "stream": {
+      "connecting": "Connexion",
+      "live": "En direct",
+      "reconnecting": "Reconnexion"
+    },
+    "sparklineLabel": "{{label}}, {{minutes}} dernières minutes : de {{min}} à {{max}}, actuellement {{current}}."
+  },
+  "system": {
+    "eyebrow": "Système",
+    "title": "Système.",
+    "infoTitle": "Cette machine",
+    "healthTitle": "Santé",
+    "loadFailed": "Les informations système n'ont pas pu être chargées.",
+    "fields": {
+      "hostname": "Nom de la machine",
+      "model": "Modèle",
+      "raspberryPi": "Raspberry Pi",
+      "os": "Système d'exploitation",
+      "kernel": "Noyau",
+      "arch": "Architecture",
+      "cpuCores": "Cœurs processeur",
+      "memory": "Mémoire",
+      "uptime": "En marche depuis",
+      "timezone": "Fuseau horaire",
+      "bootDevice": "Démarrage",
+      "version": "NasBuster"
+    },
+    "bootKind": {
+      "sd_card": "Carte SD",
+      "ssd": "SSD",
+      "other": "Autre",
+      "unknown": "Inconnu"
+    }
+  },
+  "storage": {
+    "eyebrow": "Stockage",
+    "title": "Stockage.",
+    "intro": "Tes pools, et tous les disques que le Pi voit, repérés par leur identifiant stable.",
+    "poolsTitle": "Pools",
+    "disksTitle": "Disques",
+    "newPool": "Nouveau pool",
+    "createPool": "Créer un pool",
+    "poolsLoadFailed": "Les pools n'ont pas pu être chargés.",
+    "empty": {
+      "title": "Pas encore de pool.",
+      "body": "Un pool réunit des disques vierges en un seul espace de stockage protégé.",
+      "ready_one": "{{count}} disque vierge est prêt.",
+      "ready_other": "{{count}} disques vierges sont prêts.",
+      "noneReady": "Pas encore de disque vierge : branches-en un, ou efface plus bas un disque dont tu n'as plus besoin. NasBuster n'efface un disque que si tu le lui demandes."
+    }
+  },
+  "activity": {
+    "eyebrow": "Activité",
+    "title": "Activité.",
+    "intro": "Les {{count}} dernières actions enregistrées sur ce NAS, de la plus récente à la plus ancienne.",
+    "loadFailed": "Le journal d'activité n'a pas pu être chargé.",
+    "empty": "Rien d'enregistré pour l'instant.",
+    "columns": {
+      "when": "Quand",
+      "actor": "Qui",
+      "action": "Action",
+      "target": "Cible",
+      "result": "Résultat",
+      "from": "Depuis"
+    },
+    "result": {
+      "ok": "Réussi",
+      "failed": "Échoué"
+    },
+    "system": "système",
+    "actions": {
+      "auth": {
+        "login": "Connexion",
+        "login_failed": "Connexion refusée",
+        "logout": "Déconnexion",
+        "language": "Changement de langue"
+      },
+      "setup": {
+        "admin": "Création du compte administrateur"
+      },
+      "onboarding": {
+        "update": "Progression de la configuration enregistrée",
+        "completed": "Configuration terminée"
+      },
+      "system": {
+        "identity": "Changement du nom et du fuseau horaire",
+        "certificate_renew": "A renouvelé le certificat HTTPS"
+      },
+      "disk": {
+        "smart": "Lecture de la santé SMART",
+        "wipe": "A effacé un disque"
+      },
+      "pool": {
+        "create": "A créé un pool de stockage",
+        "scrub": "A lancé un scrub",
+        "mount_degraded": "A monté un pool en mode dégradé",
+        "replace": "A remplacé un disque",
+        "restore_redundancy": "A restauré la redondance",
+        "clear_errors": "A remis les compteurs d'erreurs à zéro",
+        "destroy": "A détruit un pool",
+        "import": "A importé un pool",
+        "resume": "A repris un disque revenu",
+        "grow": "A agrandi un pool à la taille de ses disques",
+        "reassemble": "A réassemblé un pool à parité",
+        "repair_parity": "A lancé la réparation de la parité"
+      },
+      "user": {
+        "create": "A créé un utilisateur du NAS",
+        "password": "A changé le mot de passe d'un utilisateur du NAS",
+        "delete": "A supprimé un utilisateur du NAS"
+      },
+      "share": {
+        "create": "A créé un partage",
+        "access": "A changé qui peut ouvrir un partage",
+        "delete": "A supprimé un partage",
+        "time_machine": "A modifié Time Machine sur un partage",
+        "recycle": "A modifié la corbeille d'un partage"
+      },
+      "snapshot": {
+        "create": "A pris un snapshot",
+        "delete": "A supprimé un snapshot",
+        "auto": "Snapshots automatiques"
+      },
+      "protection": {
+        "update": "A changé les réglages de protection"
+      },
+      "smb": {
+        "sessions": "A lu les connexions réseau"
+      },
+      "alert": {
+        "raised": "Alerte déclenchée",
+        "resolved": "Alerte résolue",
+        "ack": "A marqué une alerte comme vue"
+      },
+      "notifications": {
+        "update": "A changé les réglages de notification",
+        "test": "A envoyé une notification de test"
+      },
+      "demo": {
+        "fault": "A simulé une panne (démo)"
+      },
+      "apps": {
+        "engine_install": "A installé Docker",
+        "engine_remove": "A désinstallé Docker"
+      },
+      "app": {
+        "create": "A installé une appli",
+        "update": "A mis à jour une appli",
+        "start": "A démarré une appli",
+        "stop": "A arrêté une appli",
+        "restart": "A redémarré une appli",
+        "remove": "A retiré une appli"
+      },
+      "config": {
+        "backup": "A sauvegardé la configuration",
+        "backup_scheduler": "Sauvegarde automatique de la configuration",
+        "restore": "A restauré la configuration"
+      },
+      "import": {
+        "mount": "A ouvert un disque en lecture seule",
+        "copy": "A copié des données depuis un disque",
+        "unmount": "A éjecté un disque"
+      },
+      "journal": {
+        "persistent": "A changé le réglage du journal système"
+      }
+    },
+    "scheduler": "Planificateur",
+    "detail": {
+      "automatic": "automatique",
+      "unplug": "débranché",
+      "replug": "rebranché",
+      "errors": "erreurs d'écriture",
+      "destroyed": "détruit, disques effacés",
+      "forgotten": "oublié, disques disparus",
+      "app": {
+        "remove": {
+          "data_kept": "données conservées",
+          "data_deleted": "données supprimées"
+        }
+      },
+      "apps": {
+        "engine_remove": {
+          "data_kept": "données conservées",
+          "data_deleted": "données supprimées"
+        }
+      },
+      "share": {
+        "time_machine": {
+          "on": "activé",
+          "off": "désactivé"
+        },
+        "recycle": {
+          "off": "désactivée"
+        }
+      },
+      "restoreCounts": "utilisateurs restaurés : {{users}} · conflits : {{conflicts}}",
+      "foreign": "rendu étranger",
+      "usbkey": "transformé en clé USB",
+      "import": {
+        "mount": {
+          "read-only": "lecture seule"
+        }
+      },
+      "recycleDays_one": "{{count}} jour",
+      "recycleDays_other": "{{count}} jours",
+      "journal": {
+        "persistent": {
+          "on": "gardé après un redémarrage",
+          "off": "en mémoire seulement"
+        }
+      }
+    }
+  },
+  "certificate": {
+    "fingerprint": "Empreinte SHA-256",
+    "names": "Valable pour",
+    "validUntil": "Valable jusqu'au",
+    "howToCheck": "Pour t'assurer que tu es bien sur ton NAS et pas sur un imposteur, ouvre le certificat depuis la barre d'adresse de ton navigateur (Non sécurisé → Certificat) et compare son empreinte SHA-256 avec celle-ci. Sur le Pi, sudo nasbusterd -print-tls-fingerprint affiche la même valeur.",
+    "outdated": "Le certificat ne porte pas encore le nom {{hostname}}. Il est renouvelé au prochain redémarrage du NAS, ou tout de suite avec le bouton ci-dessous.",
+    "renew": "Renouveler le certificat",
+    "renewWarning": "Ton navigateur avertira encore une fois, comme à la première visite : recharge la page et accepte le nouveau certificat. Son empreinte change ; le NAS garde la même clé.",
+    "renewConfirm": "Renouveler maintenant",
+    "renewing": "Renouvellement…",
+    "renewed": "Certificat renouvelé. Recharge la page, accepte-le dans ton navigateur, puis compare sa nouvelle empreinte.",
+    "reload": "Recharger la page",
+    "disabled": "HTTPS est désactivé : ce NAS n'écoute que sur cet ordinateur (démo)."
+  },
+  "settings": {
+    "eyebrow": "Réglages",
+    "title": "Réglages.",
+    "languageTitle": "Langue",
+    "languageHint": "Enregistrée sur ton compte et utilisée sur tous tes appareils.",
+    "themeTitle": "Thème",
+    "themeHint": "Enregistré dans ce navigateur uniquement.",
+    "accountTitle": "Compte",
+    "signedInAs": "Connecté en tant que",
+    "role": "Rôle",
+    "memberSince": "Membre depuis",
+    "roles": {
+      "admin": "Administrateur"
+    },
+    "protectionTitle": "Protection",
+    "protectionHint": "Les snapshots de chaque partage et les scrubs réguliers de chaque pool tournent tout seuls. Leurs passages apparaissent dans Activité.",
+    "notificationsTitle": "Notifications",
+    "notificationsHint": "Où vont les alertes quand quelque chose a besoin de toi : une fois au début, si ça s'aggrave, et quand c'est réglé.",
+    "backupTitle": "Sauvegarde de la configuration",
+    "backupHint": "Chaque nuit, le NAS enregistre sa configuration (utilisateurs et leurs mots de passe, partages, protection, applications) sur chaque pool, et garde ses 7 dernières. Celles d'une autre installation, d'avant une nouvelle carte SD par exemple, ne sont jamais effacées. Si la carte SD meurt : réinstalle, importe les pools (Stockage), puis restaure depuis ici la sauvegarde de l'installation précédente.",
+    "certificateTitle": "Certificat HTTPS",
+    "certificateHint": "Le NAS chiffre sa connexion avec un certificat qu'il signe lui-même. C'est pour ça que ton navigateur avertit : il ne peut pas le vérifier seul. Toi, tu peux.",
+    "journalTitle": "Journal système",
+    "journalHint": "Raspberry Pi OS garde le journal système en mémoire seulement : il est perdu à chaque redémarrage, avec la raison d'une panne. NasBuster le garde sur disque, plafonné à 64 Mo.",
+    "password": {
+      "title": "Mot de passe",
+      "current": "Mot de passe actuel",
+      "currentRequired": "Tape ton mot de passe actuel.",
+      "new": "Nouveau mot de passe",
+      "confirm": "Retape-le",
+      "submit": "Changer le mot de passe",
+      "submitting": "Changement…",
+      "done_zero": "Mot de passe changé.",
+      "done_one": "Mot de passe changé. {{count}} autre session a été fermée.",
+      "done_other": "Mot de passe changé. {{count}} autres sessions ont été fermées."
+    },
+    "resetDoor": {
+      "title": "Mot de passe oublié",
+      "switch": "« Mot de passe oublié ? » sur l'écran de connexion",
+      "on": "Activé : le compte du Pi (groupe sudo) peut choisir un nouveau mot de passe admin depuis l'écran de connexion. Tu reçois une notification à chaque fois.",
+      "off": "Coupé : seule la commande sur le Pi lui-même peut choisir un nouveau mot de passe admin."
+    }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Rien ici.",
+    "back": "Retour au tableau de bord"
+  },
+  "errors": {
+    "certificate": {
+      "disabled": "HTTPS n'est pas activé sur ce NAS."
+    },
+    "generic": "Une erreur est survenue. Réessaie.",
+    "genericWithStatus": "Une erreur est survenue (HTTP {{status}}). Réessaie.",
+    "network": {
+      "unreachable": "Le NAS ne répond pas. Vérifie qu'il est allumé et connecté."
+    },
+    "auth": {
+      "invalid_credentials": "Nom d'utilisateur ou mot de passe incorrect.",
+      "rate_limited": "Trop de tentatives. Attends {{retryAfter}} secondes.",
+      "required": "Ta session a expiré. Reconnecte-toi.",
+      "wrong_password": "Ce n'est pas ton mot de passe actuel.",
+      "invalid_machine_account": "Utilisateur ou mot de passe faux, ou ce compte ne peut pas administrer le Pi (il doit faire partie du groupe sudo).",
+      "machine_check_unavailable": "Le compte du Pi ne peut pas être vérifié pour le moment. Utilise la commande sur le Pi à la place.",
+      "proof_required": "Entre le compte du Pi.",
+      "reset_disabled": "La réinitialisation depuis l'écran de connexion est coupée sur ce NAS.",
+      "setup_needed": "Aucun administrateur pour l'instant : termine d'abord la configuration.",
+      "unknown_admin": "Aucun administrateur à ce nom.",
+      "choose_admin": "Il y a plusieurs administrateurs : dis lequel."
+    },
+    "csrf": {
+      "invalid": "Ton jeton de sécurité a expiré. Recharge la page et réessaie."
+    },
+    "request": {
+      "unsupported_media_type": "La requête a été refusée (format non pris en charge).",
+      "not_found": "Route d'API inconnue. L'interface et le service ne sont peut-être plus synchronisés : recharge la page.",
+      "too_large": "La requête était trop volumineuse."
+    },
+    "setup": {
+      "already_done": "La configuration est déjà faite. Connecte-toi.",
+      "invalid_code": "Ce code de setup est faux. Vérifie la sortie de l'installeur ou le journal du service.",
+      "invalid_machine_account": "Utilisateur ou mot de passe faux, ou ce compte ne peut pas administrer le Pi (il doit faire partie du groupe sudo).",
+      "machine_check_unavailable": "Le compte du Pi ne peut pas être vérifié pour le moment. Utilise le code de setup à la place.",
+      "proof_required": "Entre le compte du Pi, ou le code de setup."
+    },
+    "validation": {
+      "username": "Nom d'utilisateur invalide : 3 à 32 minuscules, chiffres, - ou _, en commençant par une lettre.",
+      "password_too_short": "Mot de passe trop court : {{min}} caractères minimum.",
+      "language": "Langue non prise en charge.",
+      "step": "Étape de configuration inconnue.",
+      "hostname": "Nom de machine invalide : 1 à 63 minuscules, chiffres ou tirets, sans tiret au début ni à la fin.",
+      "timezone": "Fuseau horaire inconnu.",
+      "json": "La requête était mal formée.",
+      "limit": "Limite invalide.",
+      "layout": "Disposition de protection inconnue.",
+      "disks": "Un disque est invalide ou listé deux fois.",
+      "disk_count": "Cette disposition demande entre {{min}} et {{max}} disques.",
+      "disk_count_exact_one": "Cette disposition demande exactement {{count}} disque.",
+      "disk_count_exact_other": "Cette disposition demande exactement {{count}} disques.",
+      "disk_count_atLeast_one": "Cette disposition demande au moins {{count}} disque.",
+      "disk_count_atLeast_other": "Cette disposition demande au moins {{count}} disques.",
+      "pool_name": "Nom de pool invalide : 2 à 24 lettres minuscules ou chiffres, en commençant par une lettre, sans tiret.",
+      "confirm": "La confirmation ne correspond pas : tape le nom exactement comme affiché.",
+      "user_name": "Nom d'utilisateur invalide : 2 à 32 minuscules, chiffres, - ou _, en commençant par une lettre, et pas un compte système.",
+      "user_password": "Mot de passe invalide : {{min}} à {{max}} caractères, sur une seule ligne.",
+      "share_name": "Nom de partage invalide : jusqu'à 20 minuscules, chiffres, - ou _, et pas un nom réservé par Samba.",
+      "access_mode": "L'accès doit être en lecture et écriture ou en lecture seule.",
+      "access": "Un utilisateur est cité deux fois.",
+      "protection": "Une rétention ou l'intervalle du scrub est hors limites.",
+      "url": "Cette URL n'est pas acceptée : https est obligatoire (http seulement sur le réseau local), sans nom d'utilisateur ni mot de passe.",
+      "token": "Le jeton est trop long (256 caractères maximum).",
+      "days": "Nombre de jours invalide.",
+      "disk_id": "Identifiant de disque invalide.",
+      "fault": "Panne inconnue.",
+      "url_ntfy": "L'URL ntfy n'est pas acceptée : https obligatoire (http seulement sur le réseau local), sans nom d'utilisateur ni mot de passe.",
+      "url_webhook": "L'URL du webhook n'est pas acceptée : https obligatoire (http seulement sur le réseau local), sans nom d'utilisateur ni mot de passe.",
+      "app_name": "Nom d'appli invalide : lettres minuscules, chiffres et tirets, en commençant par une lettre, 30 caractères au plus.",
+      "time_machine": "Taille maximale Time Machine invalide (un nombre entier de Gio, seulement avec Time Machine activé).",
+      "tail": "Nombre de lignes de journal invalide.",
+      "recycle": "La corbeille garde les fichiers supprimés de 1 à 365 jours."
+    },
+    "helper": {
+      "unavailable": "L'assistant système (nbhelper) ne tourne pas, et cette action en a besoin.",
+      "failed": "L'assistant système n'a pas pu terminer l'opération.",
+      "invalid_args": "Ce dossier ne peut pas être copié (c'est un fichier, ou il n'existe plus). Choisis-en un autre."
+    },
+    "storage": {
+      "disk_not_found": "Ce disque n'est plus branché.",
+      "unavailable": "Les outils disque (lsblk…) sont absents du Pi.",
+      "disk_too_small": "Un disque est trop petit : {{minBytes}} minimum.",
+      "disk_not_available": "{{disk}} ne peut pas être utilisé : {{role}}. Seuls les disques vierges peuvent rejoindre un pool.",
+      "disk_not_available_unknown": "Un des disques n'est plus vierge. Actualise la liste et choisis à nouveau.",
+      "pool_exists": "Un pool porte déjà ce nom. Choisis-en un autre.",
+      "pool_not_found": "Ce pool n'existe plus.",
+      "pool_not_mounted": "Le pool n'est pas monté. Monte-le d'abord (en mode dégradé si un disque manque).",
+      "disk_not_available_found": "{{disk}} n'est pas vierge : la dernière vérification avant écriture y a trouvé {{found}}. Actualise la liste et choisis à nouveau.",
+      "disk_residual": "{{disk}} semble vierge, mais {{found}} y est encore caché : un autre outil n'a retiré que sa table de partitions. NasBuster s'est arrêté avant de formater, pour que rien ne soit perdu par erreur.",
+      "disk_too_small_required": "Ce disque est trop petit : il faut au moins {{requiredBytes}}.",
+      "disk_not_available_taken": "{{disk}} n'est pas vierge, ou appartient déjà au pool.",
+      "disk_protected": "Ce disque est protégé : NasBuster n'efface jamais le disque système.",
+      "disk_mounted": "Ce disque est en service : il est monté sur {{mount}}. Arrête d'abord ce qui l'utilise.",
+      "disk_busy": "Le système tient ce disque ({{holder}}) : un array RAID, LVM ou un chiffrement l'utilise.",
+      "disk_in_pool": "Ce disque appartient au pool {{pool}}, peut-être comme la copie qui reste. Ne l'efface que quand le pool n'en a plus besoin.",
+      "pool_mounted": "Le pool est déjà monté.",
+      "no_missing_disk": "Tous les disques sont revenus : redémarre plutôt le NAS, le pool démarrera normalement.",
+      "member_not_found": "Ce disque n'est pas membre du pool, ou le disque à remplacer ne peut pas être identifié.",
+      "member_healthy": "Ce disque est sain : dans un pool à parité, on ne remplace qu'un disque absent ou défaillant.",
+      "pool_busy": "Une autre opération est déjà en cours sur ce pool. Attends qu'elle se termine, puis réessaie.",
+      "disk_missing": "Un disque manque encore : remplace-le d'abord.",
+      "scrub_required": "Lance d'abord un scrub : les compteurs ne se remettent à zéro qu'après un scrub propre.",
+      "pool_has_shares": "Le pool a encore des partages : {{shares}}. Supprime-les d'abord.",
+      "pool_not_empty": "Le pool contient encore des fichiers hors de ses partages, par exemple les données de Docker ou d'une appli (éléments à sa racine : {{entries}}). Retire-les d'abord.",
+      "pool_in_use": "Un autre programme utilise encore les fichiers du pool : {{holders}}. Rien n'a été modifié et le pool est toujours monté. Arrête ce programme (ou redémarre le NAS), puis réessaie.",
+      "pool_incomplete": "Seuls {{present}} des {{expected}} disques du pool sont branchés : rebranche d'abord ceux qui manquent.",
+      "nothing_to_resume": "Aucun disque n'attend d'être repris : le pool utilise déjà tous ses disques.",
+      "pool_broken": "Ce pool a perdu plus de disques qu'il n'en tolère : ses disques doivent être réassemblés tous ensemble, pas repris un par un. Rebranche-les tous et ne touche à rien.",
+      "scrub_not_running": "Aucun scrub ne tourne.",
+      "scrub_not_stopped": "Aucun scrub arrêté à reprendre.",
+      "cannot_reassemble": "Ce pool ne peut pas être réassemblé pour l'instant.",
+      "cannot_reassemble_not_broken": "Ce pool n'a pas besoin d'être réassemblé : son array tourne.",
+      "cannot_reassemble_missing_disks": "Tous les disques de ce pool ne sont pas encore revenus. Rebranche-les tous, puis réessaie.",
+      "cannot_reassemble_roles": "Les disques ne s'accordent pas sur leurs places dans l'array (un disque étranger, ou un ancien membre ?) : NasBuster ne force rien.",
+      "cannot_reassemble_events_gap": "Un disque est trop en retard sur les autres pour être forcé sans risque : le pool demande une récupération manuelle.",
+      "cannot_reassemble_changed": "Les disques ont bougé pendant le réassemblage (un disque rebranché ?). Rien n'a été forcé : vérifie qu'ils sont tous branchés, puis réessaie."
+    },
+    "internal": {
+      "error": "Le NAS a rencontré une erreur interne. Le détail est dans le journal du service."
+    },
+    "users": {
+      "exists": "Cet utilisateur existe déjà.",
+      "name_taken": "Ce nom appartient à un compte du système. NasBuster ne se l'approprie jamais : choisis-en un autre.",
+      "not_found": "Cet utilisateur n'existe plus."
+    },
+    "shares": {
+      "exists": "Un partage porte déjà ce nom.",
+      "not_found": "Ce partage n'existe plus."
+    },
+    "snapshots": {
+      "not_found": "Ce snapshot n'existe plus.",
+      "exists": "Un snapshot vient d'être pris à cette même seconde. Attends un instant et réessaie."
+    },
+    "alerts": {
+      "not_found": "Cette alerte n'existe plus."
+    },
+    "apps": {
+      "compose_invalid": "Docker Compose a refusé ce fichier :",
+      "engine_missing": "Docker n'est pas installé ou il est arrêté.",
+      "engine_installed": "Docker est déjà installé.",
+      "job_running": "Un déploiement ou une installation est déjà en cours : attends qu'il se termine.",
+      "exists": "Une appli porte déjà ce nom.",
+      "not_found": "Cette appli n'existe pas (ou plus).",
+      "template_not_found": "Cette appli n'est pas dans le catalogue.",
+      "engine_in_use": "Docker est encore utilisé.",
+      "engine_in_use_apps": "Retire d'abord ces applis : {{apps}}.",
+      "engine_in_use_containers_one": "{{count}} autre conteneur existe encore (une appli orpheline, ou créé à la main ou avec Portainer). Supprime-le d'abord.",
+      "engine_in_use_containers_other": "{{count}} autres conteneurs existent encore (applis orphelines, ou créés à la main ou avec Portainer). Supprime-les d'abord.",
+      "not_orphan": "Cette appli est enregistrée : passe par ses propres actions."
+    },
+    "backup": {
+      "no_pool": "Aucun pool monté pour l'enregistrer : la sauvegarde est rangée sur les pools.",
+      "invalid": "Cette sauvegarde est illisible ou incomplète. Choisis-en une autre (une autre nuit, ou sa copie sur un autre pool).",
+      "unavailable": "Indisponible sur ce NAS : en mode démo, rien ne pourrait redémarrer le service du NAS."
+    },
+    "import": {
+      "not_mounted": "Le disque n'est plus ouvert : reviens en arrière et ouvre-le à nouveau."
+    }
+  },
+  "layouts": {
+    "single": {
+      "title": "Simple",
+      "tech": "Btrfs single",
+      "body": "Un disque, tout son espace. S'il tombe en panne, tout ce qu'il contient est perdu. La corruption est détectée, pas réparée. Convient à des copies de données gardées ailleurs."
+    },
+    "mirror": {
+      "title": "Miroir",
+      "tech": "Btrfs RAID1",
+      "body": "Chaque fichier est écrit sur deux disques. Un disque peut tomber en panne sans rien perdre, et une copie abîmée se répare toute seule à partir de la bonne. Tu gardes environ la moitié de l'espace total."
+    },
+    "raid10": {
+      "title": "RAID 10",
+      "tech": "Btrfs RAID10",
+      "body": "Miroir et entrelacement sur quatre disques ou plus. Un disque peut tomber en panne, et les copies abîmées se réparent toutes seules. Plus rapide qu'un miroir, toujours environ la moitié de l'espace total."
+    },
+    "parity1": {
+      "title": "Parité",
+      "tech": "mdadm RAID5 + Btrfs",
+      "body": "L'équivalent d'un disque sert à la parité : n'importe quel disque peut tomber en panne. Plus d'espace utile qu'un miroir, mais la corruption est seulement détectée, pas réparée."
+    },
+    "parity2": {
+      "title": "Double parité",
+      "tech": "mdadm RAID6 + Btrfs",
+      "body": "L'équivalent de deux disques sert à la parité : deux disques peuvent tomber en panne en même temps. La corruption est seulement détectée, pas réparée."
+    }
+  },
+  "pools": {
+    "survivesNone": "Aucun disque ne peut tomber en panne",
+    "survives_one": "Résiste à la panne de {{count}} disque",
+    "survives_other": "Résiste à la panne de {{count}} disques",
+    "selfHealing": "Auto-réparation",
+    "selfHealingLong": "Réparée automatiquement",
+    "detectOnly": "Détection seule",
+    "detectOnlyLong": "Détectée, pas réparée",
+    "disksExact_one": "{{count}} disque",
+    "disksExact_other": "{{count}} disques",
+    "disksMin_one": "{{count}} disque ou plus",
+    "disksMin_other": "{{count}} disques ou plus",
+    "warning": {
+      "no_redundancy": "Aucune redondance : si ce disque tombe en panne, ses données sont perdues. Garde une sauvegarde ailleurs.",
+      "mixed_sizes": "Disques de tailles différentes : une partie des plus grands disques ne peut pas être utilisée.",
+      "parity_detects_only": "La parité détecte la corruption mais ne peut pas la réparer. Un scrub nommera les fichiers abîmés ; restaure-les depuis une sauvegarde."
+    },
+    "health": {
+      "ok": "Sain",
+      "degraded": "Dégradé",
+      "errors": "Erreurs",
+      "outOfService": "Hors service",
+      "unmounted": "Non monté",
+      "unknown": "Inconnu"
+    },
+    "healthHint": {
+      "degraded": "Un disque manque ou l'array est incomplet : tes données ne sont plus protégées. Rebranche ou remplace le disque.",
+      "errors": "Le système de fichiers a relevé des erreurs de lecture, d'écriture ou de checksum. Lance un scrub et vérifie la santé SMART des disques.",
+      "unmounted": "Le pool n'est pas monté : ses données sont inaccessibles.",
+      "unknown": "La santé du pool n'a pas pu être lue."
+    },
+    "free": "libres",
+    "usedOf": "{{used}} utilisés sur {{total}}",
+    "percentUsed": "{{percent}} % utilisés",
+    "almostFull": "Presque plein",
+    "gettingFull": "Se remplit",
+    "capacityLabel": "{{name}} : {{used}} utilisés sur {{total}}, {{free}} libres",
+    "mountPoint": "Point de montage",
+    "members": "Disques",
+    "array": "Array",
+    "scrub": "Scrub",
+    "created": "Créé",
+    "arrayLine_one": "{{level}} · {{count}} disque actif sur {{expected}}",
+    "arrayLine_other": "{{level}} · {{count}} disques actifs sur {{expected}}",
+    "arrayComplete": "Complet",
+    "arrayIncomplete": "Incomplet",
+    "sync": {
+      "resync": "Synchronisation initiale",
+      "recovery": "Reconstruction",
+      "check": "Vérification",
+      "reshape": "Remodelage",
+      "repair": "Réparation",
+      "label": "{{action}} : {{percent}} %"
+    },
+    "scrubStatus": {
+      "never": "Jamais lancé",
+      "running": "En cours",
+      "finished": "Terminé",
+      "aborted": "Annulé",
+      "interrupted": "Interrompu"
+    },
+    "scrubLast": "Dernier passage {{date}}",
+    "scrubTook": "durée {{duration}}",
+    "scrubResult": "{{corrected}} corrigées · {{uncorrectable}} non corrigibles",
+    "scrubHint": "Un scrub relit chaque bloc et le compare à son checksum. Lances-en un chaque mois.",
+    "scrubRun": "Lancer un scrub",
+    "scrubStarting": "Lancement…",
+    "scrubStarted": "Scrub lancé.",
+    "scrubFinished": "Scrub terminé.",
+    "scrubStillRunning": "Toujours en cours. Un scrub prend des heures sur un gros pool : actualise plus tard pour voir le résultat.",
+    "scrubNotMounted": "Monte le pool pour lancer un scrub.",
+    "statusUnavailable": "État en direct indisponible.",
+    "memberMissing": "Non branché",
+    "memberOf": "Pool {{name}}",
+    "showDisk": "Aller au disque",
+    "selectFree": "{{name}} · {{free}} libres",
+    "scrubStop": "Arrêter",
+    "scrubResume": "Reprendre",
+    "scrubStoppedHint": "Arrêté : reprends là où il s'était arrêté, ou recommence."
+  },
+  "users": {
+    "eyebrow": "Utilisateurs",
+    "title": "Utilisateurs.",
+    "intro": "Les personnes qui ouvrent les partages depuis leurs ordinateurs. Elles sont distinctes de ton compte admin et ne peuvent pas se connecter ici.",
+    "newUser": "Nouvel utilisateur",
+    "createTitle": "Nouvel utilisateur",
+    "createIntro": "Le nom et le mot de passe que cette personne tape sur son ordinateur pour ouvrir les partages.",
+    "listTitle": "Utilisateurs du NAS",
+    "loadFailed": "Les utilisateurs n'ont pas pu être chargés.",
+    "empty": {
+      "title": "Pas encore d'utilisateur.",
+      "body": "Crée un compte pour chaque personne qui ouvre les partages depuis un ordinateur."
+    },
+    "name": "Nom",
+    "nameHint": "2 à 32 caractères : minuscules, chiffres, - et _. Commence par une lettre.",
+    "password": "Mot de passe",
+    "passwordHint": "Au moins {{min}} caractères, sur une seule ligne.",
+    "passwordLength": "{{count}} / {{min}} caractères minimum",
+    "passwordOk": "Assez long.",
+    "confirm": "Confirmer le mot de passe",
+    "mismatch": "Les mots de passe ne correspondent pas.",
+    "match": "Les mots de passe correspondent.",
+    "create": "Créer l'utilisateur",
+    "creating": "Création…",
+    "created": "{{name}} a été créé.",
+    "since": "Depuis le {{date}}",
+    "shares": "Partages",
+    "noShare": "Aucun partage pour l'instant. Donne-lui un accès depuis Partages.",
+    "changePassword": "Changer le mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "savePassword": "Enregistrer le mot de passe",
+    "passwordSaved": "Le mot de passe de {{name}} a été changé.",
+    "delete": "Supprimer",
+    "deleteTitle": "Supprimer {{name}} ?",
+    "deleteBody_zero": "{{name}} n'a encore aucun partage : la suppression retire seulement le compte.",
+    "deleteBody_one": "{{name}} perd immédiatement l'accès à {{count}} partage. Les fichiers que {{name}} y a déposés restent dans le partage.",
+    "deleteBody_other": "{{name}} perd immédiatement l'accès à tous ses partages ({{count}}). Les fichiers que {{name}} y a déposés restent dans les partages.",
+    "deleteConfirm": "Tape {{name}} pour confirmer",
+    "deleteMatch": "Nom confirmé.",
+    "deleteButton": "Supprimer {{name}}",
+    "deleting": "Suppression…",
+    "deleted": "{{name}} a été supprimé. Ses fichiers sont toujours dans les partages.",
+    "nameErrors": {
+      "empty": "Donne un nom à cet utilisateur.",
+      "startLetter": "Commence par une lettre minuscule.",
+      "invalidChars": "Minuscules, chiffres, - et _ uniquement.",
+      "tooShort": "Au moins 2 caractères.",
+      "tooLong": "32 caractères maximum.",
+      "reserved": "Ce nom est réservé par le système. Choisis-en un autre."
+    },
+    "passwordErrors": {
+      "tooShort": "Au moins {{min}} caractères.",
+      "tooLong": "{{max}} caractères maximum.",
+      "multiline": "Une seule ligne."
+    }
+  },
+  "shares": {
+    "eyebrow": "Partages",
+    "title": "Partages.",
+    "intro": "Les dossiers que tes ordinateurs ouvrent par le réseau, qui peut les ouvrir, et leurs versions précédentes.",
+    "newShare": "Nouveau partage",
+    "createTitle": "Nouveau partage",
+    "created": "{{name}} est partagé.",
+    "listTitle": "Dossiers partagés",
+    "loadFailed": "Les partages n'ont pas pu être chargés.",
+    "empty": {
+      "title": "Pas encore de partage.",
+      "body": "Crée un dossier que tes ordinateurs peuvent ouvrir par le réseau."
+    },
+    "noPool": {
+      "title": "Pas encore de pool.",
+      "body": "Un partage est un dossier d'un pool. Crée d'abord un pool."
+    },
+    "name": "Nom du partage",
+    "nameHint": "Minuscules, chiffres, - et _, 20 caractères maximum.",
+    "pool": "Pool",
+    "path": "Chemin",
+    "access": "Qui peut l'ouvrir",
+    "noUsers": "Aucun utilisateur du NAS : personne ne pourrait ouvrir ce partage. Crée d'abord des utilisateurs dans",
+    "nobody": "Personne ne peut encore ouvrir ce partage.",
+    "create": "Créer le partage",
+    "creating": "Création…",
+    "editAccess": "Modifier les accès",
+    "saveAccess": "Enregistrer les accès",
+    "unsavedAccess": "Pas encore enregistré : clique sur « Enregistrer les accès » pour l'appliquer.",
+    "connected_one": "{{count}} ordinateur connecté",
+    "connected_other": "{{count}} ordinateurs connectés",
+    "noneConnected": "Aucun ordinateur connecté",
+    "mode": {
+      "none": "Aucun accès",
+      "ro": "Lecture seule",
+      "rw": "Lecture et écriture"
+    },
+    "nameErrors": {
+      "empty": "Donne un nom au partage.",
+      "startChar": "Commence par une lettre minuscule ou un chiffre.",
+      "invalidChars": "Minuscules, chiffres, - et _ uniquement.",
+      "tooLong": "20 caractères maximum.",
+      "reserved": "Ce nom est réservé par Samba. Choisis-en un autre.",
+      "exists": "Un partage nommé {{name}} existe déjà."
+    },
+    "snapshots": {
+      "button": "Snapshots",
+      "hide": "Masquer les snapshots",
+      "hint": "Dans Windows : clic droit sur un fichier ou un dossier de ce partage → Propriétés → Versions précédentes.",
+      "takeNow": "Prendre un snapshot maintenant",
+      "taking": "En cours…",
+      "taken": "Snapshot pris.",
+      "count_one": "{{count}} snapshot",
+      "count_other": "{{count}} snapshots",
+      "loading": "Lecture des snapshots…",
+      "empty": "Pas encore de snapshot. Le premier automatique arrive au début de l'heure.",
+      "delete": "Supprimer",
+      "deleteLabel": "Supprimer le snapshot du {{date}}",
+      "confirmDelete": "Supprimer le snapshot du {{date}} ? Ses versions précédentes disparaissent de Windows. C'est irréversible.",
+      "confirm": "Supprimer le snapshot",
+      "deleted": "Snapshot du {{date}} supprimé."
+    },
+    "sessions": {
+      "title": "Connectés maintenant",
+      "live": "En direct",
+      "none": "Aucun ordinateur n'est connecté pour l'instant.",
+      "encrypted": "Chiffré",
+      "notEncrypted": "Non chiffré",
+      "since": "connecté {{time}}"
+    }
+  },
+  "protection": {
+    "snapshotsTitle": "Snapshots horaires",
+    "snapshotsSwitch": "Snapshots",
+    "scrubTitle": "Scrub",
+    "scrubSwitch": "Scrub planifié",
+    "tier": {
+      "hourly": "Horaires",
+      "daily": "Quotidiens",
+      "weekly": "Hebdomadaires",
+      "monthly": "Mensuels"
+    },
+    "tierHint": {
+      "hourly_zero": "Aucun",
+      "hourly_one": "La dernière heure",
+      "hourly_other": "Les {{count}} dernières heures",
+      "daily_zero": "Aucun",
+      "daily_one": "Le dernier jour",
+      "daily_other": "Les {{count}} derniers jours",
+      "weekly_zero": "Aucun",
+      "weekly_one": "La dernière semaine",
+      "weekly_other": "Les {{count}} dernières semaines",
+      "monthly_zero": "Aucun",
+      "monthly_one": "Le dernier mois",
+      "monthly_other": "Les {{count}} derniers mois"
+    },
+    "reach": {
+      "hourly_one": "Tu peux remonter jusqu'à une heure.",
+      "hourly_other": "Tu peux remonter jusqu'à {{count}} heures.",
+      "daily_one": "Tu peux remonter jusqu'à un jour.",
+      "daily_other": "Tu peux remonter jusqu'à {{count}} jours.",
+      "weekly_one": "Tu peux remonter jusqu'à une semaine.",
+      "weekly_other": "Tu peux remonter jusqu'à {{count}} semaines.",
+      "monthly_one": "Tu peux remonter jusqu'à un mois.",
+      "monthly_other": "Tu peux remonter jusqu'à {{count}} mois."
+    },
+    "range": "Entre {{min}} et {{max}}.",
+    "allZero": "Garde au moins un snapshot dans l'une des tranches.",
+    "interval": "Tous les (jours)",
+    "intervalHint_one": "Chaque pool est vérifié tous les jours.",
+    "intervalHint_other": "Chaque pool est vérifié tous les {{count}} jours.",
+    "loadFailed": "Les réglages de protection n'ont pas pu être chargés.",
+    "lastSnapshotRun": "Derniers snapshots",
+    "lastScrub": "Dernier scrub",
+    "lastScrubOf": "Dernier scrub de {{pool}}",
+    "never": "jamais",
+    "save": "Enregistrer la protection",
+    "saved": "Enregistré.",
+    "reset": "Annuler les changements"
+  },
+  "journal": {
+    "settings": {
+      "switch": "Garder le journal système après un redémarrage",
+      "on": "Gardé : après une coupure de courant, NasBuster peut encore lire ce que le système a vu juste avant.",
+      "off": "En mémoire seulement : perdu à chaque redémarrage (le réglage de Raspberry Pi OS).",
+      "cost": "Mesuré sur un Pi 5 : environ 270 Mo écrits par jour. C'est peu pour un SSD ; sur une carte SD, ça l'use un peu plus.",
+      "pending": "Enregistré : le changement s'applique au prochain démarrage du NAS.",
+      "managedBy": "L'administrateur a réglé le stockage du journal dans {{file}} : NasBuster n'y touche pas.",
+      "open": "Ouvrir le journal des pannes"
+    },
+    "eyebrow": "Journal",
+    "title": "Journal des pannes.",
+    "intro": "Ce qui est arrivé au NAS, gardé même après un redémarrage : quand, sur quoi, et que faire. Les alertes montrent l'état actuel ; le journal en garde l'historique, jusqu'à un an.",
+    "filter": {
+      "label": "Afficher",
+      "all": "Tout",
+      "warn": "Avertissements et plus grave",
+      "error": "Erreurs seulement"
+    },
+    "empty": "Rien n'est encore inscrit.",
+    "emptyBody": "Les démarrages, les arrêts brutaux et chaque alerte qui apparaît ou se termine s'inscrivent ici.",
+    "loadFailed": "Le journal n'a pas pu être chargé.",
+    "more": "Entrées plus anciennes",
+    "understand": "Comprendre",
+    "resolved": "Résolu : {{title}}",
+    "unknown": "Événement {{code}}",
+    "titles": {
+      "system": {
+        "boot": "Le NAS a démarré.",
+        "unclean_shutdown": "Le NAS s'était arrêté brutalement."
+      }
+    },
+    "lastAlive": "Dernier signe de vie : {{time}} (à 5 minutes près).",
+    "subject": {
+      "system": "Système",
+      "pool": "Pool {{name}}",
+      "disk": "Disque {{name}}"
+    },
+    "time": {
+      "uncertain": "Heure incertaine",
+      "uncertainHelp": "Notée avant que le réseau ne mette l'horloge à l'heure (un Pi n'a pas d'horloge qui survit à une coupure). Elle sera recalculée dès que l'horloge sera à l'heure, si le NAS n'a pas redémarré entre-temps.",
+      "corrected": "Heure recalculée",
+      "correctedHelp": "Notée avant que l'horloge ne soit à l'heure, puis recalculée à partir du temps écoulé depuis le démarrage."
+    },
+    "level": {
+      "info": "Info",
+      "warn": "Avertissement",
+      "error": "Erreur",
+      "crit": "Critique",
+      "resolved": "Résolu"
+    },
+    "lexicon": {
+      "title": "Lexique des pannes.",
+      "intro": "Chaque entrée du journal a sa fiche ici : ce qui s'est passé, et que faire.",
+      "what": "Ce qui s'est passé",
+      "todo": "Que faire"
+    },
+    "codes": {
+      "system": {
+        "boot": {
+          "name": "Démarrage",
+          "what": "Le NAS a démarré. Chaque démarrage est noté : un redémarrage que personne n'a demandé se voit ici.",
+          "todo": "Rien, si c'est toi qui l'as redémarré. Sinon, regarde l'entrée juste avant : un arrêt brutal en donne la raison."
+        },
+        "unclean_shutdown": {
+          "name": "Arrêt brutal",
+          "what": "Le NAS s'est arrêté sans passer par un arrêt propre : coupure de courant, sous-tension, blocage ou prise débranchée. NasBuster s'en aperçoit au démarrage suivant ; le dernier signe de vie est donné à 5 minutes près.",
+          "todo": "Vérifie l'alimentation (l'officielle : 27 W pour un Pi 5) et le hub des disques USB. Si ça se répète, branche le NAS sur un onduleur. Lance un scrub des pools qui étaient utilisés."
+        },
+        "space": {
+          "name": "Carte SD presque pleine",
+          "what": "Le disque système, la carte SD, a dépassé 85 % (avertissement) ou 95 % (critique).",
+          "todo": "Cherche ce qui grossit dessus : les données de NasBuster et des applis vont sur un pool, jamais sur la carte."
+        }
+      },
+      "pool": {
+        "unmounted": {
+          "name": "Pool non monté",
+          "what": "Le pool n'est pas ouvert : ses données sont inaccessibles. Un disque manque peut-être, ou le montage a échoué.",
+          "todo": "Vérifie que tous les disques du pool sont branchés et alimentés, puis redémarre le NAS. S'il reste démonté, ouvre Stockage."
+        },
+        "missing_disk": {
+          "name": "Pool qui ne démarre pas",
+          "what": "Un disque du pool manquait au démarrage : le pool est resté fermé plutôt que de tourner sans filet de sécurité.",
+          "todo": "Rebranche le disque manquant (câble, alimentation du hub) et redémarre. Tes données sont toujours sur les autres disques : ne formate rien. Si le disque est mort, Stockage propose un montage dégradé."
+        },
+        "degraded": {
+          "name": "Pool dégradé",
+          "what": "Le pool tourne avec un disque absent ou sorti de l'array : les données sont là, mais sans leur seconde copie.",
+          "todo": "Rebranche le disque et utilise « Reprendre », ou remplace-le. Ne débranche rien d'autre en attendant."
+        },
+        "failed": {
+          "name": "Pool hors service",
+          "what": "Plus de disques ont disparu d'un coup que le pool n'en tolère (un pour un miroir ou une parité simple, deux pour une double parité) : le plus souvent, un hub USB ou son alimentation a coupé. Les données sont toujours sur les disques, mais le pool ne peut plus les servir.",
+          "todo": "Rebranche tous les disques sans rien formater ni effacer. Quand ils seront tous revenus, Stockage proposera de réassembler le pool d'un bloc, jamais disque par disque : un disque repris seul pourrait perdre sa place dans l'array."
+        },
+        "rebuilding": {
+          "name": "Reconstruction",
+          "what": "Tous les disques du pool sont là, mais la redondance se reconstruit encore : md écrit la parité (pool neuf, disque repris ou ajouté), ou Btrfs convertit les blocs écrits pendant une panne. D'ici là, le pool n'a pas tout son filet de sécurité.",
+          "todo": "Ne débranche rien et laisse-le finir : l'alerte se termine toute seule. Sur des clés USB, compte environ une heure pour 100 Go (mesuré sur un Pi 5)."
+        },
+        "verifying": {
+          "name": "Vérification après une panne",
+          "what": "Le pool est de nouveau complet, mais il a traversé une période sans redondance : les blocs écrits entre-temps, ou un disque revenu avec d'anciennes données, sont vérifiés par un scrub avant que le pool soit déclaré sain.",
+          "todo": "Rien : le scrub démarre tout seul. S'il trouve des erreurs qu'il ne peut pas réparer, une alerte d'erreur suit."
+        },
+        "errors": {
+          "name": "Erreurs du pool",
+          "what": "Le pool a relevé des erreurs de lecture, d'écriture ou de checksum : un disque, un câble ou un bridge USB fonctionne mal.",
+          "todo": "Lance un scrub depuis Stockage pour réparer ce qui peut l'être, vérifie la santé SMART des disques et les câbles, et restaure les fichiers abîmés depuis une sauvegarde."
+        },
+        "reassemble": {
+          "name": "Pool en attente de réassemblage",
+          "what": "Un pool à parité a perdu d'un coup plus de disques qu'il n'en tolère, et ils sont tous revenus. md ne redémarre pas seul un tel array : ses disques ne sont pas d'accord sur les dernières écritures avant la coupure.",
+          "todo": "Dans Stockage, clique sur « Réassembler le pool » : l'array redémarre avec tous les disques, md répare la parité, puis un scrub vérifie chaque fichier. Ne débranche rien avant la fin de la vérification."
+        },
+        "manual_recovery": {
+          "name": "Pool à récupérer à la main",
+          "what": "L'array du pool s'est arrêté et ses disques ne sont pas d'accord à son sujet : deux disques revendiquent la même place (un ancien membre, un disque étranger), ou l'un est loin derrière les autres. Le forcer pourrait mélanger des données anciennes et récentes : NasBuster ne le fait pas.",
+          "todo": "Ne touche à rien sur ces disques. Débranche un disque qui n'appartient pas au pool. Si l'un est loin derrière, la récupération se fait à la main : assembler les autres, puis reconstruire celui-là."
+        },
+        "space": {
+          "name": "Pool presque plein",
+          "what": "Le pool a dépassé 85 % de sa capacité (avertissement), ou 95 % (critique).",
+          "todo": "Libère de la place, ou ajoute un disque plus grand. L'alerte s'arrête quand le pool repasse 2 points sous le seuil."
+        }
+      },
+      "power": {
+        "under_voltage_now": {
+          "name": "Sous-tension",
+          "what": "Le Pi ne reçoit pas assez de courant en ce moment. Les disques peuvent décrocher en pleine écriture.",
+          "todo": "Utilise l'alimentation officielle, et alimente les disques par un hub USB alimenté."
+        },
+        "under_voltage_occurred": {
+          "name": "Sous-tension passée",
+          "what": "Le courant a faibli au moins une fois depuis le démarrage. Le Pi s'en souvient jusqu'au prochain redémarrage.",
+          "todo": "Même remède : alimentation officielle, hub alimenté pour les disques. Cherche un arrêt brutal à la même période."
+        }
+      },
+      "temperature": {
+        "hot": {
+          "name": "Trop chaud",
+          "what": "Le Pi est trop chaud et ralentit pour se protéger.",
+          "todo": "Ajoute un ventilateur ou un dissipateur, et donne-lui de l'air."
+        }
+      },
+      "throttling": {
+        "active": {
+          "name": "Processeur bridé",
+          "what": "La chaleur ou l'alimentation empêchent le Pi de tourner à pleine vitesse.",
+          "todo": "Vérifie le refroidissement et l'alimentation."
+        }
+      },
+      "smart": {
+        "failing": {
+          "name": "Disque en fin de vie",
+          "what": "L'autodiagnostic du disque (SMART) annonce sa propre panne.",
+          "todo": "Copie ce qui compte maintenant et remplace le disque dès que possible."
+        },
+        "attributes": {
+          "name": "Usure du disque",
+          "what": "Le disque a réalloué des secteurs, ou en a en attente : sa surface s'use.",
+          "todo": "Vérifie qu'il est sauvegardé, surveille-le de près et prévois son remplacement."
+        },
+        "crc": {
+          "name": "Erreurs de transfert",
+          "what": "Des données ont été abîmées en chemin entre le disque et le Pi, puis renvoyées : le disque lui-même va en général bien.",
+          "todo": "Change le câble ou le boîtier USB, ou branche le disque sur un autre port."
+        }
+      }
+    }
+  },
+  "alerts": {
+    "eyebrow": "Alertes",
+    "title": "Alertes.",
+    "intro": "Ce qui demande ton attention maintenant, puis ce qui a été réglé ces {{days}} derniers jours. Chaque changement est notifié une fois, jamais répété.",
+    "notNotified": "Tu n'es encore prévenu nulle part.",
+    "notNotifiedBody": "Les alertes n'apparaissent qu'ici. Reçois-les sur ton téléphone avec ntfy, ou envoie-les vers un webhook.",
+    "setUp": "Configurer les notifications",
+    "activeTitle": "À traiter",
+    "resolvedTitle": "Résolues ces {{days}} derniers jours",
+    "loadFailed": "Les alertes n'ont pas pu être chargées.",
+    "allClear": "Tout va bien",
+    "noneTitle": "Rien d'inquiétant.",
+    "noneBody": "NasBuster vérifie les pools, l'alimentation, la température et la santé des disques toutes les 5 minutes.",
+    "resolved": "Résolue",
+    "since": "Depuis {{time}}",
+    "resolvedAt": "Résolue {{time}}",
+    "seen": "Vue {{time}}",
+    "markSeen": "Marquer comme vue",
+    "unknownTitle": "Alerte {{code}}",
+    "bell": {
+      "none": "Alertes : rien à traiter",
+      "some_one": "Alertes : {{count}} à traiter",
+      "some_other": "Alertes : {{count}} à traiter",
+      "critical_one": "Alertes : {{count}} à traiter, critique",
+      "critical_other": "Alertes : {{count}} à traiter (critiques : {{critical}})"
+    },
+    "banner": {
+      "more_one": "et {{count}} autre",
+      "more_other": "et {{count}} autres",
+      "see": "Voir les alertes"
+    },
+    "codes": {
+      "pool": {
+        "unmounted": {
+          "title": "Le pool {{pool}} n'est pas monté.",
+          "action": "Ses données sont inaccessibles. Vérifie que tous ses disques sont branchés et alimentés, puis redémarre le NAS. S'il reste démonté, regarde dans Stockage."
+        },
+        "degraded": {
+          "title": "Le pool {{pool}} est dégradé.",
+          "action": "Un disque manque ou est sorti de l'array : tes données n'ont plus de filet de sécurité. Rebranche le disque manquant, ou remplace-le dès que possible. Ne débranche rien d'autre."
+        },
+        "failed": {
+          "title": "Le pool {{pool}} est hors service : {{missing}} disques ont disparu.",
+          "action": "C'est plus que ce que le pool tolère : ses données sont inaccessibles tant que les disques ne sont pas revenus. Ne touche pas à ces disques, ne formate et n'efface rien : rebranche-les tous (souvent, un seul hub ou une seule alimentation les a tous coupés). Quand ils seront tous là, Stockage proposera de réassembler le pool. N'utilise pas « Reprendre » disque par disque."
+        },
+        "rebuilding": {
+          "title": "Le pool {{pool}} reconstruit sa redondance.",
+          "action": "Tous les disques sont là : NasBuster reconstruit la redondance (parité d'un pool neuf, disque repris ou ajouté, ou blocs écrits pendant une panne). Tant que ce n'est pas fini, la panne d'un disque ferait perdre des données : ne débranche rien et laisse-le finir. Stockage montre l'avancement."
+        },
+        "verifying": {
+          "title": "Le pool {{pool}} vérifie ses données.",
+          "action": "Tous les disques sont là et la redondance est revenue. Après une période sans elle, NasBuster vérifie les deux copies (un scrub) avant de redéclarer le pool en bonne santé. Rien à faire : il démarre tout seul et dure de quelques minutes à quelques heures selon la taille."
+        },
+        "errors": {
+          "title": "Le pool {{pool}} a relevé des erreurs.",
+          "action": "Lance un scrub depuis Stockage pour trouver les fichiers abîmés, puis vérifie la santé SMART des disques et les câbles. Restaure les fichiers abîmés depuis une sauvegarde."
+        },
+        "missing_disk": {
+          "title": "Le pool {{pool}} ne peut pas démarrer : un disque manque.",
+          "action": "Rebranche le disque manquant (vérifie le câble USB et l'alimentation du hub), puis redémarre le NAS. Tes données sont toujours sur les autres disques : ne formate rien."
+        },
+        "reassemble": {
+          "title": "Pool {{pool}} : tous ses disques sont revenus, il attend d'être réassemblé.",
+          "action": "Le pool s'est arrêté parce que plus de disques sont partis en même temps qu'il n'en tolère. Ils sont tous revenus : ouvre Stockage et clique sur « Réassembler le pool ». Ne débranche rien d'ici là."
+        },
+        "manual_recovery": {
+          "title": "Le pool {{pool}} est hors service et demande une récupération manuelle.",
+          "action": "Ses disques ne sont pas d'accord sur l'array : un disque étranger ou un ancien membre est branché, ou un disque est loin derrière les autres. NasBuster ne force pas dans ce cas. Ne touche à rien sur ces disques, ne formate et n'efface rien : la page Stockage indique de quel cas il s'agit."
+        },
+        "space": {
+          "title": "Le pool {{pool}} est rempli à plus de {{threshold}} % : il reste {{free}}.",
+          "action": "Libère de la place (vide les corbeilles, efface de vieux fichiers ou les journaux d'une appli), ou ajoute un disque plus grand. Un pool plein n'enregistre plus ni fichiers, ni snapshots, ni applications."
+        }
+      },
+      "power": {
+        "under_voltage_now": {
+          "title": "Le Pi manque de courant en ce moment.",
+          "action": "Les disques peuvent décrocher en pleine écriture et corrompre des données. Passe à l'alimentation officielle et alimente les disques par un hub USB alimenté."
+        },
+        "under_voltage_occurred": {
+          "title": "L'alimentation a faibli depuis le dernier démarrage.",
+          "action": "Utilise l'alimentation officielle du Raspberry Pi et un hub USB alimenté pour les disques. Une alimentation faible est la première cause de disques corrompus."
+        }
+      },
+      "temperature": {
+        "hot": {
+          "title": "Le Pi est trop chaud : {{celsius}}.",
+          "action": "Il ralentit pour se protéger. Ajoute un ventilateur ou un dissipateur et donne-lui de l'air."
+        }
+      },
+      "throttling": {
+        "active": {
+          "title": "Le Pi se ralentit lui-même.",
+          "action": "La chaleur ou l'alimentation l'empêchent de tourner à pleine vitesse. Vérifie le refroidissement et l'alimentation."
+        }
+      },
+      "smart": {
+        "failing": {
+          "title": "{{disk}} annonce sa propre panne.",
+          "action": "Son autotest a échoué. Copie ce qui compte maintenant et remplace le disque dès que possible."
+        },
+        "attributes": {
+          "title": "{{disk}} montre des signes d'usure : {{attributes}}.",
+          "action": "Des secteurs ont été réalloués ou sont en attente. Vérifie qu'il est sauvegardé, surveille-le de près et prévois son remplacement."
+        },
+        "crc": {
+          "title_one": "{{disk}} : {{count}} nouvelle erreur de connexion ({{total}} au total).",
+          "title_other": "{{disk}} : {{count}} nouvelles erreurs de connexion ({{total}} au total).",
+          "action": "Cela vient en général du câble USB ou du boîtier, pas du disque lui-même. Change le câble, puis le boîtier si ça continue."
+        }
+      },
+      "system": {
+        "space": {
+          "title": "La carte SD du NAS est remplie à plus de {{threshold}} % : il reste {{free}}.",
+          "action": "Cherche ce qui grossit dessus (un journal, un téléchargement au mauvais endroit). Une carte SD pleine peut empêcher le NAS de démarrer."
+        }
+      }
+    }
+  },
+  "notifications": {
+    "ntfyTitle": "ntfy (téléphone)",
+    "ntfyIntro": "Gratuit, sans compte : l'application ntfy affiche les alertes de NasBuster en notifications sur ton téléphone.",
+    "topicUrl": "URL du sujet",
+    "topicHint": "https://ntfy.sh/<sujet>, ou ton propre serveur ntfy. http simple seulement sur ton réseau local.",
+    "regenerate": "Nouveau sujet aléatoire",
+    "token": "Jeton d'accès (facultatif)",
+    "tokenHint": "Seulement pour un sujet protégé ou ton propre serveur. Il n'est plus jamais affiché une fois enregistré.",
+    "tokenSaved": "Jeton enregistré",
+    "removeToken": "Retirer le jeton",
+    "tokenRemoved": "Jeton retiré.",
+    "tokenTooLong": "{{max}} caractères maximum.",
+    "webhookTitle": "Webhook",
+    "webhookUrl": "URL du webhook",
+    "webhookHint": "Home Assistant, un relais Discord, ton propre script… NasBuster envoie un POST en JSON.",
+    "webhookFormat": "JSON envoyé",
+    "webhookDisk": "Un disque y est désigné par son modèle et les 4 derniers caractères de son identifiant, jamais par son numéro de série complet.",
+    "save": "Enregistrer les notifications",
+    "saved": "Enregistré.",
+    "test": "Envoyer un test",
+    "saveAndTest": "Enregistrer et envoyer un test",
+    "testing": "Envoi…",
+    "sent": "Envoyé",
+    "failed": "Échec",
+    "noChannel": "Aucun canal n'est activé : active d'abord ntfy ou le webhook.",
+    "loadFailed": "Les réglages de notification n'ont pas pu être chargés.",
+    "privacy": "Quiconque devine le nom d'un sujet public peut le lire : NasBuster choisit donc un nom long et aléatoire, garde-le pour toi. Les messages disent seulement de quel NAS il s'agit et ce qui s'est passé, jamais de mot de passe, de chemin de fichier ni de numéro de série complet.",
+    "urlErrors": {
+      "empty": "Saisis une URL.",
+      "invalid": "Ce n'est pas une URL valide.",
+      "tooLong": "512 caractères maximum.",
+      "credentials": "Pas de nom d'utilisateur ni de mot de passe dans l'URL : utilise le champ du jeton.",
+      "scheme": "L'URL doit commencer par https://",
+      "httpPublic": "Le http simple ne marche que sur ton réseau local : utilise https://"
+    },
+    "guide": {
+      "install": "Installe l'application gratuite ntfy sur ton téléphone (Android : Google Play ou F-Droid ; iPhone : App Store).",
+      "subscribe": "Touche +, puis abonne-toi à ce sujet :",
+      "subscribeServer": "Touche +, choisis « Utiliser un autre serveur » ({{server}}), puis abonne-toi à ce sujet :",
+      "noTopic": "Saisis d'abord l'URL d'un sujet.",
+      "test": "Envoie un test et vérifie que la notification arrive : elle sonne comme une vraie alerte."
+    },
+    "demo": "Démo : non envoyé",
+    "codes": {
+      "http_status": "Le serveur a répondu HTTP {{status}}.",
+      "timeout": "Pas de réponse en 10 secondes.",
+      "unreachable": "Le serveur est injoignable.",
+      "invalid_url": "L'URL n'est pas valide.",
+      "demo": "Le mode démo n'envoie jamais rien sur Internet."
+    }
+  },
+  "wipe": {
+    "button": "Effacer…",
+    "offer": "Effacer ce disque…",
+    "preformatted": "Un disque neuf arrive souvent déjà formaté (exFAT, NTFS). Si tu n'as pas besoin de ce qu'il contient, efface-le pour l'utiliser ici.",
+    "title": "Effacer {{disk}} ?",
+    "contains": "Ce qu'il contient",
+    "nothingVisible": "Rien que NasBuster sache reconnaître.",
+    "residual": "{{found}}, caché derrière une table de partitions retirée",
+    "partitionFs": "Une partition de {{size}} avec {{fstype}}",
+    "partitionEmpty": "Une partition de {{size}} sans système de fichiers",
+    "mountedAt": "En service, monté sur {{mount}}",
+    "fs": {
+      "ntfs": "un système de fichiers Windows (NTFS)",
+      "exfat": "un système de fichiers exFAT (appareils photo, clés USB)",
+      "vfat": "un système de fichiers FAT",
+      "ext4": "un système de fichiers Linux (ext4)",
+      "btrfs": "un système de fichiers Btrfs",
+      "xfs": "un système de fichiers XFS",
+      "hfsplus": "un système de fichiers Mac (HFS+)",
+      "apfs": "un système de fichiers Mac (APFS)",
+      "linux_raid_member": "un morceau d'array RAID (mdadm)",
+      "LVM2_member": "un volume LVM",
+      "crypto_LUKS": "un volume chiffré (LUKS)",
+      "swap": "un espace d'échange (swap)"
+    },
+    "warningTitle": "Tout le contenu de ce disque sera perdu.",
+    "warningBody": "Ses partitions et tout ce qu'elles contiennent sont effacés pour de bon. NasBuster refuse si le disque est monté, utilisé par le système ou encore membre d'un pool.",
+    "diskId": "Identifiant du disque",
+    "typeSuffix_one": "Tape le dernier caractère de son identifiant (en surbrillance)",
+    "typeSuffix_other": "Tape les {{count}} derniers caractères de son identifiant (en surbrillance)",
+    "confirmed": "Confirmé.",
+    "erase": "Effacer le disque",
+    "erasing": "Effacement…"
+  },
+  "repair": {
+    "typeName": "Tape {{name}} pour confirmer",
+    "nameConfirmed": "Nom confirmé.",
+    "mountedDegradedLabel": "Mode dégradé",
+    "leaveDegraded": "Le pool est de nouveau sain, mais toujours monté en mode dégradé. Redémarre le NAS quand ça t'arrange pour en sortir.",
+    "member": {
+      "ok": "OK",
+      "present": "Branché",
+      "missing": "Absent",
+      "failing": "Défaillant",
+      "rebuilding": "En reconstruction",
+      "failingCount_one": "Défaillant : {{formatted}} erreur",
+      "failingCount_other": "Défaillant : {{formatted}} erreurs"
+    },
+    "missing": {
+      "title": "Un disque manque : le pool n'a pas démarré.",
+      "body": "C'est voulu, pour protéger tes données : démarrer sans lui pourrait faire diverger les deux copies. Tes fichiers sont toujours sur l'autre disque.",
+      "firstTitle": "Essaie d'abord le plus simple",
+      "first1": "Vérifie le câble USB du disque et l'alimentation du hub USB.",
+      "first2": "Rebranche-le bien à fond.",
+      "first3": "Redémarre le NAS : si le disque est revenu, le pool démarre normalement.",
+      "gone": "Le disque est vraiment perdu"
+    },
+    "degraded": {
+      "title": "Monter en mode dégradé",
+      "what": "Le pool démarre sans le disque manquant : tu retrouves tes fichiers et tu peux remplacer le disque.",
+      "onlyIf": "Seulement si tu es sûr que ce disque est perdu",
+      "risk": "Mort, égaré, ou son remplaçant est dans ta main. Si un disque USB va et vient, monter chaque côté en mode dégradé laisserait deux copies qui ne sont plus d'accord, et des modifications seraient perdues.",
+      "mount": "Monter en mode dégradé",
+      "mounting": "Montage…"
+    },
+    "replace": {
+      "missingTitle_one": "{{count}} disque manque : le pool n'a plus de filet de sécurité.",
+      "missingTitle_other": "{{count}} disques manquent : le pool n'a plus de filet de sécurité.",
+      "failingTitle_one": "Un disque est défaillant : le pool n'a plus de filet de sécurité.",
+      "failingTitle_other": "{{count}} disques sont défaillants : le pool n'a plus de filet de sécurité.",
+      "body": "Tes fichiers restent lisibles, mais une panne de plus les ferait perdre. Remplace le disque par un disque vierge au moins aussi grand.",
+      "cta": "Remplacer un disque"
+    },
+    "progress": {
+      "replace": "Reconstruction sur le nouveau disque",
+      "recovery": "Reconstruction de l'array",
+      "parity": "Réparation de la parité",
+      "balance": "Restauration de la seconde copie",
+      "left": "environ {{time}} restantes",
+      "measuring": "mesure du rythme…",
+      "usable": "Le NAS reste utilisable pendant ce temps, juste plus lent. Tu peux fermer cette page.",
+      "errors_one": "{{count}} erreur de lecture ou d'écriture pendant la reconstruction",
+      "errors_other": "{{count}} erreurs de lecture ou d'écriture pendant la reconstruction"
+    },
+    "restore": {
+      "title": "Certains fichiers n'ont qu'une seule copie.",
+      "body": "Ils ont été écrits pendant que le pool était dégradé. Le NAS leur rend leur seconde copie tout seul ; tu peux aussi le lancer maintenant.",
+      "now": "Restaurer maintenant",
+      "started": "Restauration de la seconde copie…",
+      "nothing": "Rien à restaurer : chaque fichier a déjà sa seconde copie."
+    },
+    "errors": {
+      "title": "Un disque a eu des erreurs de lecture ou d'écriture, mais l'autre copie a pris le relais.",
+      "body": "Tes fichiers vont bien pour l'instant. Vérifie-les, puis remets les compteurs à zéro pour voir le prochain problème.",
+      "count_one": "{{formatted}} erreur",
+      "count_other": "{{formatted}} erreurs",
+      "step1": "Lance un scrub : il relit tout et répare à partir de la bonne copie.",
+      "step2": "Une fois le scrub propre, remets les compteurs d'erreurs à zéro.",
+      "needScrub": "Disponible après un scrub terminé sans erreur non corrigée, il y a moins de 48 heures.",
+      "clear": "Remettre les compteurs à zéro",
+      "cleared": "Compteurs remis à zéro.",
+      "step3": "Si les erreurs reviennent, le disque (ou son câble) lâche :"
+    },
+    "resume": {
+      "title": "Le disque est revenu, mais le pool ne s'en sert pas encore.",
+      "body": "Tant qu'il n'est pas repris, tes fichiers n'ont qu'une seule copie. Le reprendre remonte le pool ; ensuite, le NAS restaure la seconde copie et vérifie les deux (un scrub).",
+      "cut": "Pendant le remontage, les connexions aux partages de ce pool sont coupées quelques secondes, et Docker redémarre si ses données sont sur ce pool. Enregistre d'abord les fichiers ouverts.",
+      "now": "Reprendre le disque",
+      "confirm": "Reprendre maintenant",
+      "working": "Reprise…",
+      "bodyMd": "Tant qu'il n'est pas remis dans l'array, le pool n'a plus de filet de sécurité. Le reprendre ne recopie que ce qui a changé pendant son absence (le bitmap de l'array) : quelques secondes, pas des heures. Rien n'est démonté, aucune connexion n'est coupée."
+    },
+    "resync": {
+      "title": "Vérification des deux copies.",
+      "body": "Le pool a tourné avec un disque absent : certains blocs n'ont peut-être qu'une bonne copie. Un scrub relit tout et répare à partir de la bonne copie. Tant qu'il n'est pas fini, le pool n'est pas déclaré sain.",
+      "running": "Le scrub tourne. Le NAS reste utilisable pendant ce temps, juste plus lent.",
+      "waiting": "Il démarre tout seul dès que rien d'autre ne tourne. Tu peux aussi le lancer maintenant.",
+      "stopped": "Arrêtée. Elle ne repart pas toute seule : reprends-la quand ça t'arrange.",
+      "repairFirst": "D'abord, md répare la parité, une fois tous les disques synchronisés (après une reconstruction, s'il y en a une) ; ensuite, le scrub vérifie chaque fichier. Le NAS lance les deux tout seul : rien à faire."
+    },
+    "reassemble": {
+      "title": "Tous les disques sont revenus : le pool peut redémarrer.",
+      "body": "Plusieurs disques sont partis en même temps (souvent un hub USB ou son alimentation), plus que la parité n'en tolère : le pool s'est arrêté pour protéger tes données. Elles sont toujours sur les disques. Réassembler redémarre l'array à partir de ce que chaque disque a noté, répare la parité, puis vérifie chaque fichier.",
+      "disks_one": "{{count}} disque trouvé",
+      "disks_other": "{{count}} disques trouvés",
+      "gap_one": "Les disques diffèrent de {{count}} mise à jour (les derniers instants avant la coupure) : la réparation de la parité les remet d'accord.",
+      "gap_other": "Les disques diffèrent de {{count}} mises à jour (les derniers instants avant la coupure) : la réparation de la parité les remet d'accord.",
+      "stepsTitle": "Ce qui va se passer",
+      "step1": "Les partages du pool sont fermés, et Docker s'arrête si ses données sont sur ce pool.",
+      "step2": "L'array redémarre avec tous les disques ; ceux qui étaient en retard rattrapent grâce au bitmap de l'array.",
+      "step3": "Le pool est remonté. md répare la parité, puis un scrub vérifie chaque fichier : des heures sur un gros pool. Tes fichiers restent utilisables pendant ce temps.",
+      "now": "Réassembler le pool",
+      "onlyIf": "Seulement quand tous les disques sont bien rebranchés",
+      "cut": "Si un hub les a coupés, vérifie d'abord son alimentation. Ne débranche rien avant la fin de la vérification. Les fichiers en cours d'écriture au moment de la coupure peuvent être incomplets.",
+      "confirm": "Réassembler maintenant",
+      "working": "Réassemblage…"
+    },
+    "outOfService": {
+      "missing_disks": {
+        "title_one": "Le pool est hors service : il manque encore {{count}} disque.",
+        "title_other": "Le pool est hors service : il manque encore {{count}} disques.",
+        "body": "Plus de disques sont partis que la parité n'en tolère : ses données sont inaccessibles. Rebranche tous les disques (souvent, un seul hub ou une seule alimentation les a tous coupés) : quand ils seront tous là, cette page proposera de réassembler le pool."
+      },
+      "roles": {
+        "title": "Le pool est hors service : ses disques ne s'accordent pas sur leurs places.",
+        "body": "Deux disques revendiquent la même place dans l'array, ou l'un vient d'un autre array (un ancien membre, un disque d'un autre NAS). NasBuster ne devine pas lequel est le bon. Débranche tout disque qui n'appartient pas à ce pool, puis recharge cette page. S'ils lui appartiennent tous, le pool demande une récupération manuelle."
+      },
+      "events_gap": {
+        "title": "Le pool est hors service : un disque est très en retard sur les autres.",
+        "body": "Un disque est parti bien avant les autres ({{count}} mises à jour de retard) : le forcer à revenir pourrait ramener d'anciennes données. Ce choix demande une personne : le pool demande une récupération manuelle."
+      },
+      "other": {
+        "title": "Le pool est hors service.",
+        "body": "Son array s'est arrêté et ne peut pas redémarrer tout seul. Vérifie que chaque disque est branché et alimenté, puis recharge cette page."
+      },
+      "gone": "Disques non connectés",
+      "touchNothing": "En attendant, ne touche à rien sur ces disques : ne les formate pas, ne les efface pas, n'en fais pas un nouveau pool. Tes données sont toujours dessus."
+    }
+  },
+  "replace": {
+    "eyebrow": "Remplacer un disque",
+    "steps": {
+      "member": "Disque à remplacer",
+      "disk": "Nouveau disque",
+      "confirm": "Confirmation"
+    },
+    "unavailable": "L'état du pool n'a pas pu être lu.",
+    "notMountedTitle": "Monte d'abord le pool.",
+    "notMountedBody": "Un disque ne se remplace que dans un pool monté. Si un disque manque, monte-le en mode dégradé depuis Stockage.",
+    "busyTitle": "Une reconstruction est déjà en cours.",
+    "busyBody": "Attends qu'elle se termine ; Stockage montre sa progression.",
+    "backToStorage": "Retour au stockage",
+    "member": {
+      "title": "Quel disque remplaces-tu ?",
+      "intro": "Le disque absent ou défaillant de {{pool}} est sélectionné.",
+      "label": "Disque à remplacer",
+      "healthyParity": "Sain : dans un pool à parité, on ne remplace qu'un disque absent ou défaillant.",
+      "preventive": "Sain : le remplacer est préventif (par exemple après une alerte SMART).",
+      "missingHint": "Non branché : le nouveau disque prendra sa place."
+    },
+    "disk": {
+      "title": "Quel nouveau disque ?",
+      "intro": "Seuls les disques vierges conviennent. NasBuster vérifie la taille quand tu confirmes.",
+      "introSize": "Seuls les disques vierges d'au moins {{size}} conviennent.",
+      "label": "Nouveau disque",
+      "noneTitle": "Aucun disque vierge n'est assez grand.",
+      "noneBody": "Branche un nouveau disque vierge, ou efface-en un qui est arrivé déjà formaté.",
+      "noneBodySize": "Branche un nouveau disque vierge d'au moins {{size}}, ou efface-en un qui est arrivé déjà formaté.",
+      "tooSmall": "Trop petit : il faut au moins {{size}}."
+    },
+    "confirm": {
+      "title": "Lancer le remplacement ?",
+      "intro": "La reconstruction tourne en arrière-plan et peut prendre des heures sur de gros disques USB.",
+      "pool": "Pool",
+      "old": "Remplacer",
+      "new": "Par",
+      "eraseTitle": "Le nouveau disque sera effacé.",
+      "eraseBody": "Tout son contenu est perdu. L'ancien disque n'est pas touché.",
+      "after": "Ensuite, rien à faire : les fichiers écrits en mode dégradé retrouvent leur seconde copie tout seuls.",
+      "start": "Lancer le remplacement",
+      "starting": "Lancement…"
+    }
+  },
+  "destroy": {
+    "zone": "Zone de danger",
+    "button": "Détruire le pool…",
+    "hint": "Seulement un pool vide : supprime d'abord ses partages.",
+    "title": "Détruire {{name}} ?",
+    "hasShares_one": "Ce pool a encore {{count}} partage.",
+    "hasShares_other": "Ce pool a encore {{count}} partages.",
+    "hasSharesBody": "Supprime-les d'abord (avec leurs fichiers), puis reviens :",
+    "body": "Ses disques sont effacés et redeviennent vierges, prêts pour un nouveau pool. Si tous ses disques ont disparu, seule sa configuration est oubliée.",
+    "warningTitle": "C'est irréversible.",
+    "warningBody": "Ce qui resterait sur ses disques est perdu pour de bon.",
+    "confirm": "Détruire {{name}}",
+    "destroying": "Destruction…",
+    "done_one": "Pool {{name}} détruit : son disque est de nouveau vierge.",
+    "done_other": "Pool {{name}} détruit : ses {{count}} disques sont de nouveau vierges.",
+    "forgotten": "Pool {{name}} oublié : ses disques avaient disparu et n'ont pas été touchés.",
+    "hasApps_one": "Ce pool contient encore {{count}} appli.",
+    "hasApps_other": "Ce pool contient encore {{count}} applis.",
+    "hasAppsBody": "Retire-les d'abord (avec leurs données), puis reviens :",
+    "hasDocker": "Docker garde ses données sur ce pool.",
+    "hasDockerBody": "Désinstalle d'abord Docker en supprimant ses données.",
+    "hasDockerLink": "Désinstaller Docker"
+  },
+  "shareDelete": {
+    "button": "Supprimer le partage…",
+    "title": "Supprimer {{name}} ?",
+    "warningTitle": "Ses fichiers et leurs versions précédentes sont supprimés pour de bon.",
+    "warningBody": "Rien ne pourra être récupéré ensuite, pas même depuis les snapshots.",
+    "copyFirst": "Copie d'abord ailleurs ce dont tu as encore besoin.",
+    "connected_one": "{{count}} ordinateur l'utilise en ce moment :",
+    "connected_other": "{{count}} ordinateurs l'utilisent en ce moment :",
+    "confirm": "Supprimer {{name}}",
+    "deleting": "Suppression…",
+    "done": "Partage {{name}} supprimé, avec ses fichiers."
+  },
+  "demoFaults": {
+    "title": "Démo uniquement · Simuler une panne",
+    "body": "Rien de réel ne se passe : ces boutons jouent les événements qu'un vrai NAS verrait, pour essayer chaque écran de réparation.",
+    "unplug": "Débrancher",
+    "replug": "Rebrancher",
+    "errors": "Erreurs d'écriture",
+    "unpluggedDisk": "Disque débranché",
+    "done": {
+      "unplug": "Disque {{disk}} débranché.",
+      "replug": "Disque {{disk}} rebranché.",
+      "errors": "Erreurs d'écriture injectées sur {{disk}}.",
+      "foreign": "Le disque {{disk}} appartient maintenant à un ancien pool « oldnas ». Il en faut deux pour pouvoir l'importer.",
+      "usbkey": "Le disque {{disk}} est maintenant une clé USB exFAT « USB-KEY » avec DCIM, Documents et Music."
+    },
+    "foreign": "Rendre étranger",
+    "usbkey": "En faire une clé USB"
+  },
+  "apps": {
+    "eyebrow": "Applications",
+    "title": "Applications.",
+    "intro": "Des applis Docker à côté de tes fichiers : leurs données sur un pool, jamais sur la carte SD.",
+    "loadFailed": "Impossible de charger les applis.",
+    "listTitle": "Tes applis",
+    "empty": {
+      "title": "Aucune appli.",
+      "body": "Installe-en une depuis le catalogue ci-dessous, ou colle un fichier compose."
+    },
+    "installStarted": "{{name}} est en cours d'installation : ses images se téléchargent. Elle démarre toute seule quand elles sont prêtes.",
+    "removedKept": "{{name}} retirée. Ses données restent sur le pool.",
+    "removedData": "{{name}} retirée, avec ses données.",
+    "name": "Nom de l'appli",
+    "nameHint": "Lettres minuscules, chiffres et tirets, {{max}} caractères au plus.",
+    "nameErrors": {
+      "empty": "Donne un nom à l'appli.",
+      "startChar": "Commence par une lettre minuscule.",
+      "invalidChars": "Lettres minuscules, chiffres et - uniquement.",
+      "tooLong": "{{max}} caractères au maximum.",
+      "trailingDash": "Ne termine pas par un tiret."
+    },
+    "poolHint": "Son fichier compose et ses dossiers ./ sont sur ce pool.",
+    "engine": {
+      "title": "Installer Docker",
+      "body": "Les applis tournent dans des conteneurs, avec Docker. NasBuster l'installe depuis les paquets de Debian et garde ses données sur un pool.",
+      "ramLabel": "RAM",
+      "ram": "Environ {{mb}} Mo une fois installé, même sans appli lancée.",
+      "sourceLabel": "Source",
+      "source": "Les paquets de Debian (docker.io), avec ses correctifs de sécurité. Quelques minutes pour télécharger et configurer.",
+      "dataLabel": "Données",
+      "data": "Images, conteneurs et dossiers des applis, sur le pool de ton choix. Jamais sur la carte SD : elle s'userait et se remplirait.",
+      "poolLabel": "Où Docker et les applis gardent leurs données",
+      "poolHint": "Docker ne démarre qu'une fois ce pool monté.",
+      "dataTitle": "Les données de Docker d'avant sont sur {{pool}}",
+      "dataHere_one": "Docker les reprend : son conteneur redémarre seul si son appli le demande. Une fois l'installation finie, regarde la page Applications : une appli que NasBuster ne connaît plus y apparaît comme orpheline.",
+      "dataHere_other": "Docker les reprend : ses {{count}} conteneurs redémarrent seuls si leurs applis le demandent. Une fois l'installation finie, regarde la page Applications : une appli que NasBuster ne connaît plus y apparaît comme orpheline.",
+      "dataHereEmpty": "Docker les reprend : images et volumes gardés, aucun conteneur à relancer.",
+      "dataElsewhere_one": "Elles contiennent {{count}} conteneur. Installé sur {{chosen}}, Docker repart de zéro, et ces données restent sur {{pool}} sans servir. Choisis {{pool}} pour retrouver tes applis.",
+      "dataElsewhere_other": "Elles contiennent {{count}} conteneurs. Installé sur {{chosen}}, Docker repart de zéro, et ces données restent sur {{pool}} sans servir. Choisis {{pool}} pour retrouver tes applis.",
+      "dataElsewhereEmpty": "Installé sur {{chosen}}, Docker repart de zéro, et ces données restent sur {{pool}} sans servir.",
+      "noPoolTitle": "Docker a besoin d'un pool.",
+      "noPoolBody": "Crée d'abord un pool : Docker y garde tout, jamais sur la carte SD.",
+      "noMountedPool": "Aucun pool n'est monté en ce moment. Monte-en un (Stockage), puis reviens.",
+      "install": "Installer Docker",
+      "retry": "Réessayer",
+      "installing": "Installation de Docker…",
+      "installingBody": "Téléchargement et configuration de Docker. Ça prend quelques minutes, et ça continue si tu quittes cette page.",
+      "logLabel": "Journal de l'installation",
+      "failedTitle": "L'installation a échoué.",
+      "failedBody": "La fin de son journal est ci-dessous. Vérifie la connexion Internet du NAS, puis réessaie.",
+      "installed": "Docker est installé. Choisis une appli ci-dessous.",
+      "summary": "Docker {{version}} · données sur {{pool}}",
+      "summaryNoPool": "Docker {{version}} · non configuré par NasBuster",
+      "downTitle": "Docker est installé mais arrêté.",
+      "downBody": "Il garde ses données sur {{pool}} et ne démarre qu'une fois ce pool monté. Vérifie le pool dans Stockage.",
+      "downBodyNoPool": "Redémarre le NAS. S'il reste arrêté, vérifie son pool dans Stockage."
+    },
+    "catalog": {
+      "title": "Catalogue",
+      "intro": "Des applis vérifiées pour NasBuster. Chacune tourne à partir d'un fichier compose que tu peux lire et modifier ensuite.",
+      "needsDocker": "Installe d'abord Docker pour lancer ces applis.",
+      "webPage": "Page web sur le port {{port}} ({{scheme}})",
+      "install": "Installer…",
+      "installed": "Installée"
+    },
+    "install": {
+      "groupLabel": "Installer {{title}}",
+      "confirm": "Installer {{title}}",
+      "installing": "Installation…"
+    },
+    "expert": {
+      "badge": "Expert",
+      "controls": "{{title}} contrôle entièrement Docker : qui a son compte admin contrôle le NAS.",
+      "firstVisitShort": "Ouvre-le juste après l'installation pour créer son compte admin.",
+      "firstVisit": "Ouvre-le juste après l'installation et crée son compte admin : d'ici là, n'importe qui sur ton réseau pourrait le créer.",
+      "lockout": "Si personne ne crée ce compte dans les 5 minutes, {{title}} se verrouille par sécurité : redémarre-le depuis Applications, un nouveau jeton de configuration y apparaît.",
+      "certificate": "Ton navigateur signale son certificat auto-signé à la première visite : c'est normal."
+    },
+    "setupToken": {
+      "title": "Jeton de configuration",
+      "body": "{{title}} demande ce jeton sur son écran de configuration. Ouvre-le, colle le jeton, puis choisis le nom et le mot de passe admin que tu veux.",
+      "copyLabel": "Copier le jeton de configuration de {{title}}",
+      "expires": "{{title}} se verrouille dans {{time}} si personne ne crée le compte.",
+      "expiring": "{{title}} se verrouille…",
+      "open": "Ouvrir {{title}}",
+      "openLabel": "Ouvrir {{title}} dans un nouvel onglet",
+      "lockedTitle": "{{title}} s'est verrouillé par sécurité.",
+      "lockedBody": "Personne n'a créé son compte admin dans les 5 minutes. Redémarre-le : un nouveau jeton apparaît ici, valable 5 minutes.",
+      "restart": "Redémarrer {{title}}"
+    },
+    "custom": {
+      "sectionTitle": "Ton propre fichier compose",
+      "teaser": "Une appli tirée de la documentation d'un projet : colle son compose.yaml.",
+      "open": "Coller un fichier compose",
+      "title": "Coller un fichier compose",
+      "intro": "NasBuster le vérifie avec Docker Compose avant d'enregistrer quoi que ce soit. Les chemins relatifs (./data) restent dans le dossier de l'appli, sur le pool.",
+      "composeLabel": "compose.yaml",
+      "deploy": "Vérifier et déployer",
+      "deploying": "Vérification…"
+    },
+    "compose": {
+      "rootTitle": "Un fichier compose a autant de pouvoir que root sur le NAS.",
+      "rootBody": "Ses conteneurs peuvent lire tous les fichiers, atteindre tous les disques et prendre le contrôle du système. Ne colle que des fichiers d'une source sûre.",
+      "size": "{{size}} Kio sur {{max}} Kio",
+      "tooBig": "{{size}} Kio : trop gros, {{max}} Kio au plus",
+      "sizeBytes_one": "{{count}} octet sur {{max}} Kio",
+      "sizeBytes_other": "{{count}} octets sur {{max}} Kio"
+    },
+    "state": {
+      "installing": "Installation…",
+      "deploying": "Mise à jour…",
+      "failed": "N'a pas démarré",
+      "running": "En marche",
+      "unhealthy": "En marche, en mauvaise santé",
+      "partial": "{{running}} sur {{total}} en marche",
+      "restarting": "Redémarre sans cesse",
+      "stopped": "Arrêtée",
+      "engineDown": "Docker est arrêté",
+      "unknown": "Inconnu"
+    },
+    "row": {
+      "source": "Origine",
+      "custom": "Ton fichier compose",
+      "open": "Ouvrir",
+      "openLabel": "Ouvrir {{name}} dans un nouvel onglet",
+      "port": "Port {{port}}",
+      "openPortLabel": "Ouvrir {{name}} sur le port {{port}} dans un nouvel onglet",
+      "failedTitle": "L'appli n'a pas démarré.",
+      "updateFailedTitle": "La dernière mise à jour a échoué : l'appli tourne comme avant.",
+      "failedBody": "La fin du journal dit pourquoi (souvent un nom d'image ou un port déjà pris). Corrige le fichier compose, puis redéploie.",
+      "deployingBody": "Téléchargement des images et démarrage des conteneurs : de quelques secondes à plusieurs minutes, selon leur taille.",
+      "jobLog": "Journal du déploiement de {{name}}"
+    },
+    "containers": {
+      "title_one": "{{count}} conteneur",
+      "title_other": "{{count}} conteneurs",
+      "none": "Aucun conteneur pour l'instant.",
+      "state": {
+        "running": "En marche",
+        "exited": "Arrêté",
+        "restarting": "Redémarre",
+        "created": "Créé",
+        "paused": "En pause",
+        "dead": "Mort"
+      },
+      "health": {
+        "healthy": "En bonne santé",
+        "unhealthy": "En mauvaise santé",
+        "starting": "Démarre"
+      }
+    },
+    "actions": {
+      "title": "Actions",
+      "start": "Démarrer",
+      "stop": "Arrêter",
+      "restart": "Redémarrer",
+      "update": "Mettre à jour",
+      "redeploy": "Redéployer",
+      "updateHint": "« Mettre à jour » télécharge les images plus récentes ; l'appli ne redémarre que si l'une d'elles a changé.",
+      "done": {
+        "start": "Démarrée.",
+        "stop": "Arrêtée.",
+        "restart": "Redémarrée.",
+        "update": "Mise à jour lancée : recherche d'images plus récentes…",
+        "redeploy": "Déploiement lancé."
+      }
+    },
+    "logs": {
+      "show": "Journaux",
+      "hide": "Masquer les journaux",
+      "title": "{{count}} dernières lignes",
+      "label": "Journaux de {{name}}",
+      "loading": "Lecture des journaux…",
+      "empty": "Aucun journal pour l'instant."
+    },
+    "edit": {
+      "button": "Modifier le fichier compose",
+      "intro": "L'enregistrement vérifie le fichier, puis redéploie l'appli avec. Elle reste sur {{pool}}.",
+      "label": "compose.yaml de {{name}}",
+      "save": "Vérifier et redéployer",
+      "saving": "Vérification…"
+    },
+    "remove": {
+      "button": "Retirer l'appli…",
+      "title": "Retirer {{name}} ?",
+      "body": "Ses conteneurs et réseaux sont arrêtés et supprimés.",
+      "deleteData": "Supprimer aussi ses données (fichier compose et dossiers ./)",
+      "deleteDataHint": "Comptes, réglages, bases de données et historique que l'appli garde dans {{pool}}/.apps/{{name}}.",
+      "dataKept": "Son dossier reste sur {{pool}} : réinstaller une appli nommée {{name}} retrouve ses données.",
+      "dataGoneTitle": "Ses données partent dans la corbeille du pool pendant {{days}} jours.",
+      "dataGoneBody": "D'ici là, une copie en lecture seule reste sur {{pool}} (dans .cwnsb/trash) et peut être restaurée en ligne de commande. Après {{days}} jours, elle est effacée définitivement.",
+      "confirm": "Retirer {{name}}",
+      "removing": "Retrait…"
+    },
+    "others": {
+      "title": "Gérées ailleurs",
+      "intro": "Des projets Compose créés à la main ou avec Portainer. NasBuster les affiche mais n'y touche pas."
+    },
+    "orphans": {
+      "title": "Applis orphelines",
+      "warnTitle": "Docker a relancé des applis que NasBuster ne connaît plus",
+      "warnBody": "Ces conteneurs portent le nom d'une appli de NasBuster qui n'est plus enregistrée : retirée pendant qu'ils vivaient dans un autre Docker, ou configuration restaurée plus ancienne qu'eux. Si leur dossier avait été effacé, ils ont pu repartir de zéro, sans compte, leur page d'administration ouverte au réseau local. Arrête-les, ou retire leurs conteneurs : leur dossier n'est jamais touché.",
+      "folder": "Son dossier : {{pool}}/.apps/{{name}}",
+      "folderUnknown": "Son fichier Compose n'est pas sur un pool de NasBuster.",
+      "keep": "Pour la garder, ajoute-la de nouveau sous le même nom ({{name}}) et sur le même pool ({{pool}}) : NasBuster reprend son dossier.",
+      "stop": "Arrêter",
+      "remove": "Retirer ses conteneurs",
+      "removeTitle": "Retirer les conteneurs de {{name}} ?",
+      "removeBody": "Docker retire ses conteneurs et son réseau. Son dossier ({{pool}}/.apps/{{name}}) et ses images restent tels quels.",
+      "removeBodyNoPool": "Docker retire ses conteneurs et son réseau. Ses fichiers et ses images restent tels quels.",
+      "removeConfirm": "Retirer les conteneurs",
+      "removing": "Retrait…",
+      "stopped": "{{name}} est arrêtée.",
+      "removed": "Les conteneurs de {{name}} sont retirés."
+    },
+    "engineRemove": {
+      "button": "Désinstaller Docker…",
+      "hint": "Libère sa RAM. Les applis qui y tournent doivent être retirées avant.",
+      "title": "Désinstaller Docker ?",
+      "body": "Docker et ses paquets sont retirés, ce qui libère environ 150 Mo de RAM. Tous les conteneurs doivent avoir disparu avant.",
+      "appsFirst_one": "Retire d'abord cette appli :",
+      "appsFirst_other": "Retire d'abord ces {{count}} applis :",
+      "appsKept_one": "Cette appli reste, avec ses données : elle reviendra quand Docker tournera de nouveau sur son pool.",
+      "appsKept_other": "Ces {{count}} applis restent, avec leurs données : elles reviendront quand Docker tournera de nouveau sur leur pool.",
+      "deleteData": "Supprimer aussi les données de Docker (images, conteneurs, volumes nommés)",
+      "deleteDataOn": "Supprimer aussi les données de Docker sur {{pool}} (images, conteneurs, volumes nommés)",
+      "volumesHint": "Les volumes nommés peuvent contenir de vraies données : les applis créées avec Portainer y gardent souvent les leurs.",
+      "dataKept": "Les données de Docker restent sur {{pool}} : réinstaller Docker les retrouve. Tant qu'elles y sont, ce pool ne peut pas être détruit.",
+      "dataKeptNoPool": "Les données de Docker restent où elles sont : réinstaller Docker les retrouve.",
+      "dataGoneTitle": "Les données de Docker sont supprimées définitivement.",
+      "dataGoneBody": "Les images seront retéléchargées à la prochaine installation, mais les volumes nommés et leur contenu sont perdus.",
+      "confirm": "Désinstaller Docker",
+      "removing": "Désinstallation…",
+      "removingLong": "Désinstallation de Docker, ça peut prendre une minute…",
+      "doneKept": "Docker désinstallé. Ses données restent sur le pool.",
+      "doneData": "Docker désinstallé, avec ses données."
+    }
+  },
+  "timeMachine": {
+    "label": "Time Machine",
+    "macs": "Les Mac de ton réseau voient ce partage comme destination de sauvegarde tout seuls (Réglages Système → Général → Time Machine).",
+    "noSnapshots": "Time Machine garde ses propres versions : NasBuster ne prend donc aucun snapshot de ce partage.",
+    "account": "Le Mac se connecte avec un utilisateur du NAS qui a la lecture et l'écriture.",
+    "limitLabel": "Taille maximale, en Gio",
+    "limitHint": "Pour que les sauvegardes ne remplissent pas le pool : environ deux fois le disque du Mac (1 000 Gio pour un Mac de 512 Go). Vide : pas de limite.",
+    "noLimit": "Pas de limite",
+    "unlimited": "Pas de limite : les sauvegardes peuvent remplir le pool",
+    "equals": "= {{size}}",
+    "aboveFree": "Plus que l'espace libre du pool ({{free}}).",
+    "limitErrors": {
+      "notNumber": "Un nombre entier de Gio, ou vide pour aucune limite.",
+      "tooBig": "{{max}} Gio au maximum."
+    },
+    "off": "Désactivé",
+    "onUnlimited": "Activé · sans limite de taille",
+    "onLimited": "Activé · {{gib}} Gio au plus",
+    "turnOn": "Utiliser pour Time Machine…",
+    "change": "Modifier…",
+    "restartTitle": "Le partage de fichiers redémarre un instant.",
+    "restartBody": "Les Mac ne voient le changement qu'après un redémarrage : les ordinateurs connectés sont déconnectés quelques secondes.",
+    "restartConnected_one": "Les Mac ne voient le changement qu'après un redémarrage : l'ordinateur connecté en ce moment est déconnecté quelques secondes.",
+    "restartConnected_other": "Les Mac ne voient le changement qu'après un redémarrage : les {{count}} ordinateurs connectés en ce moment sont déconnectés quelques secondes.",
+    "restartCreate": "Pour que les Mac voient le nouveau partage : les ordinateurs connectés sont déconnectés quelques secondes.",
+    "restartDelete": "C'est un partage Time Machine : le partage de fichiers redémarre, et les ordinateurs connectés sont déconnectés quelques secondes.",
+    "saveOn": "Activer et redémarrer le partage",
+    "saveOff": "Désactiver et redémarrer le partage",
+    "save": "Enregistrer la limite",
+    "snapshotsTitle": "Pas de snapshots automatiques sur ce partage.",
+    "snapshotsBody": "Time Machine garde ses propres versions : restaure-les depuis le Mac. Tu peux encore prendre un snapshot à la main."
+  },
+  "import": {
+    "cardTitle": "Pools trouvés sur les disques",
+    "cardIntro": "Ces pools ont été créés par CrossWax NasBuster : sur ce NAS avant une réinstallation, ou sur un autre. Importer un pool le lit tel qu'il est : rien n'est écrit sur les disques.",
+    "kindMd": "mdadm + Btrfs",
+    "kindBtrfs": "Btrfs",
+    "incompleteTitle_one": "Il manque {{missing}} disque.",
+    "incompleteTitle_other": "Il manque {{missing}} disques.",
+    "incompleteBody": "Rebranche d'abord les disques manquants, puis cherche à nouveau : un pool n'est importé que lorsque tous ses disques sont là.",
+    "lookAgain": "Chercher à nouveau",
+    "button": "Importer…",
+    "title": "Importer {{name}} ?",
+    "nothingWritten": "Rien n'est écrit sur les disques.",
+    "nothingWrittenBody": "Le NAS assemble et monte le pool, c'est tout. Ses fichiers, partages et snapshots restent tels quels.",
+    "confirm": "Importer {{name}}",
+    "importing": "Import…",
+    "exists": "Ce NAS a déjà un pool nommé {{name}} : il ne peut pas en importer un autre sous le même nom.",
+    "done": "Pool {{name}} importé, avec ses données.",
+    "restoreNext": "Tu repars d'une carte SD morte ? Restaure ensuite la configuration : utilisateurs, mots de passe, partages et applications reviennent.",
+    "restoreLink": "Réglages → Sauvegarde de la configuration",
+    "onboardingTitle_one": "Un pool d'un NAS CrossWax NasBuster est sur ces disques.",
+    "onboardingTitle_other": "{{count}} pools d'un NAS CrossWax NasBuster sont sur ces disques.",
+    "onboardingBody": "Si tu réinstalles ce NAS (une carte SD morte, par exemple), importe-les au lieu de créer un nouveau pool : tes données sont toujours dessus.",
+    "onboardingCta": "J'avais déjà un NAS CrossWax NasBuster : importer ses pools",
+    "onboardingDone": "{{name}} est de retour.",
+    "onboardingDoneBody": "Le pool est importé avec ses données. Rien n'a été écrit sur ses disques.",
+    "restoreLater": "Restaure maintenant ta configuration d'avant",
+    "restoreLaterBody": "Le pool porte les sauvegardes de ton installation précédente. Restaures-en une ici, avant de créer un utilisateur : utilisateurs et leurs mots de passe, partages, applications et réglages reviennent, et la configuration est terminée. Tu te reconnectes ensuite avec le mot de passe admin d'avant (oublié ? « Mot de passe oublié ? » sur l'écran de connexion). Pour repartir de zéro, continue.",
+    "present": "Disques présents : {{present}} sur {{count}}",
+    "noBackups": "Ce pool ne porte aucune sauvegarde d'une installation précédente : continue pour créer tes utilisateurs et tes partages."
+  },
+  "backup": {
+    "now": "Sauvegarder maintenant",
+    "saving": "Sauvegarde…",
+    "saved_one": "Enregistrée sur {{pools}}.",
+    "saved_other": "Enregistrée sur {{pools}} ({{count}} copies).",
+    "loading": "Recherche des sauvegardes sur les pools…",
+    "none": "Aucune sauvegarde pour l'instant. La première est faite cette nuit, ou maintenant avec « Sauvegarder maintenant ».",
+    "users_one": "{{count}} utilisateur du NAS",
+    "users_other": "{{count}} utilisateurs du NAS",
+    "copies_one": "Sur {{pools}}",
+    "copies_other": "{{count}} copies : {{pools}}",
+    "restore": "Restaurer…",
+    "restoreTitle": "Restaurer la sauvegarde du {{date}} ?",
+    "replacesTitle": "La configuration actuelle est remplacée par celle de la sauvegarde.",
+    "replacesWhat": "Utilisateurs et mots de passe, partages et droits, protection, applications et réglages reviennent tels qu'ils étaient le {{date}}.",
+    "sessionsEnd": "Toutes les sessions se ferment, celle-ci aussi.",
+    "oldPassword": "Tu te reconnectes avec le mot de passe admin de la sauvegarde, pas celui d'aujourd'hui. Oublié ? « Mot de passe oublié ? » sur l'écran de connexion en choisit un nouveau avec le compte du Pi.",
+    "restarts": "Le service du NAS redémarre : cette page disparaît quelques secondes.",
+    "copyLabel": "Copie à utiliser",
+    "restoreConfirm": "Restaurer et redémarrer",
+    "restoring": "Restauration…",
+    "restartingTitle": "Restauration : le service du NAS redémarre…",
+    "restartingBody": "Cette page l'attend, puis t'amène à la page de connexion.",
+    "back": "Le NAS est de retour.",
+    "backBody": "Connecte-toi avec le mot de passe admin de la sauvegarde.",
+    "usersRestored_one": "{{count}} utilisateur du NAS restauré, avec son mot de passe.",
+    "usersRestored_other": "{{count}} utilisateurs du NAS restaurés, avec leurs mots de passe.",
+    "conflictsTitle_one": "{{count}} compte a été sauté :",
+    "conflictsTitle_other": "{{count}} comptes ont été sautés :",
+    "conflictsBody": "Rien n'a été écrasé : un compte de ce système utilise déjà ce nom ou cet identifiant. Note-les, et recrée ces utilisateurs à la main (Utilisateurs).",
+    "lateTitle": "Le NAS ne répond plus depuis deux minutes.",
+    "lateBody": "Il démarre peut-être encore. Essaie la page de connexion dans un instant.",
+    "loginAgain": "Aller à la page de connexion",
+    "restoredTitle": "Configuration restaurée.",
+    "restoredBody": "Connecte-toi avec le mot de passe admin de la sauvegarde, pas celui que tu viens d'utiliser. Oublié ? Utilise « Mot de passe oublié ? » plus bas.",
+    "origin": {
+      "this": "Cette installation",
+      "other": "Installation précédente",
+      "older": "Ancien format"
+    },
+    "shares_one": "{{count}} partage",
+    "shares_other": "{{count}} partages",
+    "admin": "admin : {{name}}",
+    "adminIs": "Le compte admin de cette sauvegarde est {{name}}.",
+    "empty": "Vide : ni utilisateur du NAS, ni partage. La restaurer ne ramène rien."
+  },
+  "copy": {
+    "eyebrow": "Copier depuis un disque",
+    "fromDisk": "Copier depuis un disque…",
+    "cardTitle": "Disques avec des données à copier",
+    "cardIntro": "Copie leur contenu dans un partage : le disque est seulement lu, jamais modifié. C'est le moyen de reprendre tes fichiers d'OMV, ou de vider une clé USB.",
+    "copyButton": "Copier…",
+    "close": "Fermer",
+    "steps": {
+      "source": "Source",
+      "what": "Quoi copier",
+      "share": "Destination",
+      "progress": "Copie"
+    },
+    "source": {
+      "title": "Depuis quel disque copies-tu ?",
+      "intro": "Un disque de ton ancien NAS, une clé ou un disque USB : branche-le, il apparaît ici.",
+      "readOnly": "Le disque est ouvert en lecture seule et n'est jamais modifié.",
+      "readOnlyBody": "NasBuster ne fait que le lire : aucun fichier n'est changé, et même son journal n'est pas rejoué. Tu peux le rebrancher sur son ancien système ensuite.",
+      "label": "Disque à copier",
+      "noLabel": "Disque sans nom",
+      "array_one": "Grappe RAID de {{count}} disque",
+      "array_other": "Grappe RAID de {{count}} disques",
+      "opened": "Ouvert (lecture seule)",
+      "open": "L'ouvrir en lecture seule",
+      "opening": "Ouverture…",
+      "noneTitle": "Aucun disque avec des données à copier.",
+      "noneBody": "Branche le disque ou la clé USB, puis actualise. Le disque système, ceux des pools et les disques déjà utilisés ailleurs ne sont jamais proposés."
+    },
+    "what": {
+      "title": "Que copies-tu ?",
+      "intro": "Tout ce qu'il y a sur {{source}}, ou un seul dossier.",
+      "label": "Quoi copier",
+      "everything": "Tout",
+      "everythingDetail": "Tout {{source}} (disque de {{size}}).",
+      "empty": "Ce disque semble vide.",
+      "truncated": "Seuls les 200 premiers éléments sont listés. Pour copier autre chose, copie tout."
+    },
+    "share": {
+      "title": "Dans quel partage ?",
+      "intro": "{{what}} va dans un partage, où tes ordinateurs pourront l'ouvrir.",
+      "label": "Partage de destination",
+      "onPool": "Sur le pool {{pool}}",
+      "noneTitle": "Aucun partage pour l'instant.",
+      "noneBody": "Crée d'abord un partage, puis reviens.",
+      "newFolder": "La copie va dans un nouveau dossier du partage :",
+      "newFolderBody": "Rien de ce qui est déjà dans le partage n'est écrasé.",
+      "permissions": "Les fichiers copiés prennent les droits du partage : tous ceux qui peuvent ouvrir le partage pourront les ouvrir.",
+      "space": "Vérifie que le pool a la place : jusqu'à {{size}}.",
+      "start": "Lancer la copie",
+      "starting": "Lancement…",
+      "destExists": "Une copie de la même chose a été lancée dans cette minute. Attends une minute et réessaie.",
+      "folderPattern": "{{name}} + la date et l'heure"
+    },
+    "progress": {
+      "title": "Copie en cours…",
+      "doneTitle": "Copie terminée.",
+      "failedTitle": "La copie s'est arrêtée.",
+      "label": "Progression de la copie",
+      "ofTotal": "{{copied}} sur {{total}}",
+      "files_one": "{{formatted}} fichier",
+      "files_other": "{{formatted}} fichiers",
+      "leaveTitle": "Tu peux quitter cette page : la copie continue.",
+      "leaveBody": "Pour un gros disque, ça peut prendre des heures. Pour la revoir : « Copier depuis un disque… » sur le partage.",
+      "failedBody": "La fin de son journal dit pourquoi. Ce qui a déjà été copié reste dans le dossier.",
+      "log": "Journal de la copie",
+      "eject": "Éjecter le disque",
+      "ejectHint": "Tu pourras ensuite le débrancher. Il n'a jamais été modifié.",
+      "ejected": "Disque éjecté.",
+      "ejectedBody": "Tu peux le débrancher maintenant.",
+      "leave": "Quitter (la copie continue)",
+      "openShare": "Voir le partage"
+    }
+  },
+  "recycle": {
+    "label": "Corbeille",
+    "what": "Ce que les gens suppriment depuis leur ordinateur va dans un dossier visible « #recycle » du partage, au lieu de disparaître.",
+    "restore": "Ils le récupèrent eux-mêmes : ils le sortent de « #recycle ».",
+    "why": "Elle rattrape ce que les snapshots horaires manquent : un fichier créé puis supprimé dans la même heure.",
+    "daysLabel": "Garder les fichiers supprimés, en jours",
+    "daysHint_one": "Vidée de ce qui a été supprimé il y a plus de {{count}} jour.",
+    "daysHint_other": "Vidée de ce qui a été supprimé il y a plus de {{count}} jours.",
+    "daysError": "Un nombre entier de jours, de 1 à {{max}}.",
+    "on_one": "Activée · {{count}} jour",
+    "on_other": "Activée · {{count}} jours",
+    "off": "Désactivée",
+    "turnOn": "Activer…",
+    "change": "Modifier…",
+    "save": "Enregistrer",
+    "offWarning": "Sans elle, un fichier supprimé depuis un ordinateur disparaît, sauf si un snapshot l'a gardé. Ce qui est déjà dans « #recycle » y reste jusqu'à ce que tu le supprimes.",
+    "onboarding_one": "Corbeille : garder les fichiers supprimés {{count}} jour",
+    "onboarding_other": "Corbeille : garder les fichiers supprimés {{count}} jours",
+    "onboardingHint_one": "Ce qui est supprimé depuis un ordinateur va dans un dossier « #recycle » du partage pendant {{count}} jour. Elle rattrape ce que les snapshots horaires manquent.",
+    "onboardingHint_other": "Ce qui est supprimé depuis un ordinateur va dans un dossier « #recycle » du partage pendant {{count}} jours. Elle rattrape ce que les snapshots horaires manquent."
+  },
+  "locate": {
+    "button": "Faire clignoter son voyant",
+    "again": "Clignoter encore",
+    "blinking_one": "Clignote encore {{count}} seconde : cherche le disque dont le voyant clignote.",
+    "blinking_other": "Clignote encore {{count}} secondes : cherche le disque dont le voyant clignote.",
+    "protected": "Ce disque est protégé (disque système, ou mode labo) : NasBuster n'y touche pas."
+  }
+}

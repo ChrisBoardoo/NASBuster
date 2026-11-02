@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<!-- Install page of the APT repository (GitHub Pages). @BASE_URL@ is filled by tools/apt/build-repo.sh. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NasBuster APT repository</title>
+    <style>
+      :root {
+        --background: #0a0a0a;
+        --foreground: #fafafa;
+        --muted: #1a1a1a;
+        --muted-foreground: #8a8a8a;
+        --accent: #ff3d00;
+        --border: #262626;
+      }
+      body {
+        margin: 0;
+        background: var(--background);
+        color: var(--foreground);
+        font: 16px/1.6 system-ui, sans-serif;
+      }
+      main {
+        max-width: 48rem;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        border-bottom: 4px solid var(--accent);
+        display: inline-block;
+        padding-bottom: 0.25rem;
+      }
+      h2 {
+        margin-top: 2.5rem;
+        font-size: 1.25rem;
+      }
+      pre,
+      code {
+        font-family: ui-monospace, 'JetBrains Mono', monospace;
+        font-size: 0.875rem;
+      }
+      pre {
+        background: var(--muted);
+        border: 1px solid var(--border);
+        padding: 1rem;
+        overflow-x: auto;
+      }
+      p.note {
+        color: var(--muted-foreground);
+      }
+      a {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>NasBuster APT repository</h1>
+      <p>Packages for Raspberry Pi OS and Debian 12 or 13, on arm64 (Raspberry Pi 4 and 5) and amd64.</p>
+
+      <h2>1. Get the signing key and check it</h2>
+      <pre>sudo curl -fsSL -o /usr/share/keyrings/cwnsb-archive-keyring.asc @BASE_URL@/cwnsb-archive-keyring.asc
+gpg --show-keys /usr/share/keyrings/cwnsb-archive-keyring.asc</pre>
+      <p>The fingerprint must read exactly:</p>
+      <pre>6E4A B0CB FCC4 E45D EC76  A4B4 5282 C4BC 9717 0E72</pre>
+      <p class="note">If it differs, stop: someone may be serving a fake key. The package keeps this key up to date afterwards.</p>
+
+      <h2>2. Add the repository</h2>
+      <pre>sudo tee /etc/apt/sources.list.d/cwnsb.sources &gt;/dev/null &lt;&lt;'EOF'
+Types: deb
+URIs: @BASE_URL@
+Suites: stable
+Components: main
+Signed-By: /usr/share/keyrings/cwnsb-archive-keyring.asc
+EOF</pre>
+
+      <h2>3. Install</h2>
+      <pre>sudo apt update
+sudo apt install cwnsb</pre>
+      <p>Then open <code>https://&lt;your-pi&gt;</code> in a browser and follow the setup.</p>
+    </main>
+  </body>
+</html>
